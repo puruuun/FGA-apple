@@ -100,11 +100,13 @@ struct CmdLine {
 static QueueHandle_t cmdQueue = nullptr;
 
 static void reply(bool toBle, const char* msg) {
-    Serial.println(msg);
+    // 블루투스 응답을 먼저 보낸다. USB 시리얼은 받는 쪽이 없으면 쓰기가 막힐 수 있어서,
+    // 순서가 반대면 앱이 응답을 몇 초 늦게 받는다.
     if (toBle && cmdTx != nullptr && connected) {
         cmdTx->setValue((const uint8_t*)msg, strlen(msg));
         cmdTx->notify();
     }
+    Serial.println(msg);
 }
 
 static bool sendReport(uint16_t x, uint16_t y, bool down) {
@@ -311,6 +313,11 @@ static CmdCallbacks    cmdCallbacks;
 
 void setup() {
     Serial.begin(115200);
+#if ARDUINO_USB_CDC_ON_BOOT
+    // 보드가 PC에 꽂혀 있어도 포트를 읽는 프로그램이 없으면 출력이 쌓여 쓰기가 막힌다.
+    // 기다리지 않고 버리게 해서, 시리얼 출력이 블루투스 명령 처리를 늦추지 않게 한다.
+    Serial.setTxTimeoutMs(0);
+#endif
     cmdQueue = xQueueCreate(16, sizeof(CmdLine));
 
     NimBLEDevice::init(DEVICE_NAME);

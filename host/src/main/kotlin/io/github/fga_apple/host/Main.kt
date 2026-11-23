@@ -19,6 +19,7 @@ fun main(args: Array<String>) {
         "probe" -> probe(args.drop(1))
         "screen" -> screen(args.drop(1))
         "battle" -> battle(args.drop(1))
+        "regions" -> regions()
         else -> println(
             """
             usage:
@@ -29,6 +30,29 @@ fun main(args: Array<String>) {
             """.trimIndent()
         )
     }
+}
+
+/**
+ * 스크립트가 쓰는 몇몇 영역과 탭 위치를 이 기기 기준의 좌표로 출력한다. 화면도 보드도 쓰지 않는다.
+ * iPhone 앱의 검증 코드에 같은 값을 넣기 위한 것이다.
+ */
+private fun regions() {
+    val component = DaggerHostComponent.builder()
+        .preferences(HostPreferences.empty())
+        .config(HostConfig.load().copy(dryRun = true))
+        .build()
+    val t = component.transformer()
+    val loc = component.api().locations
+    val config = HostConfig.load()
+    fun board(l: io.github.lib_automata.Location) =
+        "${l.x.toLong() * 32767 / config.screenWidth} ${l.y.toLong() * 32767 / config.screenHeight}"
+
+    println("image scale: ${component.scale().scriptToImage}")
+    println("menuScreenRegion (image): ${t.toImage(loc.menuScreenRegion)}")
+    println("support.screenCheckRegion (image): ${t.toImage(loc.support.screenCheckRegion)}")
+    val quest = t.toScreen(loc.menuSelectQuestClick)
+    println("menuSelectQuestClick: screen $quest, board ${board(quest)}")
+    component.gestures().close()
 }
 
 /**

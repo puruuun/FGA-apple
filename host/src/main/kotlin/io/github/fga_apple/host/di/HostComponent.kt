@@ -62,6 +62,7 @@ interface HostComponent {
     fun api(): IFgoAutomataApi
     fun gameArea(): GameAreaManager
     fun scale(): Scale
+    fun transformer(): Transformer
     fun exitManager(): ExitManager
     fun screenshotManager(): ScreenshotManager
     fun gestures(): GestureService
