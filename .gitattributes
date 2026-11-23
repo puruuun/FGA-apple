@@ -1,0 +1,7 @@
+# Mac에서 실행하는 스크립트가 CRLF로 체크아웃되면 실행되지 않는다.
+*.sh text eol=lf
+gradlew text eol=lf
+*.py text eol=lf
+*.swift text eol=lf
+*.bat text eol=crlf
+*.jar binary

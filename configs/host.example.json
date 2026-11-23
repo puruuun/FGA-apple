@@ -1,0 +1,8 @@
+{
+  "frameUrl": "http://<Mac 주소>:8766",
+  "serialPort": "COM3",
+  "screenWidth": 2622,
+  "screenHeight": 1206,
+  "avoidLo": 15040,
+  "avoidHi": 16480
+}

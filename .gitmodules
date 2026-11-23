@@ -1,0 +1,3 @@
+[submodule "fga"]
+	path = fga
+	url = https://github.com/puruuun/FGA-Modified.git

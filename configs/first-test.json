@@ -1,0 +1,13 @@
+{
+  "server": "Kr",
+  "global": {},
+  "perServer": {
+    "should_limit_runs": true,
+    "limit_runs": "1"
+  },
+  "battleConfig": {
+    "autoskill_name": "first test",
+    "autoskill_cmd": "",
+    "support_mode": "First"
+  }
+}

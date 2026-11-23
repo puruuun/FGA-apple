@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+
+# PlatformIO
+firmware/.pio/
+
+# Gradle / Kotlin
+.gradle/
+.kotlin/
+build/
+
+# Mac 캡처 도구 빌드 산출물
+mac-capture/FGACapture.app/
+
+# 실행 중 만들어지는 파일과 개인 설정 (드롭 스크린샷, 내보낸 전투 설정 등)
+data/
+
+# 측정 중 받은 화면 캡처 (계정 정보가 찍힐 수 있으므로 커밋하지 않는다)
+*.jpg
+*.png
