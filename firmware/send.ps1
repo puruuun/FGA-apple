@@ -1,5 +1,3 @@
-# 보드에 명령을 보내고 응답을 출력한다.
-# 사용 예:  .\send.ps1 "STAT"   또는   .\send.ps1 "TAP 16383 16383" "STAT"
 [CmdletBinding(PositionalBinding = $false)]
 param(
     [Parameter(Mandatory = $true, Position = 0, ValueFromRemainingArguments = $true)]

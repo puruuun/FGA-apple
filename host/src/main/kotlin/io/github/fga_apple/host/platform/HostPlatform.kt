@@ -17,7 +17,6 @@ class HostPlatform @Inject constructor(
     private val preferences: IPreferences,
     private val config: HostConfig
 ) : PlatformImpl {
-    // iPhone의 FGO는 화면 전체를 쓴다. Android처럼 노치만큼 잘라 내지 않는다.
     override val windowRegion get() = Region(Location(), Size(config.screenWidth, config.screenHeight))
 
     override val canLongSwipe = true
@@ -26,6 +25,5 @@ class HostPlatform @Inject constructor(
 
     override fun getResizableBlankPattern(): Pattern = CvPattern()
 
-    // iPhone 화면 위에 표시를 그릴 방법이 없다. Android에서도 디버그 모드의 시각 보조일 뿐이다.
     override fun highlight(region: Region, duration: Duration, color: HighlightColor) {}
 }

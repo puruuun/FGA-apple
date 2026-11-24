@@ -1,10 +1,3 @@
-"""FGAProbe.xcodeproj에 Swift 소스 파일을 등록한다.
-
-Mac의 프로젝트 파일에는 서명 팀 설정이 들어 있어 저장소의 것과 내용이 다르다. 그래서 파일을
-덮어쓰지 않고, 양쪽에 같은 수정을 따로 적용한다. 이미 등록된 파일은 건너뛴다.
-
-    python pbxproj_add_swift.py <project.pbxproj> Matching.swift Templates.swift
-"""
 import re
 import sys
 

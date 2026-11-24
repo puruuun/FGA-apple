@@ -1,7 +1,3 @@
-"""터치 기록 페이지에 스와이프를 보내고, 페이지가 받은 궤적을 요약한다.
-
-    python swipetest.py "24000 24000 24000 13000 500"
-"""
 import argparse
 import math
 import time
@@ -9,8 +5,8 @@ import time
 from probe import Board
 from taptest import read_log
 
-PAGE_X_OFFSET = 62.0   # Safari 가로 화면의 왼쪽 여백 (pt)
-PAGE_Y_OFFSET = 110.0  # 주소창·탭 막대 높이 (pt)
+PAGE_X_OFFSET = 62.0
+PAGE_Y_OFFSET = 110.0
 SCREEN_W, SCREEN_H = 874.0, 402.0
 
 
@@ -65,7 +61,6 @@ def main():
         print(f"  실제: 시작 {d['clientX']:.0f},{d['clientY']:.0f} -> 끝 {u['clientX']:.0f},{u['clientY']:.0f}"
               f"  접촉 시간 {u['t'] - d['t']} ms")
         pts = [d] + moves + [u]
-        # 직선에서 벗어난 최대 거리와, 이벤트 사이 최대 이동 거리(끊김 확인).
         lx, ly = u["clientX"] - d["clientX"], u["clientY"] - d["clientY"]
         length = math.hypot(lx, ly) or 1.0
         max_dev = max(abs((p["clientX"] - d["clientX"]) * ly - (p["clientY"] - d["clientY"]) * lx) / length

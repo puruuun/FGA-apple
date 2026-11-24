@@ -22,9 +22,6 @@ import io.github.fate_grand_automata.scripts.prefs.IExecutionProfile
 import io.github.fate_grand_automata.scripts.prefs.ISupportPreferences
 import kotlinx.serialization.json.Json
 
-// 키 이름과 기본값은 FGA-Modified의 prefs/core/*.kt (BattleConfigCore, ExecutionProfileCore,
-// SupportPrefsCore 등)를 그대로 따른다. 그쪽이 바뀌면 여기도 맞춰야 한다.
-
 private val spamJson = Json {
     ignoreUnknownKeys = true
     encodeDefaults = true
@@ -89,7 +86,6 @@ class HostSupportPreferences(private val kv: KvStore) : ISupportPreferences {
     override val score62Check by kv.bool("support_score_62_check")
     override val grandScore16Check by kv.bool("support_grand_score_16_check")
     override val minimumNpLevel by kv.int("support_np_min_level", 5)
-    // An old Lv.1 setting is off until explicitly enabled with a meaningful default.
     override val npLevelCheck get() = kv.getBool("support_np_level_check", false) && minimumNpLevel > 1
     override val grandServant by kv.bool("support_grand_servant")
     override val bondCEEffect by kv.enum("support_bond_ce_effect", BondCEEffectEnum.Ignore)
@@ -137,7 +133,6 @@ class HostBattleConfig(override val id: String, private val kv: KvStore) :
 
     override val trackBond by kv.bool("bond_result_track")
     override val stopOnBondMax by kv.bool("bond_result_stop_on_max")
-    // 저장 형식은 "감시할 칸" 목록이고, 스크립트에는 그 여집합(무시할 칸)을 넘긴다.
     override val bondMaxIgnoredCharacters: Set<Int>
         get() = (1..5).toSet() - kv.getString("bond_result_stop_characters", "1,2,3,4,5")
             .split(',').mapNotNull { it.toIntOrNull()?.takeIf { n -> n in 1..5 } }.toSet()

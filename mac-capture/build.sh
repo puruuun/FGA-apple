@@ -1,5 +1,4 @@
 #!/bin/sh
-# Mac에서 실행: FGACapture.app을 빌드하고 임시 서명한다.
 set -e
 cd "$(dirname "$0")"
 export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer

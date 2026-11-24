@@ -1,10 +1,3 @@
-// ios/FGAProbe의 매칭 코드를 Mac에서 돌려 보는 점검 도구.
-// 검증 앱이 저장한 프레임(세로 버퍼 그대로의 JPEG)을 읽어, 두 회전 방향으로 템플릿 점수를 출력한다.
-//
-//   swiftc -O tools/matching_check.swift ios/FGAProbe/FGAProbe/Matching.swift \
-//          ios/FGAProbe/FGAProbe/Templates.swift -o /tmp/matching_check
-//   /tmp/matching_check last.jpg
-
 import CoreGraphics
 import CoreVideo
 import Foundation

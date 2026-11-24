@@ -1,10 +1,3 @@
-"""FGA의 Kotlin 소스에서, 어떤 클래스가 직간접으로 참조하는 파일들을 모아 분량을 센다.
-
-정확한 분석이 아니라 이름 기준의 근사다: 파일에 선언된 최상위 이름이 다른 파일 본문에 단어로
-나오면 참조로 본다. 그래서 실제보다 조금 넓게 잡힌다. 이식 범위를 가늠하는 용도.
-
-    python tools/kotlin_closure.py AutoBattle [--exclude capture,weekly]
-"""
 import re
 import sys
 from collections import deque
@@ -34,12 +27,11 @@ def main():
         for p in src.rglob("*.kt"):
             files[p] = p.read_text(encoding="utf-8")
 
-    declared = {}  # name -> file
+    declared = {}
     for p, text in files.items():
         for m in DECL.finditer(text):
             declared.setdefault(m.group(1), p)
         for m in TOPFUN.finditer(text):
-            # 확장 함수와 최상위 함수. 흔한 이름은 오탐이 많아 5글자 이상만 본다.
             if len(m.group(1)) >= 5:
                 declared.setdefault(m.group(1), p)
 

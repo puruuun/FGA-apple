@@ -1,9 +1,3 @@
-"""iPhone Safari에서 열어 터치 좌표를 기록하는 테스트 페이지 서버.
-
-Mac에서 실행:  python3 touchlog_server.py
-iPhone에서:    http://<Mac 주소>:8765
-기록 파일:     /tmp/fga-touch.log  (한 줄에 이벤트 하나, JSON)
-"""
 import json
 import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -53,7 +47,6 @@ addEventListener('touchmove', e => e.preventDefault(), { passive: false });
 """
 
 
-# 스크롤 목록 페이지: 손가락이 움직인 거리와, 손을 뗀 뒤 관성으로 더 굴러간 거리를 기록한다.
 SCROLL_PAGE = """<!doctype html>
 <html><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">

@@ -12,12 +12,6 @@ import org.opencv.imgproc.Imgproc
 import javax.inject.Inject
 import kotlin.math.roundToInt
 
-/**
- * Mac에서 받은 iPhone 화면을 FGA가 기대하는 형태로 만든다.
- *
- * Android 구현은 화면을 처음부터 비교 해상도(높이 720)로 캡처해서 넘긴다. 여기서는 원본 해상도로
- * 받은 뒤 같은 배율로 줄여 같은 형태를 만든다. [ColorManager]가 컬러를 요구하지 않으면 흑백으로 준다.
- */
 class HostScreenshotService @Inject constructor(
     config: HostConfig,
     private val scale: Scale,
@@ -26,10 +20,8 @@ class HostScreenshotService @Inject constructor(
     private val source = MacFrameSource(config.frameUrl)
     private val expected = Size(config.screenWidth, config.screenHeight)
 
-    // 돌려준 이미지는 다음 호출 전까지만 유효하다 (Android 구현과 같은 규칙).
     private var current: CvPattern? = null
 
-    /** 마지막으로 받은 프레임이 만들어진 뒤 지난 시간(ms). */
     @Volatile
     var lastFrameAgeMs: Long = -1
         private set
