@@ -24,6 +24,7 @@ Rules every agent follows in this repository. The design is in [docs/design/0001
 ./gradlew :host:test --rerun                  # host/  (needs the fga submodule: git submodule update --init)
 pio run -d firmware                           # firmware/
 python -m compileall -q tools mac-capture     # Python tools (on the Windows machine the interpreter is `py`, not `python`)
+python -m unittest discover tools/ci/tests    # tools/ci/
 python tools/ci/hygiene.py                    # nothing that must not be committed
 ```
 
