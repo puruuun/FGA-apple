@@ -1,9 +1,10 @@
 package io.github.fga_apple.host.golden
 
+import io.github.fate_grand_automata.scripts.Images
+import io.github.fate_grand_automata.scripts.ScriptLog
 import io.github.fate_grand_automata.scripts.enums.GameServer
 import io.github.fate_grand_automata.scripts.locations.IScriptAreaTransforms
 import io.github.fate_grand_automata.scripts.locations.Locations
-import io.github.fga_apple.host.di.DaggerHostComponent
 import io.github.fga_apple.host.di.HostConfig
 import io.github.fga_apple.host.prefs.HostPreferences
 import io.github.lib_automata.Location
@@ -25,52 +26,117 @@ object GoldenLocations {
 
     fun fileName(server: GameServer, width: Int, height: Int) = "${serverName(server)}_${width}x$height.json"
 
-    fun export(server: GameServer, width: Int, height: Int): Map<String, Any?> {
+    val masterOffsetPaths = listOf(
+        "battle.master.locate(Skill.Master.A)",
+        "battle.master.locate(Skill.Master.B)",
+        "battle.master.locate(Skill.Master.C)",
+        "battle.master.masterSkillOpenClick",
+        "battle.master.stageCountRegion"
+    )
+
+    val battleMenu = Images.BattleMenu
+
+    fun build(server: GameServer, width: Int, height: Int, scene: GoldenScene, assetsDir: File? = null): GoldenComponent {
         val prefs = HostPreferences.empty().also { it.gameServer = server }
-        val component = DaggerHostComponent.builder()
+        val defaults = HostConfig()
+        return DaggerGoldenComponent.builder()
             .preferences(prefs)
-            .config(HostConfig(frameUrl = "http://127.0.0.1:1", screenWidth = width, screenHeight = height, dryRun = true))
-            .build()
-        try {
-            val transformer = component.transformer()
-            val scale = component.scale()
-            val locations = component.api().locations
-
-            val walker = LocationWalker(
-                owns = { it.packageName == Locations::class.java.packageName },
-                inheritedFrom = IScriptAreaTransforms::class
+            .config(
+                HostConfig(
+                    screenWidth = width,
+                    screenHeight = height,
+                    assetsDir = assetsDir ?: defaults.assetsDir,
+                    dryRun = true
+                )
             )
-            walker.visit(locations)
-            val reached = walker.visitedTypes()
+            .scene(scene)
+            .build()
+    }
 
-            val unreachable = sortedSetOf<String>()
-            for (klass in packageClasses(Locations::class.java)) {
-                if (klass in reached || klass == Locations::class.java) continue
-                if (!klass.isAnnotationPresent(Metadata::class.java) || klass.isInterface || klass.isEnum || klass.name.endsWith("Kt") ||
-                    java.lang.reflect.Modifier.isAbstract(klass.modifiers)
-                ) continue
-                val holder = instantiate(klass.kotlin, locations)
-                if (holder == null) unreachable.add(klass.simpleName)
-                else walker.visit(holder, "sibling.${klass.simpleName}", false)
+    fun foundScene(blank: GoldenComponent): GoldenScene {
+        val master = blank.api().locations.battle.master
+        val search = master.battleMenuSearchRegion
+        val usualCenterX = master.masterSkillOpenClick.x
+        val template = blank.images()[battleMenu]
+        val size = blank.transformer().fromImage(Region(0, 0, template.width, template.height))
+        return GoldenScene(
+            Pasted(
+                battleMenu,
+                Location(usualCenterX - size.width / 2, search.y + (search.height - size.height) / 2)
+            )
+        )
+    }
+
+    private class Walked(val result: WalkResult, val unreachable: List<String>, val locations: Locations)
+
+    private fun walk(component: GoldenComponent): Walked {
+        val locations = component.api().locations
+        val walker = LocationWalker(
+            owns = { it.packageName == Locations::class.java.packageName },
+            inheritedFrom = IScriptAreaTransforms::class
+        )
+        walker.visit(locations)
+        val reached = walker.visitedTypes()
+
+        val unreachable = sortedSetOf<String>()
+        for (klass in packageClasses(Locations::class.java)) {
+            if (klass in reached || klass == Locations::class.java) continue
+            if (!klass.isAnnotationPresent(Metadata::class.java) || klass.isInterface || klass.isEnum || klass.name.endsWith("Kt") ||
+                java.lang.reflect.Modifier.isAbstract(klass.modifiers)
+            ) continue
+            val holder = instantiate(klass.kotlin, locations)
+            if (holder == null) unreachable.add(klass.simpleName)
+            else walker.visit(holder, "sibling.${klass.simpleName}", false)
+        }
+        return Walked(walker.result(), unreachable.toList(), locations)
+    }
+
+    private fun outcome(component: GoldenComponent, walked: Walked): Map<String, Any?> {
+        val transformer = component.transformer()
+        return mapOf(
+            "defaultOffsetLogged" to component.messages().logged.contains(ScriptLog.DefaultMasterOffset),
+            "values" to masterOffsetPaths.associateWith { path ->
+                render(walked.result.leaves[path] ?: error("missing $path"), transformer)
             }
+        )
+    }
 
-            val result = walker.result()
+    fun export(server: GameServer, width: Int, height: Int, assetsDir: File? = null): Map<String, Any?> {
+        val blank = build(server, width, height, GoldenScene.Blank, assetsDir)
+        var found: GoldenComponent? = null
+        try {
+            val transformer = blank.transformer()
+            val scale = blank.scale()
+            val walked = walk(blank)
+            val result = walked.result
+            val locations = walked.locations
+
+            val foundComponent = build(server, width, height, foundScene(blank), assetsDir).also { found = it }
+            val outcomes = mapOf(
+                "buttonNotFound" to outcome(blank, walked),
+                "buttonFound" to outcome(foundComponent, walk(foundComponent))
+            )
+
             return mapOf(
                 "server" to serverName(server),
                 "screen" to mapOf("width" to width, "height" to height),
                 "isWide" to locations.isWide,
-                "gameArea" to region(component.gameArea().gameArea),
+                "gameArea" to region(blank.gameArea().gameArea),
                 "scriptToScreen" to scale.scriptToScreen,
                 "screenToImage" to scale.screenToImage,
                 "scriptToImage" to scale.scriptToImage,
                 "values" to result.leaves.mapValues { (_, leaf) -> render(leaf, transformer) },
                 "errors" to result.leaves.filterValues { it is ErrorLeaf }.keys.toList(),
+                "masterOutcomes" to outcomes,
                 "notEnumerated" to result.notEnumerated,
                 "omittedInvalidArguments" to result.omittedArguments,
-                "unreachableHolders" to unreachable.toList()
+                "unreachableHolders" to walked.unreachable
             )
         } finally {
-            component.gestures().close()
+            for (component in listOfNotNull(blank, found)) {
+                component.gestures().close()
+                component.screenshots().close()
+            }
         }
     }
 
