@@ -5,7 +5,7 @@ Rules every agent follows in this repository. The design is in [docs/design/0001
 ## Rules
 
 - **Branch and PR.** Work on your own branch in your own worktree and open a PR against `main`. Do not push to `main` and do not merge.
-- **Stay in your task's paths.** Never edit anything under `fga/`: it is a read-only submodule of another project.
+- **Stay in your task's paths.** Never create, edit or delete anything under `fga/`, not even a temporary file: it is a read-only submodule of another project. To run the Kotlin original for expected values, put the throwaway code under `host/`, which depends on it, and remove it before you commit.
 - **No device work.** Do not operate a phone, the game, Xcode signing or installation, or repository settings.
 - **Never commit** screenshots, screen recordings, exported battle configs (`.fga`), a signing team id, a private network address, or a secret. Screens of the game show account data.
 - **No comments.** Write code without comments. The one exception is a single line for a fact the code cannot show, such as a measured value or an external constraint, with where it comes from. Never write what the code does, and never write in a test why it passes.
