@@ -30,3 +30,43 @@ application {
 tasks.named<JavaExec>("run") {
     workingDir = rootDir
 }
+
+dependencies {
+    implementation(kotlin("reflect"))
+    testImplementation(platform(libs.junit.bom))
+    testImplementation(libs.kotlin.test)
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+
+tasks.compileTestKotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+    }
+}
+
+tasks.compileTestJava {
+    sourceCompatibility = JavaVersion.VERSION_17.toString()
+    targetCompatibility = JavaVersion.VERSION_17.toString()
+    options.release.set(17)
+}
+
+listOf(configurations.testCompileClasspath, configurations.testRuntimeClasspath).forEach { config ->
+    config.configure {
+        attributes {
+            attribute(org.gradle.api.attributes.java.TargetJvmVersion.TARGET_JVM_VERSION_ATTRIBUTE, 17)
+        }
+    }
+}
+
+tasks.register<JavaExec>("golden") {
+    classpath = sourceSets.main.get().runtimeClasspath
+    mainClass.set("io.github.fga_apple.host.golden.GoldenMainKt")
+    workingDir = rootDir
+    args("core/testdata")
+    jvmArgs("-Dstdout.encoding=UTF-8", "-Dstderr.encoding=UTF-8")
+}

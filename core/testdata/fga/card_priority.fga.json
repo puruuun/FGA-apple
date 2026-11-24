@@ -1,0 +1,10 @@
+{
+  "autoskill_name": "Card priority per wave",
+  "card_priority": "WB, WA, WQ, B, A, Q, RB, RA, RQ\nWA, WB, WQ, A, B, Q, RA, RB, RQ\nWQ, WA, WB, Q, A, B, RQ, RA, RB",
+  "card_priority_split": "Turn",
+  "card_priority_style": "Servant",
+  "card_priority_styles": "Affinity,Servant,Servant",
+  "card_priority_servant_list": "1B,1A,1Q,2B,2A,2Q,3B,3A,3Q\n3Q,3A,3B,2Q,2A,2B,1Q,1A,1B",
+  "secondary_card_priority": "WQ, WA, WB, Q, A, B, RQ, RA, RB",
+  "secondary_card_priority_split": "Wave"
+}
