@@ -32,7 +32,9 @@ tasks.named<JavaExec>("run") {
 }
 
 dependencies {
+    implementation(kotlin("reflect"))
     testImplementation(platform(libs.junit.bom))
+    testImplementation(libs.kotlin.test)
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
@@ -59,4 +61,12 @@ listOf(configurations.testCompileClasspath, configurations.testRuntimeClasspath)
             attribute(org.gradle.api.attributes.java.TargetJvmVersion.TARGET_JVM_VERSION_ATTRIBUTE, 17)
         }
     }
+}
+
+tasks.register<JavaExec>("golden") {
+    classpath = sourceSets.main.get().runtimeClasspath
+    mainClass.set("io.github.fga_apple.host.golden.GoldenMainKt")
+    workingDir = rootDir
+    args("core/testdata")
+    jvmArgs("-Dstdout.encoding=UTF-8", "-Dstderr.encoding=UTF-8")
 }

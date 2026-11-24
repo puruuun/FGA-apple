@@ -23,6 +23,7 @@ jobs:
       firmware: ${{ steps.filter.outputs.firmware }}
       python: ${{ steps.filter.outputs.python }}
       ios: ${{ steps.filter.outputs.ios }}
+      core: ${{ steps.filter.outputs.core }}
     steps:
       - uses: actions/checkout@v4
       - uses: dorny/paths-filter@v3
@@ -45,6 +46,9 @@ jobs:
               - '.github/workflows/ci.yml'
             ios:
               - 'ios/**'
+              - '.github/workflows/ci.yml'
+            core:
+              - 'core/**'
               - '.github/workflows/ci.yml'
 
   hygiene:
@@ -119,9 +123,28 @@ jobs:
           -configuration Debug -destination 'generic/platform=iOS'
           CODE_SIGNING_ALLOWED=NO build
 
+  core:
+    needs: changes
+    if: needs.changes.outputs.core == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: core
+    steps:
+      - uses: actions/checkout@v4
+      - run: rustup show active-toolchain || rustup toolchain install
+      - run: cargo fmt --all --check
+      - run: cargo clippy --workspace --all-targets -- -D warnings
+      - run: cargo test --workspace
+      - run: cargo check --target aarch64-apple-ios -p vision -p automata -p scripts
+      - uses: EmbarkStudios/cargo-deny-action@v2
+        with:
+          manifest-path: core/Cargo.toml
+          command: check
+
   gate:
     if: always()
-    needs: [hygiene, host, firmware, python]
+    needs: [hygiene, host, firmware, python, core]
     runs-on: ubuntu-latest
     steps:
       - run: |
