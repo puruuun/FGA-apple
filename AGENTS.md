@@ -25,3 +25,12 @@ pio run -d firmware                           # firmware/
 python -m compileall -q tools mac-capture     # Python tools
 python tools/ci/hygiene.py                    # nothing that must not be committed
 ```
+
+```bash
+cd core
+cargo fmt --all --check                       # core/
+cargo clippy --workspace --all-targets -- -D warnings
+cargo test --workspace
+cargo check --target aarch64-apple-ios -p vision -p automata -p scripts
+cargo deny check
+```
