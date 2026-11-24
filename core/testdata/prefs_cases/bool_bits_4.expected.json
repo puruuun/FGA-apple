@@ -1,0 +1,12 @@
+{
+  "android": {
+    "config": {
+      "support": {"grandScore16Check": true, "grandServant": true, "maxAscended": true, "mlb": true, "npLevelCheck": true, "requireBothNormalAndRewardMatch": true, "score62Check": true, "skill1Max": true, "skill2Max": true, "skill3Max": true},
+      "tertiaryExecution": {"useServantPriority": true},
+      "tertiaryStartEnabled": true,
+      "turnLimitRetreatEnabled": true,
+      "turnLimitRetreatStopAfterStreak": true,
+      "useServantPriority": true
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "autoskill_name": "Name with \"quotes\", \\ backslash, tab\t, newline\n, unicode éテし and emoji 😀",
+  "autoskill_cmd": "a,b,c,#,d\n e ,#",
+  "autoskill_notes": "notes",
+  "battle_config_folder": "Lancer",
+  "secondary_autoskill_cmd": "x1",
+  "tertiary_autoskill_cmd": ""
+}

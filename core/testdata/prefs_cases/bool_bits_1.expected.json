@@ -1,0 +1,22 @@
+{
+  "android": {
+    "config": {
+      "autoChooseTarget": true,
+      "secondaryExecution": {"useServantPriority": true},
+      "secondaryStartEnabled": true,
+      "stopOnBondMax": true,
+      "support": {
+        "appendSkillsMax": [false, true, true, false, false],
+        "autoFriendRequest": true,
+        "friendsOnly": true,
+        "maxAscended": true,
+        "npLevelCheck": true,
+        "score62Check": true,
+        "skill1Max": true
+      },
+      "tertiaryExecution": {"useServantPriority": true},
+      "tertiaryStartEnabled": true,
+      "useServantPriority": true
+    }
+  }
+}

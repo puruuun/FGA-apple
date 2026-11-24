@@ -1,0 +1,163 @@
+{
+  "android": {
+    "config": {
+      "addRaidTurnDelay": true,
+      "bondMaxIgnoredCharacters": [1, 3, 5],
+      "commandStartBuster": 2,
+      "commandStartCardCount": 3,
+      "commandStartMaxTurns": 6,
+      "commandStartServant": 2,
+      "name": "Values stored as strings",
+      "party": 4,
+      "raidTurnDelaySeconds": 5,
+      "secondaryStartEnabled": true,
+      "shuffleCardsWave": 1,
+      "spam": [
+        {
+          "np": {
+            "spam": "Spam",
+            "waves": [3]
+          },
+          "skills": [
+            {
+              "spam": "Spam",
+              "target": "Self",
+              "waves": [1, 2]
+            },
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            },
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            }
+          ]
+        },
+        {
+          "np": {
+            "spam": "None",
+            "waves": [1, 2, 3]
+          },
+          "skills": [
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            },
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            },
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            }
+          ]
+        },
+        {
+          "np": {
+            "spam": "None",
+            "waves": [1, 2, 3]
+          },
+          "skills": [
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            },
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            },
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            }
+          ]
+        },
+        {
+          "np": {
+            "spam": "None",
+            "waves": [1, 2, 3]
+          },
+          "skills": [
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            },
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            },
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            }
+          ]
+        },
+        {
+          "np": {
+            "spam": "None",
+            "waves": [1, 2, 3]
+          },
+          "skills": [
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            },
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            },
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            }
+          ]
+        },
+        {
+          "np": {
+            "spam": "None",
+            "waves": [1, 2, 3]
+          },
+          "skills": [
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            },
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            },
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            }
+          ]
+        }
+      ],
+      "support": {"minimumNpLevel": 4, "mlb": true, "npLevelCheck": true},
+      "tertiaryStartServant": 1,
+      "trackBond": true,
+      "turnLimitRetreatEnabled": true,
+      "turnLimitRetreatStreakCount": 7,
+      "turnLimitRetreatTurns": 12
+    }
+  }
+}

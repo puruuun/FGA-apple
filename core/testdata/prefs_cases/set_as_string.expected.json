@@ -1,0 +1,8 @@
+{
+  "android": {
+    "decodeError": {"class": "java.lang.IllegalArgumentException", "message": "Expected StringSet for 'battle_config_mat', got String"}
+  },
+  "host": {
+    "config": {}
+  }
+}

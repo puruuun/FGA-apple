@@ -1,0 +1,25 @@
+{
+  "android": {
+    "config": {
+      "commandStartArts": 100,
+      "commandStartBuster": 101,
+      "commandStartCardCount": 102,
+      "commandStartMaxTurns": 103,
+      "commandStartQuick": 104,
+      "commandStartServant": 105,
+      "secondaryStartArts": 106,
+      "secondaryStartBuster": 107,
+      "secondaryStartCardCount": 108,
+      "secondaryStartQuick": 109,
+      "secondaryStartServant": 110,
+      "shuffleCardsWave": 111,
+      "support": {"minimumNpLevel": 112},
+      "tertiaryStartArts": 113,
+      "tertiaryStartBuster": 114,
+      "tertiaryStartCardCount": 115,
+      "tertiaryStartQuick": 116,
+      "tertiaryStartServant": 117,
+      "turnLimitRetreatStreakCount": 118
+    }
+  }
+}

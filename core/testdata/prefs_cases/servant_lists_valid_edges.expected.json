@@ -1,0 +1,34 @@
+{
+  "android": {
+    "config": {
+      "servantCardPriority": [
+        [
+          {"fieldPosition": 3, "type": "Quick"},
+          {"fieldPosition": 3, "type": "Arts"},
+          {"fieldPosition": 3, "type": "Buster"},
+          {"fieldPosition": 2, "type": "Quick"},
+          {"fieldPosition": 2, "type": "Arts"},
+          {"fieldPosition": 2, "type": "Buster"},
+          {"fieldPosition": 1, "type": "Quick"},
+          {"fieldPosition": 1, "type": "Arts"},
+          {"fieldPosition": 1, "type": "Buster"}
+        ]
+      ],
+      "servantPriority": [
+        [
+          {"position": 6},
+          {"position": 5},
+          {"position": 4}
+        ]
+      ],
+      "tertiaryExecution": {
+        "servantPriority": [
+          [
+            {"position": 1},
+            {"position": 2}
+          ]
+        ]
+      }
+    }
+  }
+}

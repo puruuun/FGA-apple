@@ -1,0 +1,27 @@
+{
+  "support_friend_names_list": [
+    "f1",
+    "f2"
+  ],
+  "support_pref_servant_list": [
+    "s1.png"
+  ],
+  "support_pref_ce_list": [
+    "c1.png",
+    "c2.png",
+    "c3.png"
+  ],
+  "support_pref_np_list": [
+    "n1.png",
+    "n2.png",
+    "n3.png",
+    "n4.png"
+  ],
+  "battle_config_mat": [
+    "Gear",
+    "Page",
+    "Medal",
+    "Claw",
+    "Heart"
+  ]
+}

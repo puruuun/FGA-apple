@@ -1,0 +1,8 @@
+{
+  "android": {
+    "decodeError": {"class": "java.lang.IllegalArgumentException", "message": "Expected String for 'raid_delay_seconds', got Int"}
+  },
+  "host": {
+    "config": {"raidTurnDelaySeconds": 5}
+  }
+}

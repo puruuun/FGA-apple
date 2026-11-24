@@ -1,0 +1,21 @@
+{
+  "command_start_arts": 100,
+  "command_start_buster": 101,
+  "command_start_card_count": 102,
+  "command_start_max_turns": 103,
+  "command_start_quick": 104,
+  "command_start_servant": 105,
+  "secondary_start_arts": 106,
+  "secondary_start_buster": 107,
+  "secondary_start_card_count": 108,
+  "secondary_start_quick": 109,
+  "secondary_start_servant": 110,
+  "shuffle_cards_wave": 111,
+  "support_np_min_level": 112,
+  "tertiary_start_arts": 113,
+  "tertiary_start_buster": 114,
+  "tertiary_start_card_count": 115,
+  "tertiary_start_quick": 116,
+  "tertiary_start_servant": 117,
+  "turn_limit_retreat_streak_count": 118
+}

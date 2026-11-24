@@ -1,0 +1,7 @@
+{
+  "android": {
+    "config": {
+      "bondMaxIgnoredCharacters": [1, 3]
+    }
+  }
+}

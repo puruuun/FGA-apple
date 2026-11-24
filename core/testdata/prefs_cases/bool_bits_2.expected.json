@@ -1,0 +1,22 @@
+{
+  "android": {
+    "config": {
+      "cardSwapDetection": true,
+      "secondaryExecution": {"useServantPriority": true},
+      "secondaryStartEnabled": true,
+      "support": {
+        "appendSkillsMax": [false, false, false, true, true],
+        "autoFriendRequest": true,
+        "friendsOnly": true,
+        "mlb": true,
+        "requireBothNormalAndRewardMatch": true,
+        "score62Check": true,
+        "skill1Max": true
+      },
+      "trackBond": true,
+      "turnLimitRetreatEnabled": true,
+      "turnLimitRetreatStopAfterStreak": true,
+      "useServantPriority": true
+    }
+  }
+}

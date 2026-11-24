@@ -1,0 +1,44 @@
+{
+  "android": {
+    "config": {
+      "spam": [
+        {
+          "np": {
+            "spam": "None",
+            "waves": [3]
+          },
+          "skills": [
+            {
+              "spam": "Danger",
+              "target": "Slot2",
+              "waves": [1, 2]
+            }
+          ]
+        },
+        {
+          "np": {
+            "spam": "None",
+            "waves": [1, 2, 3]
+          },
+          "skills": [
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            },
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            },
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

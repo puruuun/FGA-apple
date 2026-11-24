@@ -1,0 +1,8 @@
+{
+  "android": {
+    "decodeError": {"class": "java.lang.IllegalArgumentException", "message": "Expected String for 'autoskill_name', got Int"}
+  },
+  "host": {
+    "config": {"name": "5"}
+  }
+}

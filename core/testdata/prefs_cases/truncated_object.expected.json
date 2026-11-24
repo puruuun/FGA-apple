@@ -1,0 +1,5 @@
+{
+  "android": {
+    "decodeError": {"class": "kotlinx.serialization.json.JsonDecodingException", "message": "Unexpected JSON token at offset 22: Expected end of the object or comma at path: $\nJSON input: {\"autoskill_name\": \"x\""}
+  }
+}

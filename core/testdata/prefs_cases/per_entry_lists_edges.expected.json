@@ -1,0 +1,14 @@
+{
+  "android": {
+    "config": {
+      "braveChains": ["WithNP", "None", "Avoid", "None", "None"],
+      "cardPriorityStyles": ["Servant", "Affinity", "Affinity", "Servant"],
+      "rearrangeCards": [true, false, false, false, false],
+      "secondaryExecution": {
+        "braveChains": ["None"],
+        "rearrangeCards": [false]
+      },
+      "useServantPriorities": [true, false, false, true]
+    }
+  }
+}

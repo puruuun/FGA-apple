@@ -1,0 +1,30 @@
+{
+  "android": {
+    "config": {
+      "cardPriority": [
+        [
+          {"affinity": "Normal", "type": "Buster"},
+          {"affinity": "Normal", "type": "Arts"},
+          {"affinity": "Normal", "type": "Quick"},
+          {"affinity": "Weak", "type": "Buster"},
+          {"affinity": "Weak", "type": "Arts"},
+          {"affinity": "Weak", "type": "Quick"},
+          {"affinity": "Resist", "type": "Buster"},
+          {"affinity": "Resist", "type": "Arts"},
+          {"affinity": "Resist", "type": "Quick"}
+        ],
+        [
+          {"affinity": "Normal", "type": "Buster"},
+          {"affinity": "Normal", "type": "Arts"},
+          {"affinity": "Normal", "type": "Quick"},
+          {"affinity": "Weak", "type": "Buster"},
+          {"affinity": "Weak", "type": "Arts"},
+          {"affinity": "Weak", "type": "Quick"},
+          {"affinity": "Resist", "type": "Buster"},
+          {"affinity": "Resist", "type": "Arts"},
+          {"affinity": "Resist", "type": "Quick"}
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "android": {
+    "config": {
+      "cardPriority": [
+        [
+          {"affinity": "Weak", "type": "Quick"},
+          {"affinity": "Weak", "type": "Arts"},
+          {"affinity": "Weak", "type": "Buster"},
+          {"affinity": "Normal", "type": "Quick"},
+          {"affinity": "Normal", "type": "Arts"},
+          {"affinity": "Normal", "type": "Buster"},
+          {"affinity": "Resist", "type": "Quick"},
+          {"affinity": "Resist", "type": "Arts"},
+          {"affinity": "Resist", "type": "Buster"}
+        ]
+      ],
+      "secondaryExecution": {
+        "cardPriority": {"error": "io.github.fate_grand_automata.scripts.entrypoints.AutoBattle$BattleExitException"}
+      },
+      "secondaryStartEnabled": true
+    }
+  }
+}

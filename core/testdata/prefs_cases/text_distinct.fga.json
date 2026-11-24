@@ -1,0 +1,8 @@
+{
+  "autoskill_name": "name",
+  "autoskill_notes": "some notes",
+  "battle_config_folder": "folder",
+  "autoskill_cmd": "p0",
+  "secondary_autoskill_cmd": "p1",
+  "tertiary_autoskill_cmd": "p2"
+}

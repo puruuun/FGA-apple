@@ -1,0 +1,7 @@
+{
+  "android": {
+    "config": {
+      "cardPriority": {"error": "io.github.fate_grand_automata.scripts.entrypoints.AutoBattle$BattleExitException"}
+    }
+  }
+}

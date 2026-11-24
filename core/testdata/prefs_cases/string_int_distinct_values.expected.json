@@ -1,0 +1,5 @@
+{
+  "android": {
+    "config": {"party": 21, "raidTurnDelaySeconds": 22, "turnLimitRetreatTurns": 23}
+  }
+}

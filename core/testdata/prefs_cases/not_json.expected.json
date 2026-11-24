@@ -1,0 +1,5 @@
+{
+  "android": {
+    "decodeError": {"class": "kotlinx.serialization.json.JsonDecodingException", "message": "Unexpected JSON token at offset 5: Expected EOF after parsing, but had a instead at path: $\nJSON input: not a battle config"}
+  }
+}

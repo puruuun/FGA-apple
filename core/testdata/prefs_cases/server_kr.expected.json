@@ -1,0 +1,7 @@
+{
+  "android": {
+    "config": {
+      "server": {"betterFgo": false, "simple": "Kr"}
+    }
+  }
+}

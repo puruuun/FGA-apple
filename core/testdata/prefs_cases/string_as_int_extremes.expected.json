@@ -1,0 +1,8 @@
+{
+  "android": {
+    "config": {"party": -2147483648, "raidTurnDelaySeconds": 2147483647}
+  },
+  "host": {
+    "config": {"party": -2147483648, "raidTurnDelaySeconds": 2147483647}
+  }
+}

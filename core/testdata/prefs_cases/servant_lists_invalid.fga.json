@@ -1,0 +1,6 @@
+{
+  "card_priority_servant_list": "1B,1A",
+  "servant_priority": "7,8",
+  "secondary_card_priority_servant_list": "1B,1B,1B,1B,1B,1B,1B,1B,1B",
+  "secondary_servant_priority": "1,2,3,4,5,6\n1,2,3,4,5,x"
+}

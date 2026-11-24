@@ -1,0 +1,8 @@
+{
+  "android": {
+    "config": {"turnLimitRetreatTurns": 7}
+  },
+  "host": {
+    "config": {"party": 5, "turnLimitRetreatTurns": 7}
+  }
+}

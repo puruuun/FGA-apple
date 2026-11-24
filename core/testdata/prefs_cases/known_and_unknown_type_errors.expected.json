@@ -1,0 +1,5 @@
+{
+  "android": {
+    "decodeError": {"class": "java.lang.IllegalArgumentException", "message": "Expected Int for 'command_start_servant', got String"}
+  }
+}
