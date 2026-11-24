@@ -1,9 +1,3 @@
-"""포인터를 지정한 좌표로 보내고, Mac이 캡처한 iPhone 화면에서 실제 위치를 찾아 비교한다.
-
-사용 예:
-    python probe.py 16383,16383 8192,8192
-    python probe.py --scan-x 13000 19000 500 --y 8192
-"""
 import argparse
 import io
 import os
@@ -15,7 +9,6 @@ import numpy as np
 import serial
 from PIL import Image
 
-# Mac의 SSH 주소(사용자@호스트). 환경마다 다르므로 FGA_MAC 환경 변수로 준다.
 MAC = os.environ.get("FGA_MAC", "")
 FRAME = "/tmp/fga-frame.jpg"
 COORD_MAX = 32767
@@ -25,7 +18,7 @@ def grab() -> np.ndarray:
     data = subprocess.run(
         ["ssh", "-o", "BatchMode=yes", MAC, f"cat {FRAME}"],
         capture_output=True).stdout
-    # Windows OpenSSH는 데이터를 다 받고도 종료 코드가 0이 아닐 때가 있어 내용으로 판단한다.
+    # Windows OpenSSH can exit non-zero after a complete transfer, so judge by the data.
     if len(data) < 1000:
         raise RuntimeError("frame fetch failed")
     return np.asarray(Image.open(io.BytesIO(data)).convert("RGB")).astype(np.int16)
@@ -37,7 +30,6 @@ def yellow_mask(img: np.ndarray) -> np.ndarray:
 
 
 def locate(img: np.ndarray, baseline: np.ndarray):
-    """기준 프레임에 없던 노란 픽셀 무리의 중심을 돌려준다. 못 찾으면 None."""
     mask = yellow_mask(img) & ~baseline
     ys, xs = np.nonzero(mask)
     if len(xs) < 80:
@@ -53,8 +45,7 @@ def locate(img: np.ndarray, baseline: np.ndarray):
 
 class Board:
     def __init__(self, port: str):
-        # ESP32-C3의 USB 단자는 RTS 신호를 리셋으로 해석한다. 포트를 열 때 RTS가 켜지면
-        # 보드가 재시작되므로, 열기 전에 꺼 둔다.
+        # The ESP32-C3 USB port treats RTS as reset, so RTS must be off before the port opens.
         self.sp = serial.Serial()
         self.sp.port = port
         self.sp.baudrate = 115200
@@ -100,13 +91,11 @@ def main():
         ap.error("no points")
 
     board = Board(args.port)
-    # 기준 프레임: 포인터를 구석으로 치워 두고 화면의 원래 노란 픽셀을 기록한다.
     board.cmd("MOVE 300 32000")
     time.sleep(args.settle)
     base_img = grab()
     h, w = base_img.shape[:2]
     baseline = yellow_mask(base_img)
-    # 화면이 움직여도 버티도록 기준 마스크를 조금 넓힌다.
     grown = baseline.copy()
     for dy in (-3, 0, 3):
         for dx in (-3, 0, 3):
@@ -115,12 +104,10 @@ def main():
     print(f"{'sent':>13} {'expect px':>12} {'actual px':>12} {'err px':>10}  n")
 
     for x, y in pts:
-        # 매번 먼 곳에서 출발시켜 직전 위치의 영향을 없앤다.
         board.cmd(f"MOVE {args.start}")
         time.sleep(0.25)
         for via in args.via:
             vx, vy = (int(v) for v in via.split(","))
-            # 'dx,dy' 형태로 목표 기준 상대 위치를 거쳐 가게 한다.
             board.cmd(f"MOVE {x + vx} {y + vy}")
             time.sleep(0.08)
         board.cmd(f"MOVE {x} {y}")

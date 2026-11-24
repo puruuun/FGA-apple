@@ -24,9 +24,6 @@ import kotlin.time.Duration
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
 
-// 키 이름과 기본값은 FGA-Modified의 prefs/core/PrefsCore.kt, PerServerConfigPrefsCore.kt,
-// RefillPrefsCore.kt를 그대로 따른다.
-
 class HostPerServerConfig(override val server: GameServer, private val kv: KvStore) : IPerServerConfigPrefs {
     override var selectedAutoSkillKey by kv.string("autoskill_selected")
     override var rainbowApple by kv.int("rainbowApple", 0)
@@ -73,28 +70,10 @@ class HostPerServerConfig(override val server: GameServer, private val kv: KvSto
     override var limitCEs by kv.int("limit_ces", 1)
 }
 
-/**
- * 설정 파일 하나에서 읽는 스크립트 설정.
- *
- * ```json
- * {
- *   "server": "Kr",
- *   "global": { "skill_delay": 500 },
- *   "perServer": { "should_limit_runs": true, "limit_runs": 1 },
- *   "battleConfig": { "autoskill_name": "...", "autoskill_cmd": "..." }
- * }
- * ```
- * `battleConfig`에는 Android 앱에서 내보낸 전투 설정의 내용을 그대로 넣을 수 있다.
- * 빠진 값은 Android 앱과 같은 기본값을 쓴다.
- */
 class HostPreferences(root: JsonObject) : IPreferences {
     companion object {
         private const val BATTLE_CONFIG_ID = "host"
 
-        /**
-         * @param exportedBattleConfig Android 앱에서 내보낸 전투 설정(.fga). 주면 [file]의 `battleConfig`
-         *   대신 이것을 쓴다. 내보낸 파일은 그 전투 설정의 키-값을 그대로 담은 JSON이다.
-         */
         fun load(file: File, exportedBattleConfig: File? = null): HostPreferences {
             val root = Json.parseToJsonElement(file.readText()).jsonObject
             if (exportedBattleConfig == null) return HostPreferences(root)

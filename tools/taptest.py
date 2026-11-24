@@ -1,8 +1,3 @@
-"""터치 기록 페이지(touchlog_server.py)를 띄운 iPhone에 탭을 하나씩 보내고,
-페이지가 받은 실제 터치 좌표를 출력한다.
-
-    python taptest.py 8192,8192 16000,16383 --settle 300
-"""
 import argparse
 import json
 import subprocess
@@ -36,7 +31,6 @@ def main():
     ap.add_argument("--start", default=None, help="각 탭 전에 포인터를 보낼 위치 'x y'")
     args = ap.parse_args()
 
-    # Safari 가로 화면에서 위쪽 약 110pt(좌표 9000 미만)는 주소창·탭 막대라서 누르지 않는다.
     for p in args.points:
         if int(p.split(",")[1]) < 11000:
             ap.error(f"{p}: y가 11000 미만이면 Safari 탭 막대를 누를 수 있어 거부합니다")
@@ -53,7 +47,6 @@ def main():
 
     seen = len(read_log())
     if args.burst:
-        # 쉬지 않고 연달아 보낸 뒤 한꺼번에 기록을 읽는다.
         t0 = time.time()
         for p in args.points:
             x, y = p.split(",")
@@ -97,7 +90,6 @@ def main():
             parts.append(f"(+{moves} move)")
         print(f"{x:>6},{y:<6} | " + "  ".join(parts or ["(no event)"]))
         if not new:
-            # 페이지가 탭을 받지 못했다면 다른 화면을 누르고 있다는 뜻이므로 즉시 멈춘다.
             print("ABORT: 테스트 페이지가 탭을 받지 못했습니다. 나머지 탭은 보내지 않습니다.")
             break
     if recs:

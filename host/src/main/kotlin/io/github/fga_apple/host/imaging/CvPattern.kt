@@ -32,11 +32,6 @@ internal inline fun <T> Mat.use(block: (Mat) -> T): T =
         release()
     }
 
-/**
- * FGA-Modified의 Android 구현(`app/.../imaging/DroidCvPattern.kt`, MIT)을 데스크톱 OpenCV로 옮긴 것.
- * 스크립트의 유사도 기준값이 그대로 통하려면 매칭 방식과 상수가 Android 쪽과 같아야 하므로,
- * 알고리즘과 숫자는 원본을 그대로 따른다. 원본이 바뀌면 여기도 맞춰야 한다.
- */
 class CvPattern(
     internal var mat: Mat = Mat(),
     private val ownsMat: Boolean = true,
@@ -79,7 +74,6 @@ class CvPattern(
             }
         }
 
-        /** 인코딩된 이미지(JPEG·PNG)를 BGR 컬러로 푼다. 화면 프레임 수신용. */
         fun decodeColor(bytes: ByteArray, tag: String = ""): CvPattern =
             CvPattern(decode(bytes, Imgcodecs.IMREAD_COLOR), tag = tag)
     }
@@ -128,7 +122,6 @@ class CvPattern(
         val ok = Mat()
         val bad = Mat()
         try {
-            // NaN, ±Inf and |value| > 1.01 (outside normal float32 correlation bounds) map to 0.
             Core.inRange(result, Scalar(-1.01), Scalar(1.01), ok)
             Core.bitwise_not(ok, bad)
             result.setTo(Scalar(0.0), bad)
@@ -165,7 +158,6 @@ class CvPattern(
                     val region = Region(loc.x.roundToInt(), loc.y.roundToInt(), template.width, template.height)
                     yield(Match(region, score))
 
-                    // Flood fill eliminates the problem of nearby points to a high similarity point also having high similarity
                     result.floodFill(loc, 0.3, 0.0)
                 } else {
                     break
@@ -247,7 +239,6 @@ class CvPattern(
             matcher.knnMatch(mapDescriptors, sceneDescriptors, matches, 2)
             val mapPoints = mapKeys.toArray()
             val scenePoints = sceneKeys.toArray()
-            // A strict nearest/second-nearest ratio and unique scene point prevent repeated map motifs dominating the fit.
             return matches.mapNotNull { pair ->
                 val a = pair.toArray()
                 a.firstOrNull()?.takeIf { a.size == 2 && it.distance < 0.70 * a[1].distance }
@@ -264,7 +255,6 @@ class CvPattern(
     }
 
     override fun isWhite(): Boolean {
-        // 0 = black, 255 = white
         return Core.minMaxLoc(mat).minVal >= 200
     }
 
@@ -272,7 +262,6 @@ class CvPattern(
         return Core.minMaxLoc(mat).maxVal <= 55
     }
 
-    // Colour mats are BGR.
     override fun meanColor(): MeanColor? {
         if (mat.empty() || mat.channels() < 3) return null
         val mean = Core.mean(mat)
@@ -281,7 +270,6 @@ class CvPattern(
 
     override fun grayPixels(): ByteArray? {
         if (mat.empty() || mat.channels() != 1) return null
-        // crop()이 만든 부분 행렬은 메모리가 연속이 아닐 수 있어, 복사본에서 읽는다.
         return mat.clone().use { m -> ByteArray(width * height).also { m.get(0, 0, it) } }
     }
 
@@ -298,7 +286,6 @@ class CvPattern(
         return this
     }
 
-    /** Fills in outlined text. Only use this on binary images produced by [threshold]. */
     override fun fillText(): Pattern {
         check(mask == null) { "masked template: fillText not supported" }
         val fillMask = Mat.zeros(CvSize(width + 2.0, height + 2.0), mat.type())
@@ -349,7 +336,6 @@ class CvPattern(
         val holePoints = mutableListOf<Point>()
         contours.forEachIndexed { index, matOfPoint ->
             val parent = hierarchy[0, index][3].toInt()
-            // top level holes have a parent but no grandparent...
             if ((parent >= 0) && (hierarchy[0, parent][3] < 0)) {
                 holePoints.add(findTopHolePoint(matOfPoint))
             }

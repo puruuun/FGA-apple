@@ -19,7 +19,6 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import javax.inject.Inject
 
-/** 스크립트가 띄우는 알림과 기록을 콘솔에 출력한다. Android에서는 토스트와 로그 화면으로 가던 것. */
 class ConsoleMessages @Inject constructor() : IScriptMessages {
     private fun describe(item: Any): String {
         val fields = item.javaClass.declaredFields
@@ -35,10 +34,6 @@ class ConsoleMessages @Inject constructor() : IScriptMessages {
     override fun log(item: ScriptLog) = println("[log] ${describe(item)}")
 }
 
-/**
- * OCR은 아직 붙이지 않았다. FGA-Modified가 Tesseract를 판독기 단위로 교체하는 중이라,
- * 이쪽은 그 결과(또는 Apple Vision)를 붙일 자리만 둔다. OCR이 필요한 기능을 켜면 여기서 멈춘다.
- */
 class UnsupportedOcr @Inject constructor() : OcrService {
     private fun fail(): Nothing = throw UnsupportedOperationException(
         "이 호스트에는 아직 OCR이 없습니다. OCR이 필요한 설정(서포트 점수·보구 레벨 조건, 인연 추적 등)을 끄세요."
@@ -49,7 +44,6 @@ class UnsupportedOcr @Inject constructor() : OcrService {
     override fun close() {}
 }
 
-/** 스크립트가 남기는 파일(드롭 스크린샷, 진단 자료)을 `data/` 아래에 둔다. */
 class HostStorage @Inject constructor(private val config: HostConfig) : IStorageProvider {
     private fun dir(name: String) = File(config.dataDir, name).apply { mkdirs() }
     private fun stamp() = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss-SSS"))

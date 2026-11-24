@@ -49,10 +49,6 @@ import io.github.lib_automata.Waiter
 import io.github.lib_automata.dagger.ScriptScope
 import javax.inject.Singleton
 
-/**
- * 스크립트 한 번 실행에 필요한 부품 묶음. Android 앱에서 Hilt의 ScriptComponent와
- * `app/di/script` 폴더의 모듈들이 하던 일을 일반 Dagger로 한다.
- */
 @Singleton
 @ScriptScope
 @Component(modules = [LibAutomataModule::class, ScriptsModule::class, PreferencesModule::class, HostModule::class])
@@ -76,7 +72,6 @@ interface HostComponent {
     }
 }
 
-// app/di/script/LibAutomataModule.kt와 같은 연결.
 @Module
 abstract class LibAutomataModule {
     companion object {
@@ -95,7 +90,6 @@ abstract class LibAutomataModule {
     @ScriptScope @Binds abstract fun api(api: StandardAutomataApi): AutomataApi
 }
 
-// app/di/script/ScriptsModule.kt에서 화면·게임 로직 쪽 연결.
 @Module
 abstract class ScriptsModule {
     companion object {
@@ -113,7 +107,6 @@ abstract class ScriptsModule {
     @ScriptScope @Binds abstract fun supportScreen(screen: RealSupportScreen): SupportScreen
 }
 
-// app/di/script/PreferencesModule.kt와 같은 연결.
 @Module
 class PreferencesModule {
     @ScriptScope @Provides
@@ -129,7 +122,6 @@ class PreferencesModule {
     fun provideCommonSupportPrefs(prefs: IPreferences): ISupportPreferencesCommon = prefs.support
 }
 
-// 이 저장소가 직접 구현하는 플랫폼 부품.
 @Module
 abstract class HostModule {
     @ScriptScope @Binds abstract fun platform(platform: HostPlatform): PlatformImpl
@@ -141,7 +133,6 @@ abstract class HostModule {
     @ScriptScope @Binds abstract fun storage(storage: io.github.fga_apple.host.platform.HostStorage): io.github.fate_grand_automata.IStorageProvider
 
     companion object {
-        // Android의 로그 수집(게임 통신 캡처)과 판독 진단 저장은 이쪽에 없다. FGA가 제공하는 "없음" 구현을 쓴다.
         @ScriptScope @Provides
         fun captureFeed(): io.github.fate_grand_automata.scripts.capture.ICaptureFeed =
             io.github.fate_grand_automata.scripts.capture.ICaptureFeed.None

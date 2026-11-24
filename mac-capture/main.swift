@@ -1,7 +1,3 @@
-// USB로 연결된 iPhone 화면을 받아 최신 프레임을 JPEG 파일로 계속 덮어쓴다.
-// 출력: /tmp/fga-frame.jpg   로그: /tmp/fga-capture.log
-// 카메라 권한이 필요하므로 .app 번들로 묶어 `open`으로 실행한다.
-
 import AVFoundation
 import CoreImage
 import CoreMediaIO
@@ -23,7 +19,7 @@ func log(_ message: String) {
     }
 }
 
-// iOS 기기는 이 속성을 켜야 캡처 장치 목록에 나타난다.
+// iOS devices appear in the capture device list only when this property is enabled.
 func enableScreenCaptureDevices() {
     var address = CMIOObjectPropertyAddress(
         mSelector: CMIOObjectPropertySelector(kCMIOHardwarePropertyAllowScreenCaptureDevices),

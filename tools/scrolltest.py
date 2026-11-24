@@ -1,7 +1,3 @@
-"""스크롤 목록 페이지(/scroll)에 세로 스와이프를 보내고, 실제 스크롤 거리와 관성 거리를 잰다.
-
-    python scrolltest.py --hold 50 100 200 --dur 300 600
-"""
 import argparse
 import time
 
@@ -9,7 +5,7 @@ from probe import Board
 from taptest import read_log
 
 X = 24000
-Y_FROM, Y_TO = 26000, 13000          # 손가락이 위로 13000 단위 = 159.5pt 이동
+Y_FROM, Y_TO = 26000, 13000
 EXPECT = (Y_FROM - Y_TO) / 32767 * 402
 
 
@@ -37,7 +33,6 @@ def main():
         for dur in args.dur:
             for _ in range(args.repeat):
                 board.cmd(f"SWIPE {X} {Y_FROM} {X} {Y_TO} {dur}")
-                # 관성 스크롤이 끝나고 페이지가 기록을 보낼 때까지 기다린다.
                 new = []
                 deadline = time.time() + 6
                 while time.time() < deadline and not new:

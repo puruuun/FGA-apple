@@ -32,10 +32,6 @@ fun main(args: Array<String>) {
     }
 }
 
-/**
- * 스크립트가 쓰는 몇몇 영역과 탭 위치를 이 기기 기준의 좌표로 출력한다. 화면도 보드도 쓰지 않는다.
- * iPhone 앱의 검증 코드에 같은 값을 넣기 위한 것이다.
- */
 private fun regions() {
     val component = DaggerHostComponent.builder()
         .preferences(HostPreferences.empty())
@@ -55,10 +51,6 @@ private fun regions() {
     component.gestures().close()
 }
 
-/**
- * 전투 스크립트(AutoBattle)를 실행한다. 스크립트는 스스로 끝나지 않고 예외로 종료 사유를 알리므로,
- * 그 사유를 받아 출력하고 끝낸다. 실행 중에 `data/stop` 파일이 생기면 중단을 요청한다.
- */
 private fun battle(args: List<String>) {
     val configFile = args.firstOrNull { !it.startsWith("--") }?.let(::File)
         ?: return println("전투 설정 파일이 필요합니다: host battle <config.json>")
@@ -84,7 +76,6 @@ private fun battle(args: List<String>) {
     println("  실행 횟수 제한: ${if (server.shouldLimitRuns) "${server.limitRuns}회" else "없음"}")
     println("  AP 회복: ${server.resources.ifEmpty { "사용 안 함" }}, AP 자연 회복 대기 ${server.waitForAPRegen}")
 
-    // 회복 아이템은 되돌릴 수 없는 소모라서, 명시적으로 허용하지 않으면 시작하지 않는다.
     if (server.resources.isNotEmpty() && "--allow-refill" !in args) {
         return println("설정에 AP 회복 아이템 사용이 켜져 있습니다. 의도한 것이면 --allow-refill 을 붙이세요.")
     }
@@ -119,14 +110,9 @@ private fun battle(args: List<String>) {
     println("완료한 실행 횟수: ${prefs.completedRuns}")
     component.screenshotService().close()
     component.gestures().close()
-    // OpenCV와 시리얼 라이브러리의 백그라운드 스레드가 남아도 프로세스를 끝낸다.
     kotlin.system.exitProcess(0)
 }
 
-/**
- * 스크립트 부품 전체를 조립한 뒤, 스크립트가 실제로 쓰는 영역·기준으로 현재 화면이 무엇인지 물어본다.
- * 터치는 보내지 않는다(dry-run). 좌표 계산과 영역이 iPhone 화면에 맞는지 보는 용도.
- */
 private fun screen(args: List<String>) {
     val prefs = args.firstOrNull()?.let { HostPreferences.load(File(it)) } ?: HostPreferences.empty()
     val component = DaggerHostComponent.builder()
@@ -157,10 +143,6 @@ private fun screen(args: List<String>) {
     component.gestures().close()
 }
 
-/**
- * 현재 iPhone 화면을 FGA와 같은 방식(720p 높이로 축소, 흑백)으로 만든 뒤, 한 서버의 템플릿 전부를
- * 화면 전체에서 찾아 점수가 높은 순으로 보여 준다. iPhone 화면에서 FGA 템플릿이 통하는지 보는 용도.
- */
 private fun probe(args: List<String>) {
     val server = args.getOrElse(0) { "Kr" }
     val top = args.getOrElse(1) { "15" }.toInt()
@@ -176,7 +158,6 @@ private fun probe(args: List<String>) {
     val screen = CvPattern(gray, tag = "gray").use { it.resize(Size(scaledWidth, 720)) }
     println("compare image ${screen.width}x${screen.height}")
 
-    // 서버 폴더에 없는 이미지는 En 것을 쓴다 (FGA의 규칙과 같음).
     val files = linkedMapOf<String, File>()
     for (dir in listOf("En", server)) {
         File(assets, dir).listFiles { f -> f.isFile && f.extension == "png" }?.forEach { files[it.name] = it }

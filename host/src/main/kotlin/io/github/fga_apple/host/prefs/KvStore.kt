@@ -8,14 +8,6 @@ import kotlinx.serialization.json.JsonPrimitive
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
-/**
- * Android의 SharedPreferences 자리를 대신하는 키-값 저장소.
- *
- * FGA-Modified의 `prefs` 모듈과 **같은 키 이름**을 쓴다. 그래서 Android 앱에서 내보낸 전투 설정
- * (SharedPreferences 전체를 JSON으로 쓴 것)을 그대로 읽을 수 있다. Android는 숫자를 문자열로
- * 저장하는 키와 숫자로 저장하는 키가 섞여 있으므로, 읽을 때는 양쪽을 모두 받아들인다.
- * 실행 중 바뀐 값은 메모리에만 남고 파일로 다시 쓰지 않는다.
- */
 class KvStore(initial: JsonObject = JsonObject(emptyMap())) {
     private val values: MutableMap<String, JsonElement> = initial.toMutableMap()
 
@@ -58,7 +50,6 @@ class KvStore(initial: JsonObject = JsonObject(emptyMap())) {
         }
     }
 
-    // 위임 속성. `var x by kv.bool("key")`처럼 쓴다.
     fun string(key: String, default: String = "") = prop({ getString(key, default) }, { put(key, it) })
     fun bool(key: String, default: Boolean = false) = prop({ getBool(key, default) }, { put(key, it) })
     fun int(key: String, default: Int = 0) = prop({ getInt(key, default) }, { put(key, it) })
@@ -68,7 +59,6 @@ class KvStore(initial: JsonObject = JsonObject(emptyMap())) {
         { put(key, it.name) }
     )
 
-    /** 문자열 하나로 저장되는 값. 저장된 것이 없으면 [default], 해석에 실패하면 [parse]가 정한 대로. */
     fun <T> serialized(key: String, default: T, parse: (String) -> T, format: (T) -> String) = prop(
         { if (values[key] is JsonPrimitive && values[key] !is JsonNull) parse(getString(key, "")) else default },
         { put(key, format(it)) }
