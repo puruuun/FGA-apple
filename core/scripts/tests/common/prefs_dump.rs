@@ -152,7 +152,7 @@ fn execution(profile: &ExecutionProfile, into: &mut Map<String, Value>) {
     );
 }
 
-fn execution_object(profile: &ExecutionProfile) -> Value {
+pub fn execution_object(profile: &ExecutionProfile) -> Value {
     let mut map = Map::new();
     execution(profile, &mut map);
     Value::Object(map)

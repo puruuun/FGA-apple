@@ -1,0 +1,13 @@
+{
+  "android": {
+    "config": {
+      "materials": ["Claw", "Gear", "Heart", "Medal", "Page"],
+      "support": {
+        "friendNames": ["f1", "f2"],
+        "preferredCEs": ["c1.png", "c2.png", "c3.png"],
+        "preferredNoblePhantasms": ["n1.png", "n2.png", "n4.png", "n3.png"],
+        "preferredServants": ["s1.png"]
+      }
+    }
+  }
+}

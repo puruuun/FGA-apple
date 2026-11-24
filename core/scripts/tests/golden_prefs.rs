@@ -6,6 +6,7 @@ use std::path::{Path, PathBuf};
 
 use scripts::prefs::battle_config::BattleConfig;
 use scripts::prefs::battle_config_file::BattleConfigFile;
+use scripts::prefs::pref_maker::PrefType;
 use serde_json::Value;
 
 fn testdata() -> PathBuf {
@@ -34,6 +35,33 @@ fn inputs() -> Result<Vec<PathBuf>, String> {
     }
     files.sort();
     Ok(files)
+}
+
+fn retype(text: &str) -> Result<String, String> {
+    let mut root: Value = serde_json::from_str(text).map_err(|e| e.to_string())?;
+    let object = root.as_object_mut().ok_or("not an object")?;
+    for (key, value) in object.iter_mut() {
+        let Some(stored) = BattleConfig::pref_types().get(key.as_str()) else {
+            continue;
+        };
+        let replacement = match (stored, &*value) {
+            (PrefType::String, Value::Number(number)) => Some(Value::String(number.to_string())),
+            (PrefType::String, Value::Bool(flag)) => Some(Value::String(flag.to_string())),
+            (PrefType::Boolean, Value::String(text)) => match text.as_str() {
+                "true" => Some(Value::Bool(true)),
+                "false" => Some(Value::Bool(false)),
+                _ => None,
+            },
+            (PrefType::Int, Value::String(text)) => {
+                text.trim().parse::<i32>().ok().map(Value::from)
+            }
+            _ => None,
+        };
+        if let Some(replacement) = replacement {
+            *value = replacement;
+        }
+    }
+    serde_json::to_string(&root).map_err(|e| e.to_string())
 }
 
 fn first_difference(path: &str, expected: &Value, actual: &Value) -> Option<String> {
@@ -86,9 +114,9 @@ fn every_golden_key_of_every_input_matches_in_both_readers() -> Result<(), Strin
         )?)
         .map_err(|e| format!("{name}: golden is not JSON: {e}"))?;
 
-        let lenient =
-            BattleConfigFile::decode_lenient(&text).map_err(|e| format!("{name}: {e}"))?;
-        let actual = prefs_dump::dump(&BattleConfig::from_store("host", &lenient));
+        let store =
+            BattleConfigFile::decode(&retype(&text)?).map_err(|e| format!("{name}: {e}"))?;
+        let actual = prefs_dump::dump(&BattleConfig::from_store("host", &store));
         if let Some(difference) = first_difference(name, &golden, &actual) {
             return Err(difference);
         }

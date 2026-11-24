@@ -2,11 +2,11 @@ use std::collections::BTreeMap;
 use std::sync::LazyLock;
 
 use super::execution_profile::ExecutionProfile;
-use super::game_server_stand_in::GameServerStandIn;
 use super::pref_maker::{PrefMaker, PrefStore, PrefType};
 use super::support_preferences::SupportPreferences;
 use crate::enums::command_start_combine_mode::CommandStartCombineMode;
 use crate::enums::command_start_mode::CommandStartMode;
+use crate::enums::game_server_enum::{GameServer, GameServers};
 use crate::enums::material_enum::MaterialEnum;
 use crate::enums::shuffle_cards_enum::ShuffleCardsEnum;
 use crate::kotlin::{LinkedSet, to_int};
@@ -64,7 +64,7 @@ pub struct BattleConfig {
     pub materials: LinkedSet<MaterialEnum>,
     pub support: SupportPreferences,
     pub auto_choose_target: bool,
-    pub server: Option<GameServerStandIn>,
+    pub server: Option<GameServer>,
     pub add_raid_turn_delay: bool,
     pub raid_turn_delay_seconds: i32,
     pub turn_limit_retreat_enabled: bool,
@@ -163,7 +163,7 @@ impl BattleConfig {
             .iter()
             .filter_map(|name| MaterialEnum::from_name(name))
             .collect();
-        let server = maker.serialized("battle_config_server", None, GameServerStandIn::deserialize);
+        let server = maker.serialized("battle_config_server", None, GameServers::deserialize);
         let support = SupportPreferences::read(maker);
         let auto_choose_target = maker.bool("auto_choose_target", false);
         let add_raid_turn_delay = maker.bool("add_raid_delay", false);

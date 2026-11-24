@@ -83,18 +83,34 @@ object GoldenScores {
 
     private fun quote(text: String) = "\"" + text.replace("\\", "\\\\").replace("\"", "\\\"") + "\""
 
+    fun maskPath(name: String) = name.removeSuffix(".png") + ".mask.png"
+
+    fun writeTemplates(dir: File, templates: Collection<Template>) {
+        dir.deleteRecursively()
+        for (template in templates.distinctBy { it.name }.sortedBy { it.name }) {
+            val gray = File(dir, template.name)
+            gray.parentFile.mkdirs()
+            gray.writeBytes(FrameBuilder.encodePng(template.gray))
+            template.mask?.let { File(dir, maskPath(template.name)).writeBytes(FrameBuilder.encodePng(it)) }
+        }
+    }
+
     fun writeSynthetic(root: File, assetsDir: File) {
         val loaded = Templates.load(assetsDir)
         loaded.skipped.forEach { println("skipped $it") }
         val frames = File(root, "core/testdata/synthetic/frames").apply { mkdirs() }
         val scores = File(root, "core/testdata/golden/scores").apply { mkdirs() }
+        val used = mutableMapOf<String, Template>()
         for (index in 0 until FrameBuilder.FRAME_COUNT) {
             val frame = FrameBuilder.build(index, loaded.usable)
+            frame.cases.forEach { used[it.template.name] = it.template }
             File(frames, "${frame.name}.png").writeBytes(FrameBuilder.encodePng(frame.mat))
             val json = frameJson(frame.name, "synthetic", frame.seed, frame.mat, frame.cases)
             File(scores, "${frame.name}.json").writeBytes(json.toByteArray(Charsets.UTF_8))
             println("${frame.name}: ${frame.cases.size} cases")
         }
+        writeTemplates(File(root, "core/testdata/synthetic/templates"), used.values)
+        println("templates: ${used.size}")
     }
 
     fun writeRecorded(framesDir: File, root: File, assetsDir: File) {

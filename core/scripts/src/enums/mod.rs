@@ -50,6 +50,7 @@ pub mod card_priority_style;
 pub mod card_type_enum;
 pub mod command_start_combine_mode;
 pub mod command_start_mode;
+pub mod game_server_enum;
 pub mod material_enum;
 pub mod refill_resource_enum;
 pub mod script_mode_enum;

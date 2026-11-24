@@ -1,0 +1,7 @@
+{
+  "android": {
+    "config": {
+      "support": {"fallbackTo": "Preferred", "selectionMode": "First"}
+    }
+  }
+}

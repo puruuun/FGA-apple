@@ -1,0 +1,333 @@
+{
+  "android": {
+    "config": {
+      "braveChains": ["WithNP"],
+      "cardPriority": [
+        [
+          {"affinity": "Weak", "type": "Buster"},
+          {"affinity": "Weak", "type": "Arts"},
+          {"affinity": "Weak", "type": "Quick"},
+          {"affinity": "Normal", "type": "Buster"},
+          {"affinity": "Normal", "type": "Arts"},
+          {"affinity": "Normal", "type": "Quick"},
+          {"affinity": "Resist", "type": "Buster"},
+          {"affinity": "Resist", "type": "Arts"},
+          {"affinity": "Resist", "type": "Quick"}
+        ],
+        [
+          {"affinity": "Weak", "type": "Arts"},
+          {"affinity": "Weak", "type": "Quick"},
+          {"affinity": "Weak", "type": "Buster"},
+          {"affinity": "Normal", "type": "Arts"},
+          {"affinity": "Normal", "type": "Quick"},
+          {"affinity": "Normal", "type": "Buster"},
+          {"affinity": "Resist", "type": "Arts"},
+          {"affinity": "Resist", "type": "Quick"},
+          {"affinity": "Resist", "type": "Buster"}
+        ]
+      ],
+      "cardPriorityStyles": ["Servant"],
+      "rearrangeCards": [true],
+      "secondaryExecution": {
+        "braveChains": ["Avoid", "WithNP"],
+        "cardPriority": [
+          [
+            {"affinity": "Weak", "type": "Arts"},
+            {"affinity": "Weak", "type": "Quick"},
+            {"affinity": "Weak", "type": "Buster"},
+            {"affinity": "Normal", "type": "Arts"},
+            {"affinity": "Normal", "type": "Quick"},
+            {"affinity": "Normal", "type": "Buster"},
+            {"affinity": "Resist", "type": "Arts"},
+            {"affinity": "Resist", "type": "Quick"},
+            {"affinity": "Resist", "type": "Buster"}
+          ],
+          [
+            {"affinity": "Weak", "type": "Quick"},
+            {"affinity": "Weak", "type": "Buster"},
+            {"affinity": "Weak", "type": "Arts"},
+            {"affinity": "Normal", "type": "Quick"},
+            {"affinity": "Normal", "type": "Buster"},
+            {"affinity": "Normal", "type": "Arts"},
+            {"affinity": "Resist", "type": "Quick"},
+            {"affinity": "Resist", "type": "Buster"},
+            {"affinity": "Resist", "type": "Arts"}
+          ]
+        ],
+        "cardPriorityStyles": ["Affinity", "Servant"],
+        "rearrangeCards": [false, true],
+        "servantCardPriority": [
+          [
+            {"fieldPosition": 3, "type": "Buster"},
+            {"fieldPosition": 3, "type": "Arts"},
+            {"fieldPosition": 3, "type": "Quick"},
+            {"fieldPosition": 2, "type": "Buster"},
+            {"fieldPosition": 2, "type": "Arts"},
+            {"fieldPosition": 2, "type": "Quick"},
+            {"fieldPosition": 1, "type": "Buster"},
+            {"fieldPosition": 1, "type": "Arts"},
+            {"fieldPosition": 1, "type": "Quick"}
+          ]
+        ],
+        "servantPriority": [
+          [
+            {"position": 6},
+            {"position": 5},
+            {"position": 4},
+            {"position": 3},
+            {"position": 2},
+            {"position": 1}
+          ]
+        ],
+        "skillCommand": "cmd1",
+        "useServantPriorities": [false, true]
+      },
+      "skillCommand": "cmd0",
+      "tertiaryExecution": {
+        "braveChains": ["Avoid", "Avoid", "None"],
+        "cardPriority": [
+          [
+            {"affinity": "Weak", "type": "Quick"},
+            {"affinity": "Weak", "type": "Buster"},
+            {"affinity": "Weak", "type": "Arts"},
+            {"affinity": "Normal", "type": "Quick"},
+            {"affinity": "Normal", "type": "Buster"},
+            {"affinity": "Normal", "type": "Arts"},
+            {"affinity": "Resist", "type": "Quick"},
+            {"affinity": "Resist", "type": "Buster"},
+            {"affinity": "Resist", "type": "Arts"}
+          ],
+          [
+            {"affinity": "Weak", "type": "Buster"},
+            {"affinity": "Weak", "type": "Arts"},
+            {"affinity": "Weak", "type": "Quick"},
+            {"affinity": "Normal", "type": "Buster"},
+            {"affinity": "Normal", "type": "Arts"},
+            {"affinity": "Normal", "type": "Quick"},
+            {"affinity": "Resist", "type": "Buster"},
+            {"affinity": "Resist", "type": "Arts"},
+            {"affinity": "Resist", "type": "Quick"}
+          ]
+        ],
+        "cardPriorityStyles": ["Servant", "Servant", "Affinity"],
+        "rearrangeCards": [true, true, false],
+        "servantCardPriority": [
+          [
+            {"fieldPosition": 2, "type": "Quick"},
+            {"fieldPosition": 2, "type": "Arts"},
+            {"fieldPosition": 2, "type": "Buster"},
+            {"fieldPosition": 1, "type": "Quick"},
+            {"fieldPosition": 1, "type": "Arts"},
+            {"fieldPosition": 1, "type": "Buster"},
+            {"fieldPosition": 3, "type": "Quick"},
+            {"fieldPosition": 3, "type": "Arts"},
+            {"fieldPosition": 3, "type": "Buster"}
+          ]
+        ],
+        "servantPriority": [
+          [
+            {"position": 2},
+            {"position": 1},
+            {"position": 4},
+            {"position": 3},
+            {"position": 6},
+            {"position": 5}
+          ],
+          [
+            {"position": 3},
+            {"position": 1},
+            {"position": 2},
+            {"position": 4},
+            {"position": 5},
+            {"position": 6}
+          ]
+        ],
+        "skillCommand": "cmd2",
+        "useServantPriorities": [true, true, false]
+      },
+      "useServantPriorities": [true]
+    },
+    "invalidProfile": {"class": "java.lang.IllegalStateException", "message": "Invalid execution profile: 3"},
+    "profiles": [
+      {
+        "braveChains": ["WithNP"],
+        "cardPriority": [
+          [
+            {"affinity": "Weak", "type": "Buster"},
+            {"affinity": "Weak", "type": "Arts"},
+            {"affinity": "Weak", "type": "Quick"},
+            {"affinity": "Normal", "type": "Buster"},
+            {"affinity": "Normal", "type": "Arts"},
+            {"affinity": "Normal", "type": "Quick"},
+            {"affinity": "Resist", "type": "Buster"},
+            {"affinity": "Resist", "type": "Arts"},
+            {"affinity": "Resist", "type": "Quick"}
+          ],
+          [
+            {"affinity": "Weak", "type": "Arts"},
+            {"affinity": "Weak", "type": "Quick"},
+            {"affinity": "Weak", "type": "Buster"},
+            {"affinity": "Normal", "type": "Arts"},
+            {"affinity": "Normal", "type": "Quick"},
+            {"affinity": "Normal", "type": "Buster"},
+            {"affinity": "Resist", "type": "Arts"},
+            {"affinity": "Resist", "type": "Quick"},
+            {"affinity": "Resist", "type": "Buster"}
+          ]
+        ],
+        "cardPrioritySplit": "Wave",
+        "cardPriorityStyle": "Affinity",
+        "cardPriorityStyles": ["Servant"],
+        "rearrangeCards": [true],
+        "servantCardPriority": [
+          [
+            {"fieldPosition": 1, "type": "Buster"},
+            {"fieldPosition": 1, "type": "Arts"},
+            {"fieldPosition": 1, "type": "Quick"},
+            {"fieldPosition": 2, "type": "Buster"},
+            {"fieldPosition": 2, "type": "Arts"},
+            {"fieldPosition": 2, "type": "Quick"},
+            {"fieldPosition": 3, "type": "Buster"},
+            {"fieldPosition": 3, "type": "Arts"},
+            {"fieldPosition": 3, "type": "Quick"}
+          ]
+        ],
+        "servantPriority": [
+          [
+            {"position": 1},
+            {"position": 2},
+            {"position": 3},
+            {"position": 4},
+            {"position": 5},
+            {"position": 6}
+          ]
+        ],
+        "skillCommand": "cmd0",
+        "useServantPriorities": [true],
+        "useServantPriority": false
+      },
+      {
+        "braveChains": ["Avoid", "WithNP"],
+        "cardPriority": [
+          [
+            {"affinity": "Weak", "type": "Arts"},
+            {"affinity": "Weak", "type": "Quick"},
+            {"affinity": "Weak", "type": "Buster"},
+            {"affinity": "Normal", "type": "Arts"},
+            {"affinity": "Normal", "type": "Quick"},
+            {"affinity": "Normal", "type": "Buster"},
+            {"affinity": "Resist", "type": "Arts"},
+            {"affinity": "Resist", "type": "Quick"},
+            {"affinity": "Resist", "type": "Buster"}
+          ],
+          [
+            {"affinity": "Weak", "type": "Quick"},
+            {"affinity": "Weak", "type": "Buster"},
+            {"affinity": "Weak", "type": "Arts"},
+            {"affinity": "Normal", "type": "Quick"},
+            {"affinity": "Normal", "type": "Buster"},
+            {"affinity": "Normal", "type": "Arts"},
+            {"affinity": "Resist", "type": "Quick"},
+            {"affinity": "Resist", "type": "Buster"},
+            {"affinity": "Resist", "type": "Arts"}
+          ]
+        ],
+        "cardPrioritySplit": "Wave",
+        "cardPriorityStyle": "Affinity",
+        "cardPriorityStyles": ["Affinity", "Servant"],
+        "rearrangeCards": [false, true],
+        "servantCardPriority": [
+          [
+            {"fieldPosition": 3, "type": "Buster"},
+            {"fieldPosition": 3, "type": "Arts"},
+            {"fieldPosition": 3, "type": "Quick"},
+            {"fieldPosition": 2, "type": "Buster"},
+            {"fieldPosition": 2, "type": "Arts"},
+            {"fieldPosition": 2, "type": "Quick"},
+            {"fieldPosition": 1, "type": "Buster"},
+            {"fieldPosition": 1, "type": "Arts"},
+            {"fieldPosition": 1, "type": "Quick"}
+          ]
+        ],
+        "servantPriority": [
+          [
+            {"position": 6},
+            {"position": 5},
+            {"position": 4},
+            {"position": 3},
+            {"position": 2},
+            {"position": 1}
+          ]
+        ],
+        "skillCommand": "cmd1",
+        "useServantPriorities": [false, true],
+        "useServantPriority": false
+      },
+      {
+        "braveChains": ["Avoid", "Avoid", "None"],
+        "cardPriority": [
+          [
+            {"affinity": "Weak", "type": "Quick"},
+            {"affinity": "Weak", "type": "Buster"},
+            {"affinity": "Weak", "type": "Arts"},
+            {"affinity": "Normal", "type": "Quick"},
+            {"affinity": "Normal", "type": "Buster"},
+            {"affinity": "Normal", "type": "Arts"},
+            {"affinity": "Resist", "type": "Quick"},
+            {"affinity": "Resist", "type": "Buster"},
+            {"affinity": "Resist", "type": "Arts"}
+          ],
+          [
+            {"affinity": "Weak", "type": "Buster"},
+            {"affinity": "Weak", "type": "Arts"},
+            {"affinity": "Weak", "type": "Quick"},
+            {"affinity": "Normal", "type": "Buster"},
+            {"affinity": "Normal", "type": "Arts"},
+            {"affinity": "Normal", "type": "Quick"},
+            {"affinity": "Resist", "type": "Buster"},
+            {"affinity": "Resist", "type": "Arts"},
+            {"affinity": "Resist", "type": "Quick"}
+          ]
+        ],
+        "cardPrioritySplit": "Wave",
+        "cardPriorityStyle": "Affinity",
+        "cardPriorityStyles": ["Servant", "Servant", "Affinity"],
+        "rearrangeCards": [true, true, false],
+        "servantCardPriority": [
+          [
+            {"fieldPosition": 2, "type": "Quick"},
+            {"fieldPosition": 2, "type": "Arts"},
+            {"fieldPosition": 2, "type": "Buster"},
+            {"fieldPosition": 1, "type": "Quick"},
+            {"fieldPosition": 1, "type": "Arts"},
+            {"fieldPosition": 1, "type": "Buster"},
+            {"fieldPosition": 3, "type": "Quick"},
+            {"fieldPosition": 3, "type": "Arts"},
+            {"fieldPosition": 3, "type": "Buster"}
+          ]
+        ],
+        "servantPriority": [
+          [
+            {"position": 2},
+            {"position": 1},
+            {"position": 4},
+            {"position": 3},
+            {"position": 6},
+            {"position": 5}
+          ],
+          [
+            {"position": 3},
+            {"position": 1},
+            {"position": 2},
+            {"position": 4},
+            {"position": 5},
+            {"position": 6}
+          ]
+        ],
+        "skillCommand": "cmd2",
+        "useServantPriorities": [true, true, false],
+        "useServantPriority": false
+      }
+    ]
+  }
+}

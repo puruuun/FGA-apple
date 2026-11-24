@@ -1,0 +1,25 @@
+{
+  "currentAppleCount": {"Bronze": 14, "Copper": 15, "Gold": 12, "SQ": 11, "Silver": 13},
+  "defaults": {
+    "blueApple": 0,
+    "copperApple": 0,
+    "currentAppleCount": 0,
+    "goldApple": 0,
+    "limitCEs": 1,
+    "limitMats": 1,
+    "limitRuns": 1,
+    "rainbowApple": 0,
+    "resources": [],
+    "selectedApple": "Copper",
+    "selectedAutoSkillKey": "",
+    "server": {"betterFgo": false, "simple": "Kr"},
+    "shouldLimitCEs": false,
+    "shouldLimitMats": false,
+    "shouldLimitRuns": false,
+    "silverApple": 0,
+    "useStormPod": false,
+    "useTeapot": false,
+    "waitForAPRegen": false
+  },
+  "storedCounts": {"blueApple": "14", "copperApple": "15", "goldApple": "12", "rainbowApple": "11", "silverApple": "13"}
+}

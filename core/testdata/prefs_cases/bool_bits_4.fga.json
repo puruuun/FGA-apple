@@ -1,0 +1,17 @@
+{
+  "support_grand_score_16_check": true,
+  "support_grand_servant": true,
+  "support_max_ascended": true,
+  "support_np_level_check": true,
+  "support_pref_ce_mlb": true,
+  "support_require_both_normal_and_reward_match": true,
+  "support_score_62_check": true,
+  "support_skill_max_1": true,
+  "support_skill_max_2": true,
+  "support_skill_max_3": true,
+  "tertiary_start_enabled": true,
+  "tertiary_use_servant_priority": true,
+  "turn_limit_retreat_enabled": true,
+  "turn_limit_retreat_stop_after_streak": true,
+  "use_servant_priority": true
+}

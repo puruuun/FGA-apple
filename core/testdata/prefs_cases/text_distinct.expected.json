@@ -1,0 +1,12 @@
+{
+  "android": {
+    "config": {
+      "folder": "folder",
+      "name": "name",
+      "notes": "some notes",
+      "secondaryExecution": {"skillCommand": "p1"},
+      "skillCommand": "p0",
+      "tertiaryExecution": {"skillCommand": "p2"}
+    }
+  }
+}

@@ -1,7 +1,9 @@
 {
   "android": {
     "config": {
+      "folder": "Lancer",
       "name": "Name with \"quotes\", \\ backslash, tab\t, newline\n, unicode éテし and emoji 😀",
+      "notes": "notes",
       "secondaryExecution": {"skillCommand": "x1"},
       "skillCommand": "a,b,c,#,d\n e ,#"
     }

@@ -3,7 +3,6 @@ use serde_json::{Map, Number, Value};
 use super::battle_config::BattleConfig;
 use super::pref_maker::{PrefStore, PrefType, PrefValue};
 use super::prefs_error::PrefsError;
-use crate::kotlin::{to_int, trim};
 
 enum Decoded {
     Text(String),
@@ -53,17 +52,6 @@ impl BattleConfigFile {
         for (key, value) in decoded {
             if let Some(expected) = schema.get(key) {
                 store.insert(key.to_string(), normalize_for_type(key, value, *expected)?);
-            }
-        }
-        Ok(store)
-    }
-
-    pub fn decode_lenient(text: &str) -> Result<PrefStore, PrefsError> {
-        let root = parse_object(text)?;
-        let mut store = PrefStore::new();
-        for (key, expected) in BattleConfig::pref_types() {
-            if let Some(value) = root.get(key).and_then(|element| coerce(element, *expected)) {
-                store.insert(key.clone(), value);
             }
         }
         Ok(store)
@@ -152,49 +140,5 @@ fn normalize_for_type(
             Ok(PrefValue::StringSet(unique))
         }
         (PrefType::StringSet, other) => Err(mismatch("StringSet", &other)),
-    }
-}
-
-fn scalar_text(element: &Value) -> Option<String> {
-    match element {
-        Value::Null => None,
-        other => primitive_content(other),
-    }
-}
-
-fn coerce(element: &Value, expected: PrefType) -> Option<PrefValue> {
-    match expected {
-        PrefType::String => scalar_text(element).map(PrefValue::String),
-        PrefType::Boolean => {
-            let text = scalar_text(element)?.to_lowercase();
-            match text.as_str() {
-                "true" => Some(PrefValue::Boolean(true)),
-                "false" => Some(PrefValue::Boolean(false)),
-                _ => None,
-            }
-        }
-        PrefType::Int => {
-            let text = scalar_text(element)?;
-            let text = trim(&text);
-            match to_int(text) {
-                Ok(number) => Some(PrefValue::Int(number)),
-                Err(_) => text
-                    .parse::<f64>()
-                    .ok()
-                    .map(|number| PrefValue::Int(number as i32)),
-            }
-        }
-        PrefType::StringSet => match element {
-            Value::Array(items) => {
-                let mut unique: Vec<String> = Vec::new();
-                for item in items.iter().filter_map(primitive_content) {
-                    if !unique.contains(&item) {
-                        unique.push(item);
-                    }
-                }
-                Some(PrefValue::StringSet(unique))
-            }
-            _ => None,
-        },
     }
 }

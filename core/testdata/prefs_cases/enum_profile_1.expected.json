@@ -1,0 +1,7 @@
+{
+  "android": {
+    "config": {
+      "secondaryExecution": {"cardPrioritySplit": "Turn", "cardPriorityStyle": "Servant"}
+    }
+  }
+}

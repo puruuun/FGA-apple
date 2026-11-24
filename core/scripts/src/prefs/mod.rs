@@ -1,7 +1,6 @@
 pub mod battle_config;
 pub mod battle_config_file;
 pub mod execution_profile;
-pub mod game_server_stand_in;
 pub mod per_server_config_prefs;
 pub mod pref_maker;
 pub mod prefs_error;

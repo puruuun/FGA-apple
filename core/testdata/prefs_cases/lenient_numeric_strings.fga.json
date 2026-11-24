@@ -1,8 +1,0 @@
-{
-  "autoskill_party": 6,
-  "command_start_servant": "3",
-  "command_start_buster": " 2 ",
-  "shuffle_cards_wave": "1",
-  "raid_delay_seconds": 9,
-  "turn_limit_retreat_streak_count": "5"
-}

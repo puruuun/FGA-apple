@@ -1,0 +1,17 @@
+{
+  "bond_result_track": true,
+  "card_swap_detection": true,
+  "secondary_start_enabled": true,
+  "secondary_use_servant_priority": true,
+  "support_append_skill_max_4": true,
+  "support_append_skill_max_5": true,
+  "support_auto_friend_request": true,
+  "support_friends_only": true,
+  "support_pref_ce_mlb": true,
+  "support_require_both_normal_and_reward_match": true,
+  "support_score_62_check": true,
+  "support_skill_max_1": true,
+  "turn_limit_retreat_enabled": true,
+  "turn_limit_retreat_stop_after_streak": true,
+  "use_servant_priority": true
+}

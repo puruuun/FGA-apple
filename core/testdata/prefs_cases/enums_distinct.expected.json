@@ -1,0 +1,9 @@
+{
+  "android": {
+    "config": {
+      "commandStartMode": "CardCount",
+      "shuffleCards": "NoNPMatching",
+      "support": {"bondCEEffect": "NP", "supportClass": "Caster"}
+    }
+  }
+}
