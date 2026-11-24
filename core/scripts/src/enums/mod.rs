@@ -47,5 +47,8 @@ pub mod card_affinity_enum;
 pub mod card_priority_split;
 pub mod card_priority_style;
 pub mod card_type_enum;
+pub mod game_server_enum;
+pub mod refill_resource_enum;
 pub mod shuffle_cards_enum;
 pub mod spam_enum;
+pub mod support_class;

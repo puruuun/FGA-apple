@@ -1,5 +1,6 @@
 use automata::{GameAreaManager, GeometryError, Location, Region, Scale};
 
+use crate::enums::game_server_enum::GameServer;
 use crate::fgo_game_area_manager::is_wide;
 
 pub const WIDE_EDGE_INSET: i32 = 171;
@@ -10,6 +11,10 @@ pub trait IScriptAreaTransforms {
     fn script_area(&self) -> Region;
 
     fn is_wide(&self) -> bool;
+
+    fn game_server(&self) -> GameServer;
+
+    fn can_long_swipe(&self) -> bool;
 
     fn x_from_center_location(&self, location: Location) -> Location;
 
@@ -55,12 +60,16 @@ pub trait IScriptAreaTransforms {
 pub struct ScriptAreaTransforms {
     script_area: Region,
     is_wide: bool,
+    game_server: GameServer,
+    can_long_swipe: bool,
 }
 
 impl ScriptAreaTransforms {
     pub fn new(
         scale: &dyn Scale,
         game_area_manager: &dyn GameAreaManager,
+        game_server: GameServer,
+        can_long_swipe: bool,
     ) -> Result<Self, GeometryError> {
         let script_area = Region::from_location_size(
             Location::default(),
@@ -70,6 +79,8 @@ impl ScriptAreaTransforms {
         Ok(Self {
             script_area,
             is_wide: is_wide(script_area.size()),
+            game_server,
+            can_long_swipe,
         })
     }
 }
@@ -81,6 +92,14 @@ impl IScriptAreaTransforms for ScriptAreaTransforms {
 
     fn is_wide(&self) -> bool {
         self.is_wide
+    }
+
+    fn game_server(&self) -> GameServer {
+        self.game_server
+    }
+
+    fn can_long_swipe(&self) -> bool {
+        self.can_long_swipe
     }
 
     fn x_from_center_location(&self, location: Location) -> Location {
@@ -108,11 +127,71 @@ impl IScriptAreaTransforms for ScriptAreaTransforms {
     }
 }
 
+macro_rules! delegate_script_area_transforms {
+    ($type:ty, $field:ident) => {
+        impl $crate::locations::script_area_transforms::IScriptAreaTransforms for $type {
+            fn script_area(&self) -> ::automata::Region {
+                self.$field.script_area()
+            }
+
+            fn is_wide(&self) -> bool {
+                self.$field.is_wide()
+            }
+
+            fn game_server(&self) -> $crate::enums::game_server_enum::GameServer {
+                self.$field.game_server()
+            }
+
+            fn can_long_swipe(&self) -> bool {
+                self.$field.can_long_swipe()
+            }
+
+            fn x_from_center_location(
+                &self,
+                location: ::automata::Location,
+            ) -> ::automata::Location {
+                self.$field.x_from_center_location(location)
+            }
+
+            fn x_from_center_region(&self, region: ::automata::Region) -> ::automata::Region {
+                self.$field.x_from_center_region(region)
+            }
+
+            fn x_from_right_location(
+                &self,
+                location: ::automata::Location,
+            ) -> ::automata::Location {
+                self.$field.x_from_right_location(location)
+            }
+
+            fn x_from_right_region(&self, region: ::automata::Region) -> ::automata::Region {
+                self.$field.x_from_right_region(region)
+            }
+
+            fn y_from_bottom_location(
+                &self,
+                location: ::automata::Location,
+            ) -> ::automata::Location {
+                self.$field.y_from_bottom_location(location)
+            }
+
+            fn y_from_bottom_region(&self, region: ::automata::Region) -> ::automata::Region {
+                self.$field.y_from_bottom_region(region)
+            }
+        }
+    };
+}
+
+pub(crate) use delegate_script_area_transforms;
+
+pub type Transforms = std::sync::Arc<dyn IScriptAreaTransforms + Send + Sync>;
+
 #[cfg(test)]
 mod tests {
     use automata::{RealScale, Size};
 
     use super::*;
+    use crate::enums::game_server_enum::GameServers;
     use crate::fgo_game_area_manager::FgoGameAreaManager;
 
     struct Row {
@@ -226,7 +305,8 @@ mod tests {
             let screen = Size::new(row.screen.0, row.screen.1).unwrap();
             let manager = FgoGameAreaManager::new(screen, Location::default).unwrap();
             let scale = RealScale::new(&manager);
-            let t = ScriptAreaTransforms::new(&scale, &manager).unwrap();
+            let t =
+                ScriptAreaTransforms::new(&scale, &manager, GameServers::DEFAULT, true).unwrap();
             let label = format!("{}x{}", row.screen.0, row.screen.1);
 
             assert_eq!(
@@ -236,6 +316,8 @@ mod tests {
             );
             assert_eq!(t.is_wide(), row.wide, "{label}");
             assert_eq!(t.edge_inset(), row.inset, "{label}");
+            assert_eq!(t.game_server(), GameServers::DEFAULT, "{label}");
+            assert!(t.can_long_swipe(), "{label}");
 
             let l = Location::new(10, 20);
             let r = Region::new(10, 20, 30, 40).unwrap();
