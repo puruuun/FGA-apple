@@ -70,7 +70,7 @@ jobs:
           distribution: temurin
           java-version: '21'
       - uses: gradle/actions/setup-gradle@v4
-      - run: bash ./gradlew :host:compileKotlin --console=plain
+      - run: bash ./gradlew :host:test --console=plain
 
   firmware:
     needs: changes
