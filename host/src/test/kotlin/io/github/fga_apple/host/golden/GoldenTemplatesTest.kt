@@ -123,7 +123,8 @@ class GoldenTemplatesTest {
                 val label = "$name ${template.name} ${case.getValue("kind").jsonPrimitive.content}"
                 assertEquals(expected.getValue("x").jsonPrimitive.int, best.x, label)
                 assertEquals(expected.getValue("y").jsonPrimitive.int, best.y, label)
-                assertEquals(expected.getValue("score").jsonPrimitive.double, best.score, 1e-9, label)
+                val committed = expected.getValue("score").jsonPrimitive.double
+                assertTrue(kotlin.math.abs(committed - best.score) <= 1e-9, "$label committed $committed computed ${best.score}")
                 checked++
                 if (template.masked) maskedChecked++
             }
