@@ -1,0 +1,344 @@
+{
+  "addRaidTurnDelay": true,
+  "autoChooseTarget": false,
+  "bondMaxIgnoredCharacters": [1, 3, 5],
+  "braveChains": [],
+  "cardPriority": [
+    [
+      {"affinity": "Weak", "type": "Buster"},
+      {"affinity": "Weak", "type": "Arts"},
+      {"affinity": "Weak", "type": "Quick"},
+      {"affinity": "Normal", "type": "Buster"},
+      {"affinity": "Normal", "type": "Arts"},
+      {"affinity": "Normal", "type": "Quick"},
+      {"affinity": "Resist", "type": "Buster"},
+      {"affinity": "Resist", "type": "Arts"},
+      {"affinity": "Resist", "type": "Quick"}
+    ]
+  ],
+  "cardPrioritySplit": "Wave",
+  "cardPriorityStyle": "Affinity",
+  "cardPriorityStyles": [],
+  "cardSwapDetection": false,
+  "commandStartArts": 0,
+  "commandStartBuster": 2,
+  "commandStartCardCount": 3,
+  "commandStartCombineMode": "And",
+  "commandStartMaxTurns": 6,
+  "commandStartMode": "Basic",
+  "commandStartQuick": 0,
+  "commandStartServant": 2,
+  "id": "host",
+  "materials": [],
+  "name": "Values stored as strings",
+  "party": 4,
+  "raidTurnDelaySeconds": 5,
+  "rearrangeCards": [],
+  "secondaryExecution": {
+    "braveChains": [],
+    "cardPriority": [
+      [
+        {"affinity": "Weak", "type": "Buster"},
+        {"affinity": "Weak", "type": "Arts"},
+        {"affinity": "Weak", "type": "Quick"},
+        {"affinity": "Normal", "type": "Buster"},
+        {"affinity": "Normal", "type": "Arts"},
+        {"affinity": "Normal", "type": "Quick"},
+        {"affinity": "Resist", "type": "Buster"},
+        {"affinity": "Resist", "type": "Arts"},
+        {"affinity": "Resist", "type": "Quick"}
+      ]
+    ],
+    "cardPrioritySplit": "Wave",
+    "cardPriorityStyle": "Affinity",
+    "cardPriorityStyles": [],
+    "rearrangeCards": [],
+    "servantCardPriority": [
+      [
+        {"fieldPosition": 1, "type": "Buster"},
+        {"fieldPosition": 1, "type": "Arts"},
+        {"fieldPosition": 1, "type": "Quick"},
+        {"fieldPosition": 2, "type": "Buster"},
+        {"fieldPosition": 2, "type": "Arts"},
+        {"fieldPosition": 2, "type": "Quick"},
+        {"fieldPosition": 3, "type": "Buster"},
+        {"fieldPosition": 3, "type": "Arts"},
+        {"fieldPosition": 3, "type": "Quick"}
+      ]
+    ],
+    "servantPriority": [
+      [
+        {"position": 1},
+        {"position": 2},
+        {"position": 3},
+        {"position": 4},
+        {"position": 5},
+        {"position": 6}
+      ]
+    ],
+    "skillCommand": "",
+    "useServantPriorities": [],
+    "useServantPriority": false
+  },
+  "secondaryStartArts": 0,
+  "secondaryStartBuster": 0,
+  "secondaryStartCardCount": 2,
+  "secondaryStartCombineMode": "And",
+  "secondaryStartEnabled": true,
+  "secondaryStartQuick": 0,
+  "secondaryStartServant": 2,
+  "servantCardPriority": [
+    [
+      {"fieldPosition": 1, "type": "Buster"},
+      {"fieldPosition": 1, "type": "Arts"},
+      {"fieldPosition": 1, "type": "Quick"},
+      {"fieldPosition": 2, "type": "Buster"},
+      {"fieldPosition": 2, "type": "Arts"},
+      {"fieldPosition": 2, "type": "Quick"},
+      {"fieldPosition": 3, "type": "Buster"},
+      {"fieldPosition": 3, "type": "Arts"},
+      {"fieldPosition": 3, "type": "Quick"}
+    ]
+  ],
+  "servantPriority": [
+    [
+      {"position": 1},
+      {"position": 2},
+      {"position": 3},
+      {"position": 4},
+      {"position": 5},
+      {"position": 6}
+    ]
+  ],
+  "server": null,
+  "shuffleCards": "None",
+  "shuffleCardsWave": 1,
+  "skillCommand": "",
+  "spam": [
+    {
+      "np": {
+        "spam": "Spam",
+        "waves": [3]
+      },
+      "skills": [
+        {
+          "spam": "Spam",
+          "target": "Self",
+          "waves": [1, 2]
+        },
+        {
+          "spam": "None",
+          "target": "None",
+          "waves": [1, 2, 3]
+        },
+        {
+          "spam": "None",
+          "target": "None",
+          "waves": [1, 2, 3]
+        }
+      ]
+    },
+    {
+      "np": {
+        "spam": "None",
+        "waves": [1, 2, 3]
+      },
+      "skills": [
+        {
+          "spam": "None",
+          "target": "None",
+          "waves": [1, 2, 3]
+        },
+        {
+          "spam": "None",
+          "target": "None",
+          "waves": [1, 2, 3]
+        },
+        {
+          "spam": "None",
+          "target": "None",
+          "waves": [1, 2, 3]
+        }
+      ]
+    },
+    {
+      "np": {
+        "spam": "None",
+        "waves": [1, 2, 3]
+      },
+      "skills": [
+        {
+          "spam": "None",
+          "target": "None",
+          "waves": [1, 2, 3]
+        },
+        {
+          "spam": "None",
+          "target": "None",
+          "waves": [1, 2, 3]
+        },
+        {
+          "spam": "None",
+          "target": "None",
+          "waves": [1, 2, 3]
+        }
+      ]
+    },
+    {
+      "np": {
+        "spam": "None",
+        "waves": [1, 2, 3]
+      },
+      "skills": [
+        {
+          "spam": "None",
+          "target": "None",
+          "waves": [1, 2, 3]
+        },
+        {
+          "spam": "None",
+          "target": "None",
+          "waves": [1, 2, 3]
+        },
+        {
+          "spam": "None",
+          "target": "None",
+          "waves": [1, 2, 3]
+        }
+      ]
+    },
+    {
+      "np": {
+        "spam": "None",
+        "waves": [1, 2, 3]
+      },
+      "skills": [
+        {
+          "spam": "None",
+          "target": "None",
+          "waves": [1, 2, 3]
+        },
+        {
+          "spam": "None",
+          "target": "None",
+          "waves": [1, 2, 3]
+        },
+        {
+          "spam": "None",
+          "target": "None",
+          "waves": [1, 2, 3]
+        }
+      ]
+    },
+    {
+      "np": {
+        "spam": "None",
+        "waves": [1, 2, 3]
+      },
+      "skills": [
+        {
+          "spam": "None",
+          "target": "None",
+          "waves": [1, 2, 3]
+        },
+        {
+          "spam": "None",
+          "target": "None",
+          "waves": [1, 2, 3]
+        },
+        {
+          "spam": "None",
+          "target": "None",
+          "waves": [1, 2, 3]
+        }
+      ]
+    }
+  ],
+  "stopOnBondMax": false,
+  "support": {
+    "alsoCheckAll": false,
+    "appendSkillCheck": false,
+    "appendSkillsMax": [false, false, false, false, false],
+    "autoFriendRequest": false,
+    "bondCEEffect": "Ignore",
+    "fallbackTo": "Manual",
+    "friendNames": [],
+    "friendsOnly": false,
+    "grandScore16Check": false,
+    "grandServant": false,
+    "maxAscended": false,
+    "minimumNpLevel": 4,
+    "mlb": true,
+    "npLevelCheck": true,
+    "preferredCEs": [],
+    "preferredNoblePhantasms": [],
+    "preferredServants": [],
+    "requireBothNormalAndRewardMatch": false,
+    "score62Check": false,
+    "selectionMode": "Preferred",
+    "skill1Max": false,
+    "skill2Max": false,
+    "skill3Max": false,
+    "supportClass": "None"
+  },
+  "tertiaryExecution": {
+    "braveChains": [],
+    "cardPriority": [
+      [
+        {"affinity": "Weak", "type": "Buster"},
+        {"affinity": "Weak", "type": "Arts"},
+        {"affinity": "Weak", "type": "Quick"},
+        {"affinity": "Normal", "type": "Buster"},
+        {"affinity": "Normal", "type": "Arts"},
+        {"affinity": "Normal", "type": "Quick"},
+        {"affinity": "Resist", "type": "Buster"},
+        {"affinity": "Resist", "type": "Arts"},
+        {"affinity": "Resist", "type": "Quick"}
+      ]
+    ],
+    "cardPrioritySplit": "Wave",
+    "cardPriorityStyle": "Affinity",
+    "cardPriorityStyles": [],
+    "rearrangeCards": [],
+    "servantCardPriority": [
+      [
+        {"fieldPosition": 1, "type": "Buster"},
+        {"fieldPosition": 1, "type": "Arts"},
+        {"fieldPosition": 1, "type": "Quick"},
+        {"fieldPosition": 2, "type": "Buster"},
+        {"fieldPosition": 2, "type": "Arts"},
+        {"fieldPosition": 2, "type": "Quick"},
+        {"fieldPosition": 3, "type": "Buster"},
+        {"fieldPosition": 3, "type": "Arts"},
+        {"fieldPosition": 3, "type": "Quick"}
+      ]
+    ],
+    "servantPriority": [
+      [
+        {"position": 1},
+        {"position": 2},
+        {"position": 3},
+        {"position": 4},
+        {"position": 5},
+        {"position": 6}
+      ]
+    ],
+    "skillCommand": "",
+    "useServantPriorities": [],
+    "useServantPriority": false
+  },
+  "tertiaryStartArts": 0,
+  "tertiaryStartBuster": 0,
+  "tertiaryStartCardCount": 2,
+  "tertiaryStartCombineMode": "And",
+  "tertiaryStartEnabled": false,
+  "tertiaryStartQuick": 0,
+  "tertiaryStartServant": 1,
+  "trackBond": true,
+  "turnLimitRetreatEnabled": true,
+  "turnLimitRetreatStopAfterStreak": false,
+  "turnLimitRetreatStreakCount": 7,
+  "turnLimitRetreatTurns": 12,
+  "useServantPriorities": [],
+  "useServantPriority": false
+}
