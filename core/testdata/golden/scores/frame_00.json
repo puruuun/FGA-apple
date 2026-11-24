@@ -1,0 +1,187 @@
+{
+  "cases": [
+    {
+      "best": {"score": 1.0000001192092896, "x": 216, "y": 40},
+      "further": [],
+      "kind": "local",
+      "masked": true,
+      "params": {},
+      "pasted": {"height": 38, "width": 38, "x": 216, "y": 40},
+      "region": {"height": 78, "width": 78, "x": 196, "y": 20},
+      "template": "card_swap.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 1.0000001192092896, "x": 216, "y": 40},
+      "further": [],
+      "kind": "whole_frame",
+      "masked": true,
+      "params": {},
+      "pasted": {"height": 38, "width": 38, "x": 216, "y": 40},
+      "region": {"height": 720, "width": 1565, "x": 0, "y": 0},
+      "template": "card_swap.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 1.0, "x": 322, "y": 127},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 108, "width": 108, "x": 322, "y": 127},
+      "region": {"height": 148, "width": 148, "x": 302, "y": 107},
+      "template": "Gold5StarXP.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.9593086242675781, "x": 526, "y": 36},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"brightness": 40.0, "contrast": 1.15},
+      "pasted": {"height": 110, "width": 105, "x": 526, "y": 36},
+      "region": {"height": 150, "width": 145, "x": 506, "y": 16},
+      "template": "GoldXP.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.9491241574287415, "x": 820, "y": 88},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 110, "width": 105, "x": 820, "y": 88},
+      "region": {"height": 150, "width": 145, "x": 800, "y": 68},
+      "template": "SilverXP.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.9491241574287415, "x": 820, "y": 88},
+      "further": [],
+      "kind": "whole_frame",
+      "masked": false,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 110, "width": 105, "x": 820, "y": 88},
+      "region": {"height": 720, "width": 1565, "x": 0, "y": 0},
+      "template": "SilverXP.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.16995316743850708, "x": 1176, "y": 134},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 26, "width": 229, "x": 1059, "y": 134},
+      "region": {"height": 56, "width": 239, "x": 1173, "y": 119},
+      "template": "StopGifts.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 1.0, "x": 1478, "y": 9},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 33, "width": 38, "x": 1478, "y": 9},
+      "region": {"height": 62, "width": 78, "x": 1458, "y": 0},
+      "template": "art.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.9999185800552368, "x": 136, "y": 391},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"brightness": -20.0, "contrast": 0.85},
+      "pasted": {"height": 41, "width": 82, "x": 136, "y": 391},
+      "region": {"height": 81, "width": 122, "x": 116, "y": 371},
+      "template": "battle.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.9999156594276428, "x": 136, "y": 391},
+      "further": [],
+      "kind": "whole_frame",
+      "masked": false,
+      "params": {"brightness": -20.0, "contrast": 0.85},
+      "pasted": {"height": 41, "width": 82, "x": 136, "y": 391},
+      "region": {"height": 720, "width": 1565, "x": 0, "y": 0},
+      "template": "battle.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.9348655939102173, "x": 275, "y": 390},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 15, "width": 65, "x": 275, "y": 390},
+      "region": {"height": 55, "width": 105, "x": 255, "y": 370},
+      "template": "battle_menu.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.05804067850112915, "x": 629, "y": 374},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 42, "width": 52, "x": 593, "y": 376},
+      "region": {"height": 72, "width": 62, "x": 619, "y": 361},
+      "template": "bond.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 1.0, "x": 1010, "y": 434},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 7, "width": 11, "x": 1010, "y": 434},
+      "region": {"height": 47, "width": 51, "x": 990, "y": 414},
+      "template": "bond10.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.9857907295227051, "x": 1133, "y": 269},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"brightness": 40.0, "contrast": 1.15},
+      "pasted": {"height": 17, "width": 16, "x": 1133, "y": 269},
+      "region": {"height": 57, "width": 56, "x": 1113, "y": 249},
+      "template": "bond_ce_effect_default.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.38070225715637207, "x": 1433, "y": 430},
+      "further": [],
+      "kind": "noise",
+      "masked": false,
+      "params": {},
+      "pasted": null,
+      "region": {"height": 240, "width": 260, "x": 1300, "y": 240},
+      "template": "bond_ce_effect_np.png",
+      "variant": "absent"
+    },
+    {
+      "best": {"score": 0.086613729596138, "x": 96, "y": 516},
+      "further": [],
+      "kind": "noise",
+      "masked": false,
+      "params": {},
+      "pasted": null,
+      "region": {"height": 240, "width": 260, "x": 0, "y": 480},
+      "template": "bond_level_up_marker.png",
+      "variant": "absent"
+    }
+  ],
+  "frame": "frame_00",
+  "height": 720,
+  "method": "TM_CCOEFF_NORMED",
+  "seed": 1179078385224545,
+  "similarity": 0.8,
+  "source": "synthetic",
+  "width": 1565
+}

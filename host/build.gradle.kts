@@ -30,3 +30,41 @@ application {
 tasks.named<JavaExec>("run") {
     workingDir = rootDir
 }
+
+dependencies {
+    testImplementation(platform(libs.junit.bom))
+    testImplementation(libs.kotlin.test)
+}
+
+tasks.named<Test>("test") {
+    useJUnitPlatform()
+    workingDir = rootDir
+}
+
+tasks.named<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>("compileTestKotlin") {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+    }
+}
+
+tasks.named<JavaCompile>("compileTestJava") {
+    sourceCompatibility = JavaVersion.VERSION_17.toString()
+    targetCompatibility = JavaVersion.VERSION_17.toString()
+    options.release.set(17)
+}
+
+listOf(configurations.testCompileClasspath, configurations.testRuntimeClasspath).forEach { config ->
+    config.configure {
+        attributes {
+            attribute(TargetJvmVersion.TARGET_JVM_VERSION_ATTRIBUTE, 17)
+        }
+    }
+}
+
+tasks.register<JavaExec>("goldenScores") {
+    group = "verification"
+    description = "Writes the synthetic frames and their OpenCV scores"
+    classpath = sourceSets.main.get().runtimeClasspath
+    mainClass.set("io.github.fga_apple.host.golden.GoldenScoresKt")
+    workingDir = rootDir
+}

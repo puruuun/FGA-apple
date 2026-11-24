@@ -1,0 +1,191 @@
+{
+  "cases": [
+    {
+      "best": {"score": 1.0000001192092896, "x": 154, "y": 16},
+      "further": [],
+      "kind": "local",
+      "masked": true,
+      "params": {},
+      "pasted": {"height": 38, "width": 38, "x": 154, "y": 16},
+      "region": {"height": 74, "width": 78, "x": 134, "y": 0},
+      "template": "card_swap.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 1.0000001192092896, "x": 154, "y": 16},
+      "further": [],
+      "kind": "whole_frame",
+      "masked": true,
+      "params": {},
+      "pasted": {"height": 38, "width": 38, "x": 154, "y": 16},
+      "region": {"height": 720, "width": 1565, "x": 0, "y": 0},
+      "template": "card_swap.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.6963813900947571, "x": 474, "y": 187},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 19, "width": 29, "x": 474, "y": 187},
+      "region": {"height": 59, "width": 69, "x": 454, "y": 167},
+      "template": "support_grand_16_b.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.15529242157936096, "x": 654, "y": 9},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 19, "width": 29, "x": 640, "y": 6},
+      "region": {"height": 49, "width": 39, "x": 654, "y": 0},
+      "template": "support_grand_16_c.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 0.9999988675117493, "x": 837, "y": 148},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 19, "width": 29, "x": 837, "y": 148},
+      "region": {"height": 59, "width": 69, "x": 817, "y": 128},
+      "template": "support_grand_16_d.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.9999988675117493, "x": 837, "y": 148},
+      "further": [
+        {"score": 0.8993186354637146, "x": 640, "y": 6}
+      ],
+      "kind": "whole_frame",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 19, "width": 29, "x": 837, "y": 148},
+      "region": {"height": 720, "width": 1565, "x": 0, "y": 0},
+      "template": "support_grand_16_d.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.9999799728393555, "x": 1061, "y": 218},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"brightness": -20.0, "contrast": 1.15},
+      "pasted": {"height": 21, "width": 34, "x": 1061, "y": 218},
+      "region": {"height": 61, "width": 74, "x": 1041, "y": 198},
+      "template": "support_grand_16_large_a.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.7874660491943359, "x": 1509, "y": 103},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 21, "width": 34, "x": 1509, "y": 103},
+      "region": {"height": 61, "width": 74, "x": 1489, "y": 83},
+      "template": "support_grand_16_large_b.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.19036324322223663, "x": 238, "y": 341},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 21, "width": 34, "x": 221, "y": 339},
+      "region": {"height": 51, "width": 44, "x": 238, "y": 324},
+      "template": "support_grand_16_large_c.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 1.0, "x": 221, "y": 339},
+      "further": [
+        {"score": 0.8922377228736877, "x": 1061, "y": 217}
+      ],
+      "kind": "whole_frame",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 21, "width": 34, "x": 221, "y": 339},
+      "region": {"height": 720, "width": 1565, "x": 0, "y": 0},
+      "template": "support_grand_16_large_c.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 1.0, "x": 448, "y": 241},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 21, "width": 34, "x": 448, "y": 241},
+      "region": {"height": 61, "width": 74, "x": 428, "y": 221},
+      "template": "support_grand_16_large_d.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.9999866485595703, "x": 553, "y": 345},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"brightness": 40.0, "contrast": 0.85},
+      "pasted": {"height": 21, "width": 23, "x": 553, "y": 345},
+      "region": {"height": 61, "width": 63, "x": 533, "y": 325},
+      "template": "support_normal_skills.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.953858494758606, "x": 859, "y": 411},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 43, "width": 140, "x": 859, "y": 411},
+      "region": {"height": 83, "width": 180, "x": 839, "y": 391},
+      "template": "support_not_found.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.08832909911870956, "x": 1127, "y": 366},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 25, "width": 38, "x": 1108, "y": 354},
+      "region": {"height": 55, "width": 48, "x": 1127, "y": 339},
+      "template": "support_np_lv.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 0.11699610948562622, "x": 1387, "y": 338},
+      "further": [],
+      "kind": "noise",
+      "masked": false,
+      "params": {},
+      "pasted": null,
+      "region": {"height": 240, "width": 260, "x": 1300, "y": 240},
+      "template": "support_np_lv_gold.png",
+      "variant": "absent"
+    },
+    {
+      "best": {"score": 0.14959993958473206, "x": 172, "y": 593},
+      "further": [],
+      "kind": "noise",
+      "masked": false,
+      "params": {},
+      "pasted": null,
+      "region": {"height": 240, "width": 260, "x": 0, "y": 480},
+      "template": "support_refresh.png",
+      "variant": "absent"
+    }
+  ],
+  "frame": "frame_10",
+  "height": 720,
+  "method": "TM_CCOEFF_NORMED",
+  "seed": 1179078385303735,
+  "similarity": 0.8,
+  "source": "synthetic",
+  "width": 1565
+}
