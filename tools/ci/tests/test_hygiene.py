@@ -85,6 +85,53 @@ class OtherRulesStillApply(unittest.TestCase):
         self.assertEqual(code, 1, out)
         self.assertIn("private network address", out)
 
+    def test_private_address_inside_a_synthetic_png_fails(self):
+        address = ".".join(["192", "168", "1", "20"])
+        code, out = run_in_repo({"core/testdata/synthetic/frame.png": PNG + address.encode()})
+        self.assertEqual(code, 1, out)
+        self.assertIn("private network address", out)
+
+    def test_private_address_in_utf16_text_fails(self):
+        address = ".".join(["192", "168", "1", "20"])
+        code, out = run_in_repo({"docs/note.txt": f"host {address}\n".encode("utf-16")})
+        self.assertEqual(code, 1, out)
+        self.assertIn("private network address", out)
+
+
+class MediaIsJudgedByContentToo(unittest.TestCase):
+    def test_more_capture_formats_fail_by_name(self):
+        for name in ("shot.tif", "shot.tiff", "shot.avif", "shot.heif", "rec.webm", "rec.avi", "rec.m4v", "shot.pdf"):
+            with self.subTest(name=name):
+                code, out = run_in_repo({"docs/" + name: b"x"})
+                self.assertEqual(code, 1, out)
+
+    def test_media_bytes_under_a_text_name_fail(self):
+        samples = {
+            "png": PNG,
+            "jpeg": b"\xff\xd8\xff\xe0",
+            "gif": b"GIF89a",
+            "tiff": b"II*\x00",
+            "webp": b"RIFF\x00\x00\x00\x00WEBP",
+            "mp4": b"\x00\x00\x00\x18ftypmp42",
+            "mkv": b"\x1a\x45\xdf\xa3",
+            "bmp": b"BM\x00\x00\x00\x00\x00\x00\x00\x00",
+            "pdf": b"%PDF-1.7",
+        }
+        for kind, content in samples.items():
+            for path in ("docs/frame.txt", "core/testdata/synthetic/frame.png.txt"):
+                with self.subTest(kind=kind, path=path):
+                    code, out = run_in_repo({path: content})
+                    self.assertEqual(code, 1, out)
+                    self.assertIn(path, out)
+
+    def test_text_that_only_looks_like_media_passes(self):
+        code, out = run_in_repo({"docs/note.txt": b"BM is short for benchmark\nRIFF and ftyp are words\n"})
+        self.assertEqual(code, 0, out)
+
+    def test_image_under_the_submodule_path_fails(self):
+        code, out = run_in_repo({"fga/shot.png": PNG})
+        self.assertEqual(code, 1, out)
+
 
 if __name__ == "__main__":
     unittest.main()
