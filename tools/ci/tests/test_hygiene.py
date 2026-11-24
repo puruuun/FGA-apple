@@ -80,7 +80,8 @@ class ImageAllowance(unittest.TestCase):
 
 class OtherRulesStillApply(unittest.TestCase):
     def test_private_address_in_text_file_under_synthetic_fails(self):
-        code, out = run_in_repo({"core/testdata/synthetic/notes.txt": b"host 192.168.1.20\n"})
+        address = ".".join(["192", "168", "1", "20"])
+        code, out = run_in_repo({"core/testdata/synthetic/notes.txt": f"host {address}\n".encode()})
         self.assertEqual(code, 1, out)
         self.assertIn("private network address", out)
 
