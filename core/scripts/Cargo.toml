@@ -11,3 +11,6 @@ workspace = true
 
 [dependencies]
 automata = { path = "../automata" }
+
+[dev-dependencies]
+serde_json = { version = "1", features = ["float_roundtrip"] }
