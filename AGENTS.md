@@ -23,4 +23,5 @@ Rules every agent follows in this repository. The design is in [docs/design/0001
 ./gradlew :host:compileKotlin                 # host/  (needs the fga submodule: git submodule update --init)
 pio run -d firmware                           # firmware/
 python -m compileall -q tools mac-capture     # Python tools
+python tools/ci/hygiene.py                    # nothing that must not be committed
 ```
