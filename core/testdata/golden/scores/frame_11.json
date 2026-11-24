@@ -1,0 +1,187 @@
+{
+  "cases": [
+    {
+      "best": {"score": 0.9999808073043823, "x": 97, "y": 100},
+      "further": [],
+      "kind": "local",
+      "masked": true,
+      "params": {"brightness": 20.0, "contrast": 0.7},
+      "pasted": {"height": 38, "width": 38, "x": 97, "y": 100},
+      "region": {"height": 78, "width": 78, "x": 77, "y": 80},
+      "template": "card_swap.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.9999808073043823, "x": 97, "y": 100},
+      "further": [],
+      "kind": "whole_frame",
+      "masked": true,
+      "params": {"brightness": 20.0, "contrast": 0.7},
+      "pasted": {"height": 38, "width": 38, "x": 97, "y": 100},
+      "region": {"height": 720, "width": 1565, "x": 0, "y": 0},
+      "template": "card_swap.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.09143772721290588, "x": 285, "y": 93},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 25, "width": 38, "x": 265, "y": 80},
+      "region": {"height": 55, "width": 48, "x": 284, "y": 65},
+      "template": "support_np_lv_gold.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 0.9999996423721313, "x": 651, "y": 147},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 26, "width": 31, "x": 651, "y": 147},
+      "region": {"height": 66, "width": 71, "x": 631, "y": 127},
+      "template": "support_refresh.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.9985336065292358, "x": 918, "y": 118},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"brightness": -40.0, "contrast": 0.85},
+      "pasted": {"height": 43, "width": 89, "x": 918, "y": 118},
+      "region": {"height": 83, "width": 129, "x": 898, "y": 98},
+      "template": "support_region_tool.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.9985331296920776, "x": 918, "y": 118},
+      "further": [],
+      "kind": "whole_frame",
+      "masked": false,
+      "params": {"brightness": -40.0, "contrast": 0.85},
+      "pasted": {"height": 43, "width": 89, "x": 918, "y": 118},
+      "region": {"height": 720, "width": 1565, "x": 0, "y": 0},
+      "template": "support_region_tool.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.7953384518623352, "x": 1130, "y": 99},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 22, "width": 40, "x": 1130, "y": 99},
+      "region": {"height": 62, "width": 80, "x": 1110, "y": 79},
+      "template": "support_score_62.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.23388896882534027, "x": 1329, "y": 50},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 166, "width": 55, "x": 1302, "y": 50},
+      "region": {"height": 196, "width": 65, "x": 1329, "y": 35},
+      "template": "support_screen.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 0.9999997019767761, "x": 181, "y": 446},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 11, "width": 28, "x": 181, "y": 446},
+      "region": {"height": 51, "width": 68, "x": 161, "y": 426},
+      "template": "support_scrollbar_bottom.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.9999993443489075, "x": 181, "y": 446},
+      "further": [],
+      "kind": "whole_frame",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 11, "width": 28, "x": 181, "y": 446},
+      "region": {"height": 720, "width": 1565, "x": 0, "y": 0},
+      "template": "support_scrollbar_bottom.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.9999109506607056, "x": 309, "y": 319},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"brightness": -20.0, "contrast": 0.7},
+      "pasted": {"height": 11, "width": 28, "x": 309, "y": 319},
+      "region": {"height": 51, "width": 68, "x": 289, "y": 299},
+      "template": "support_scrollbar_moved.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.95556640625, "x": 700, "y": 257},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 11, "width": 28, "x": 700, "y": 257},
+      "region": {"height": 51, "width": 68, "x": 680, "y": 237},
+      "template": "support_scrollbar_top.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.1648963838815689, "x": 1003, "y": 339},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 12, "width": 70, "x": 968, "y": 339},
+      "region": {"height": 42, "width": 80, "x": 1003, "y": 324},
+      "template": "target_danger.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 0.9999997615814209, "x": 1172, "y": 320},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 13, "width": 73, "x": 1172, "y": 320},
+      "region": {"height": 53, "width": 113, "x": 1152, "y": 300},
+      "template": "target_servant.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.09512878954410553, "x": 1435, "y": 397},
+      "further": [],
+      "kind": "noise",
+      "masked": false,
+      "params": {},
+      "pasted": null,
+      "region": {"height": 240, "width": 260, "x": 1300, "y": 240},
+      "template": "weak.png",
+      "variant": "absent"
+    },
+    {
+      "best": {"score": 0.07862350344657898, "x": 51, "y": 643},
+      "further": [],
+      "kind": "noise",
+      "masked": false,
+      "params": {},
+      "pasted": null,
+      "region": {"height": 240, "width": 260, "x": 0, "y": 480},
+      "template": "weekly_daily_quest.png",
+      "variant": "absent"
+    }
+  ],
+  "frame": "frame_11",
+  "height": 720,
+  "method": "TM_CCOEFF_NORMED",
+  "seed": 1179078385311654,
+  "similarity": 0.8,
+  "source": "synthetic",
+  "width": 1565
+}

@@ -1,0 +1,187 @@
+{
+  "cases": [
+    {
+      "best": {"score": 0.8913516402244568, "x": 157, "y": 98},
+      "further": [],
+      "kind": "local",
+      "masked": true,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 38, "width": 38, "x": 157, "y": 98},
+      "region": {"height": 78, "width": 78, "x": 137, "y": 78},
+      "template": "card_swap.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.8913516402244568, "x": 157, "y": 98},
+      "further": [],
+      "kind": "whole_frame",
+      "masked": true,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 38, "width": 38, "x": 157, "y": 98},
+      "region": {"height": 720, "width": 1565, "x": 0, "y": 0},
+      "template": "card_swap.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.13283371925354004, "x": 306, "y": 110},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 41, "width": 18, "x": 290, "y": 106},
+      "region": {"height": 71, "width": 28, "x": 299, "y": 91},
+      "template": "skill_level_digit_1.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 1.0, "x": 543, "y": 48},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 48, "width": 34, "x": 543, "y": 48},
+      "region": {"height": 88, "width": 74, "x": 523, "y": 28},
+      "template": "skill_level_digit_2.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.9999821186065674, "x": 970, "y": 195},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"brightness": 40.0, "contrast": 0.85},
+      "pasted": {"height": 41, "width": 29, "x": 970, "y": 195},
+      "region": {"height": 81, "width": 69, "x": 950, "y": 175},
+      "template": "skill_level_digit_3.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.9999821186065674, "x": 970, "y": 195},
+      "further": [],
+      "kind": "whole_frame",
+      "masked": false,
+      "params": {"brightness": 40.0, "contrast": 0.85},
+      "pasted": {"height": 41, "width": 29, "x": 970, "y": 195},
+      "region": {"height": 720, "width": 1565, "x": 0, "y": 0},
+      "template": "skill_level_digit_3.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.9319915175437927, "x": 1136, "y": 28},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 41, "width": 29, "x": 1136, "y": 28},
+      "region": {"height": 81, "width": 69, "x": 1116, "y": 8},
+      "template": "skill_level_digit_4.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.18425649404525757, "x": 1343, "y": 139},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 41, "width": 28, "x": 1329, "y": 153},
+      "region": {"height": 71, "width": 38, "x": 1343, "y": 138},
+      "template": "skill_level_digit_5.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 0.9999998807907104, "x": 136, "y": 418},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 41, "width": 28, "x": 136, "y": 418},
+      "region": {"height": 81, "width": 68, "x": 116, "y": 398},
+      "template": "skill_level_digit_6.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.9999998807907104, "x": 136, "y": 418},
+      "further": [],
+      "kind": "whole_frame",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 41, "width": 28, "x": 136, "y": 418},
+      "region": {"height": 720, "width": 1565, "x": 0, "y": 0},
+      "template": "skill_level_digit_6.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.9996850490570068, "x": 302, "y": 402},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"brightness": -20.0, "contrast": 0.7},
+      "pasted": {"height": 41, "width": 28, "x": 302, "y": 402},
+      "region": {"height": 81, "width": 68, "x": 282, "y": 382},
+      "template": "skill_level_digit_7.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.9102166891098022, "x": 705, "y": 394},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 41, "width": 28, "x": 705, "y": 394},
+      "region": {"height": 81, "width": 68, "x": 685, "y": 374},
+      "template": "skill_level_digit_8.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.14308179914951324, "x": 911, "y": 354},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 41, "width": 29, "x": 895, "y": 363},
+      "region": {"height": 71, "width": 39, "x": 909, "y": 348},
+      "template": "skill_level_digit_9.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 0.9999998807907104, "x": 1164, "y": 437},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 41, "width": 29, "x": 1164, "y": 437},
+      "region": {"height": 81, "width": 69, "x": 1144, "y": 417},
+      "template": "skill_level_digit_9_kr.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.08584189414978027, "x": 1416, "y": 382},
+      "further": [],
+      "kind": "noise",
+      "masked": false,
+      "params": {},
+      "pasted": null,
+      "region": {"height": 240, "width": 260, "x": 1300, "y": 240},
+      "template": "skill_level_digit_9_next.png",
+      "variant": "absent"
+    },
+    {
+      "best": {"score": 0.08672081679105759, "x": 106, "y": 603},
+      "further": [],
+      "kind": "noise",
+      "masked": false,
+      "params": {},
+      "pasted": null,
+      "region": {"height": 240, "width": 260, "x": 0, "y": 480},
+      "template": "skill_level_lock.png",
+      "variant": "absent"
+    }
+  ],
+  "frame": "frame_07",
+  "height": 720,
+  "method": "TM_CCOEFF_NORMED",
+  "seed": 1179078385279978,
+  "similarity": 0.8,
+  "source": "synthetic",
+  "width": 1565
+}

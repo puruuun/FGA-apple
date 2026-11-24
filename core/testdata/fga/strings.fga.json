@@ -1,0 +1,23 @@
+{
+  "autoskill_name": "Values stored as strings",
+  "autoskill_party": "4",
+  "command_start_servant": "2",
+  "command_start_card_count": "3",
+  "command_start_buster": "2",
+  "command_start_max_turns": "6",
+  "secondary_start_enabled": "true",
+  "tertiary_start_enabled": "false",
+  "tertiary_start_servant": "1",
+  "shuffle_cards_wave": "1",
+  "raid_delay_seconds": "5",
+  "add_raid_delay": "true",
+  "turn_limit_retreat_enabled": "true",
+  "turn_limit_retreat_turns": "12",
+  "turn_limit_retreat_streak_count": "7",
+  "support_np_min_level": "4",
+  "support_np_level_check": "true",
+  "support_pref_ce_mlb": "true",
+  "bond_result_track": "true",
+  "bond_result_stop_characters": "2,4",
+  "spam_x": "[{\"skills\":[{\"waves\":[1,2],\"spam\":\"Spam\",\"target\":\"Self\"},{},{}],\"np\":{\"waves\":[3],\"spam\":\"Spam\"}},{},{},{},{},{}]"
+}

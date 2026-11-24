@@ -1,0 +1,187 @@
+{
+  "cases": [
+    {
+      "best": {"score": 0.9991215467453003, "x": 218, "y": 93},
+      "further": [],
+      "kind": "local",
+      "masked": true,
+      "params": {"brightness": 20.0, "contrast": 1.15},
+      "pasted": {"height": 38, "width": 38, "x": 218, "y": 93},
+      "region": {"height": 78, "width": 78, "x": 198, "y": 73},
+      "template": "card_swap.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.9991215467453003, "x": 218, "y": 93},
+      "further": [],
+      "kind": "whole_frame",
+      "masked": true,
+      "params": {"brightness": 20.0, "contrast": 1.15},
+      "pasted": {"height": 38, "width": 38, "x": 218, "y": 93},
+      "region": {"height": 720, "width": 1565, "x": 0, "y": 0},
+      "template": "card_swap.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.9963078498840332, "x": 488, "y": 114},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"brightness": 20.0, "contrast": 1.3},
+      "pasted": {"height": 6, "width": 18, "x": 488, "y": 114},
+      "region": {"height": 46, "width": 58, "x": 468, "y": 94},
+      "template": "bond_ce_effect_np.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.968116283416748, "x": 651, "y": 165},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 35, "width": 73, "x": 651, "y": 165},
+      "region": {"height": 75, "width": 113, "x": 631, "y": 145},
+      "template": "bond_level_up_marker.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.12123917043209076, "x": 894, "y": 167},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 28, "width": 76, "x": 853, "y": 167},
+      "region": {"height": 58, "width": 86, "x": 891, "y": 152},
+      "template": "bond_max.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 1.0, "x": 853, "y": 167},
+      "further": [],
+      "kind": "whole_frame",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 28, "width": 76, "x": 853, "y": 167},
+      "region": {"height": 720, "width": 1565, "x": 0, "y": 0},
+      "template": "bond_max.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 1.0, "x": 1182, "y": 117},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 26, "width": 89, "x": 1182, "y": 117},
+      "region": {"height": 66, "width": 129, "x": 1162, "y": 97},
+      "template": "buster.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.9999794363975525, "x": 1442, "y": 65},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"brightness": -20.0, "contrast": 0.85},
+      "pasted": {"height": 62, "width": 33, "x": 1442, "y": 65},
+      "region": {"height": 102, "width": 73, "x": 1422, "y": 45},
+      "template": "cancel.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.93576580286026, "x": 99, "y": 392},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 42, "width": 46, "x": 99, "y": 392},
+      "region": {"height": 82, "width": 86, "x": 79, "y": 372},
+      "template": "ce_details.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.9357646703720093, "x": 99, "y": 392},
+      "further": [],
+      "kind": "whole_frame",
+      "masked": false,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 42, "width": 46, "x": 99, "y": 392},
+      "region": {"height": 720, "width": 1565, "x": 0, "y": 0},
+      "template": "ce_details.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.15127474069595337, "x": 431, "y": 241},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 36, "width": 109, "x": 376, "y": 241},
+      "region": {"height": 66, "width": 119, "x": 430, "y": 226},
+      "template": "close.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 0.9999996423721313, "x": 665, "y": 257},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 24, "width": 40, "x": 665, "y": 257},
+      "region": {"height": 64, "width": 80, "x": 645, "y": 237},
+      "template": "command_spell.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.9911203384399414, "x": 783, "y": 258},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"brightness": 20.0, "contrast": 1.15},
+      "pasted": {"height": 11, "width": 61, "x": 783, "y": 258},
+      "region": {"height": 51, "width": 101, "x": 763, "y": 238},
+      "template": "drop_ce.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.8477015495300293, "x": 1119, "y": 381},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 9, "width": 24, "x": 1119, "y": 381},
+      "region": {"height": 49, "width": 64, "x": 1099, "y": 361},
+      "template": "drop_ce_star.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.10184136778116226, "x": 1415, "y": 429},
+      "further": [],
+      "kind": "noise",
+      "masked": false,
+      "params": {},
+      "pasted": null,
+      "region": {"height": 240, "width": 260, "x": 1300, "y": 240},
+      "template": "drop_scrollbar.png",
+      "variant": "absent"
+    },
+    {
+      "best": {"score": 0.011701533570885658, "x": 64, "y": 504},
+      "further": [],
+      "kind": "noise",
+      "masked": false,
+      "params": {},
+      "pasted": null,
+      "region": {"height": 240, "width": 260, "x": 0, "y": 480},
+      "template": "empty_enhance.png",
+      "variant": "absent"
+    }
+  ],
+  "frame": "frame_01",
+  "height": 720,
+  "method": "TM_CCOEFF_NORMED",
+  "seed": 1179078385232464,
+  "similarity": 0.8,
+  "source": "synthetic",
+  "width": 1565
+}

@@ -88,6 +88,7 @@ class HostPreferences(root: JsonObject) : IPreferences {
         KvStore(root[name]?.jsonObject ?: JsonObject(emptyMap()))
 
     private val kv = section(root, "global")
+    val battleConfigRaw: JsonObject = root["battleConfig"]?.jsonObject ?: JsonObject(emptyMap())
     private val battleConfig = HostBattleConfig(BATTLE_CONFIG_ID, section(root, "battleConfig"))
 
     override var gameServer: GameServer =
