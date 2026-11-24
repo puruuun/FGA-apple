@@ -1,0 +1,132 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      host: ${{ steps.filter.outputs.host }}
+      firmware: ${{ steps.filter.outputs.firmware }}
+      python: ${{ steps.filter.outputs.python }}
+      ios: ${{ steps.filter.outputs.ios }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            host:
+              - 'host/**'
+              - 'fga'
+              - '.gitmodules'
+              - '*.gradle.kts'
+              - 'gradle/**'
+              - 'gradle.properties'
+              - '.github/workflows/ci.yml'
+            firmware:
+              - 'firmware/**'
+              - '.github/workflows/ci.yml'
+            python:
+              - '**/*.py'
+              - '.github/workflows/ci.yml'
+            ios:
+              - 'ios/**'
+              - '.github/workflows/ci.yml'
+
+  hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/ci/hygiene.py
+
+  host:
+    needs: changes
+    if: needs.changes.outputs.host == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: gradle/actions/setup-gradle@v4
+      - run: bash ./gradlew :host:compileKotlin --console=plain
+
+  firmware:
+    needs: changes
+    if: needs.changes.outputs.firmware == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/cache@v4
+        with:
+          path: ~/.platformio
+          key: platformio-${{ hashFiles('firmware/platformio.ini') }}
+      - run: pip install platformio
+      - run: pio run -d firmware
+
+  python:
+    needs: changes
+    if: needs.changes.outputs.python == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m compileall -q tools mac-capture
+
+  ios:
+    needs: changes
+    if: needs.changes.outputs.ios == 'true'
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: xcode
+        run: |
+          ls -d /Applications/Xcode*.app
+          app=$(ls -d /Applications/Xcode_27*.app 2>/dev/null | sort -V | tail -1)
+          if [ -z "$app" ]; then
+            echo "::notice::No Xcode 27 on this runner, so the probe is not built here. It needs the iOS 27 SDK."
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          else
+            sudo xcode-select -s "$app"
+            xcodebuild -version
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.xcode.outputs.found == 'true'
+        run: >
+          xcodebuild -project ios/FGAProbe/FGAProbe.xcodeproj -scheme FGAProbe
+          -configuration Debug -destination 'generic/platform=iOS'
+          CODE_SIGNING_ALLOWED=NO build
+
+  gate:
+    if: always()
+    needs: [hygiene, host, firmware, python]
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          results='${{ join(needs.*.result, ' ') }}'
+          echo "$results"
+          for r in $results; do
+            if [ "$r" != success ] && [ "$r" != skipped ]; then exit 1; fi
+          done
