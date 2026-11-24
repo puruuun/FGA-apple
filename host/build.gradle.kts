@@ -30,3 +30,33 @@ application {
 tasks.named<JavaExec>("run") {
     workingDir = rootDir
 }
+
+dependencies {
+    testImplementation(platform(libs.junit.bom))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+
+tasks.compileTestKotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+    }
+}
+
+tasks.compileTestJava {
+    sourceCompatibility = JavaVersion.VERSION_17.toString()
+    targetCompatibility = JavaVersion.VERSION_17.toString()
+    options.release.set(17)
+}
+
+listOf(configurations.testCompileClasspath, configurations.testRuntimeClasspath).forEach { config ->
+    config.configure {
+        attributes {
+            attribute(org.gradle.api.attributes.java.TargetJvmVersion.TARGET_JVM_VERSION_ATTRIBUTE, 17)
+        }
+    }
+}

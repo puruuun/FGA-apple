@@ -19,19 +19,23 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import javax.inject.Inject
 
-class ConsoleMessages @Inject constructor() : IScriptMessages {
-    private fun describe(item: Any): String {
-        val fields = item.javaClass.declaredFields
-            .filter { !Modifier.isStatic(it.modifiers) }
-            .joinToString(", ") { f ->
-                f.isAccessible = true
-                "${f.name}=${runCatching { f.get(item) }.getOrNull()}"
-            }
-        return item.javaClass.simpleName + if (fields.isEmpty()) "" else "($fields)"
-    }
+fun describeScriptItem(item: Any): String {
+    val fields = item.javaClass.declaredFields
+        .filter { !Modifier.isStatic(it.modifiers) }
+        .joinToString(", ") { f ->
+            f.isAccessible = true
+            "${f.name}=${runCatching { f.get(item) }.getOrNull()}"
+        }
+    return item.javaClass.simpleName + if (fields.isEmpty()) "" else "($fields)"
+}
 
-    override fun notify(action: ScriptNotify) = println("[notify] ${describe(action)}")
-    override fun log(item: ScriptLog) = println("[log] ${describe(item)}")
+fun notifyLine(action: ScriptNotify) = "[notify] ${describeScriptItem(action)}"
+
+fun logLine(item: ScriptLog) = "[log] ${describeScriptItem(item)}"
+
+class ConsoleMessages @Inject constructor() : IScriptMessages {
+    override fun notify(action: ScriptNotify) = println(notifyLine(action))
+    override fun log(item: ScriptLog) = println(logLine(item))
 }
 
 class UnsupportedOcr @Inject constructor() : OcrService {
