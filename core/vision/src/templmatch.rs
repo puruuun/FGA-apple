@@ -27,13 +27,16 @@ fn result_size(image: &GrayImage, templ: &GrayImage) -> (usize, usize) {
 
 const PARALLEL_WORK: usize = 1 << 22;
 
-fn by_rows<F>(columns: usize, rows: usize, work_per_row: usize, fill: F) -> Vec<u64>
+pub(crate) fn available_threads() -> usize {
+    std::thread::available_parallelism().map_or(1, |n| n.get())
+}
+
+fn by_rows<F>(columns: usize, rows: usize, work_per_row: usize, threads: usize, fill: F) -> Vec<u64>
 where
     F: Fn(usize, &mut [u64]) + Sync,
 {
     let mut out = vec![0u64; columns * rows];
     let columns = columns.max(1);
-    let threads = std::thread::available_parallelism().map_or(1, |n| n.get());
     let work = work_per_row.saturating_mul(rows);
     if threads < 2 || rows < 2 || work < PARALLEL_WORK {
         for (y, out_row) in out.chunks_mut(columns).enumerate() {
@@ -62,18 +65,25 @@ fn cross_corr(
     width: usize,
     columns: usize,
     rows: usize,
+    threads: usize,
 ) -> Vec<u64> {
-    by_rows(columns, rows, columns * kernel.len(), |y, out_row| {
-        for (r, kernel_row) in kernel.chunks(width.max(1)).enumerate() {
-            let start = (y + r) * image_width;
-            let image_row = image.get(start..start + image_width).unwrap_or(&[]);
-            for (x, cell) in out_row.iter_mut().enumerate() {
-                if let Some(window) = image_row.get(x..x + width) {
-                    *cell += dot(window, kernel_row);
+    by_rows(
+        columns,
+        rows,
+        columns * kernel.len(),
+        threads,
+        |y, out_row| {
+            for (r, kernel_row) in kernel.chunks(width.max(1)).enumerate() {
+                let start = (y + r) * image_width;
+                let image_row = image.get(start..start + image_width).unwrap_or(&[]);
+                for (x, cell) in out_row.iter_mut().enumerate() {
+                    if let Some(window) = image_row.get(x..x + width) {
+                        *cell += dot(window, kernel_row);
+                    }
                 }
             }
-        }
-    })
+        },
+    )
 }
 
 fn kept_runs(keep: &[u8], width: usize) -> Vec<(usize, usize, usize)> {
@@ -100,23 +110,30 @@ fn run_sums(
     runs: &[(usize, usize, usize)],
     columns: usize,
     rows: usize,
+    threads: usize,
 ) -> Vec<u64> {
-    by_rows(columns, rows, columns * runs.len(), |y, out_row| {
-        for &(r, start, end) in runs {
-            let base = (y + r) * stride;
-            let Some(row) = prefix.get(base..base + stride) else {
-                continue;
-            };
-            for (cell, (high, low)) in out_row.iter_mut().zip(
-                row.get(end..)
-                    .unwrap_or(&[])
-                    .iter()
-                    .zip(row.get(start..).unwrap_or(&[])),
-            ) {
-                *cell += high - low;
+    by_rows(
+        columns,
+        rows,
+        columns * runs.len(),
+        threads,
+        |y, out_row| {
+            for &(r, start, end) in runs {
+                let base = (y + r) * stride;
+                let Some(row) = prefix.get(base..base + stride) else {
+                    continue;
+                };
+                for (cell, (high, low)) in out_row.iter_mut().zip(
+                    row.get(end..)
+                        .unwrap_or(&[])
+                        .iter()
+                        .zip(row.get(start..).unwrap_or(&[])),
+                ) {
+                    *cell += high - low;
+                }
             }
-        }
-    })
+        },
+    )
 }
 
 fn row_prefix(image: &GrayImage, value: impl Fn(u8) -> u64) -> Vec<u64> {
@@ -166,7 +183,7 @@ fn window_sums(image: &GrayImage, width: usize, height: usize) -> (Vec<u64>, Vec
     (sums, squares)
 }
 
-pub(crate) fn ccoeff_normed(image: &GrayImage, templ: &GrayImage) -> ScoreMap {
+pub(crate) fn ccoeff_normed(image: &GrayImage, templ: &GrayImage, threads: usize) -> ScoreMap {
     let (columns, rows) = result_size(image, templ);
     let area = templ.pixels().len() as f64;
     let inv_area = 1.0 / area;
@@ -194,6 +211,7 @@ pub(crate) fn ccoeff_normed(image: &GrayImage, templ: &GrayImage) -> ScoreMap {
         templ.width(),
         columns,
         rows,
+        threads,
     );
     let (sums, squares) = window_sums(image, templ.width(), templ.height());
 
@@ -206,11 +224,7 @@ pub(crate) fn ccoeff_normed(image: &GrayImage, templ: &GrayImage) -> ScoreMap {
             let wnd_mean2 = sum * sum * inv_area;
             let mut num = corr as f64 - sum * templ_mean;
             let diff2 = (wnd_sum2 - wnd_mean2).max(0.0);
-            let t = if diff2 <= (10.0 * f64::from(f32::EPSILON) * wnd_sum2).min(0.5) {
-                0.0
-            } else {
-                diff2.sqrt() * templ_norm
-            };
+            let t = diff2.sqrt() * templ_norm;
             if num.abs() < t {
                 num /= t;
             } else if num.abs() < t * 1.125 {
@@ -228,6 +242,7 @@ pub(crate) fn ccoeff_normed_masked(
     image: &GrayImage,
     templ: &GrayImage,
     mask: &GrayImage,
+    threads: usize,
 ) -> ScoreMap {
     let (columns, rows) = result_size(image, templ);
     let keep: Vec<u8> = mask.pixels().iter().map(|&m| u8::from(m > 0)).collect();
@@ -255,16 +270,25 @@ pub(crate) fn ccoeff_normed_masked(
         width,
         columns,
         rows,
+        threads,
     );
     let runs = kept_runs(&keep, width);
     let stride = image.width() + 1;
-    let sums = run_sums(&row_prefix(image, u64::from), stride, &runs, columns, rows);
+    let sums = run_sums(
+        &row_prefix(image, u64::from),
+        stride,
+        &runs,
+        columns,
+        rows,
+        threads,
+    );
     let square_sums = run_sums(
         &row_prefix(image, |p| u64::from(p) * u64::from(p)),
         stride,
         &runs,
         columns,
         rows,
+        threads,
     );
     let values = correlation
         .iter()
@@ -279,4 +303,62 @@ pub(crate) fn ccoeff_normed_masked(
         })
         .collect();
     ScoreMap::new(columns, rows, values)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn noise(seed: u32, width: usize, height: usize) -> Vec<u8> {
+        let mut state = seed;
+        (0..width * height)
+            .map(|_| {
+                state = state.wrapping_mul(1103515245).wrapping_add(12345) & 0x7fff_ffff;
+                (state >> 16) as u8
+            })
+            .collect()
+    }
+
+    fn pasted_bottom_right() -> (GrayImage, GrayImage, GrayImage) {
+        let (width, height, side) = (220, 130, 40);
+        let templ = noise(5, side, side);
+        let mut pixels = noise(9, width, height);
+        for r in 0..side {
+            let start = (height - side + r) * width + width - side;
+            pixels[start..start + side].copy_from_slice(&templ[r * side..(r + 1) * side]);
+        }
+        let mask = (0..side * side)
+            .map(|i| {
+                if (i / side + i % side) % 7 == 0 {
+                    0
+                } else {
+                    255
+                }
+            })
+            .collect();
+        (
+            GrayImage::new(width, height, pixels).unwrap(),
+            GrayImage::new(side, side, templ).unwrap(),
+            GrayImage::new(side, side, mask).unwrap(),
+        )
+    }
+
+    #[test]
+    fn threaded_maps_equal_the_sequential_map_to_the_last_row_and_column() {
+        let (image, templ, mask) = pasted_bottom_right();
+        let (columns, rows) = result_size(&image, &templ);
+        assert!(columns * templ.pixels().len() * rows > PARALLEL_WORK);
+        let last = Some((1.0, columns - 1, rows - 1));
+        let sequential = ccoeff_normed(&image, &templ, 1);
+        assert_eq!(sequential.max_loc(), last);
+        let sequential_masked = ccoeff_normed_masked(&image, &templ, &mask, 1);
+        assert_eq!(sequential_masked.max_loc(), last);
+        for threads in [2, 3, 4, 7] {
+            assert_eq!(ccoeff_normed(&image, &templ, threads), sequential);
+            assert_eq!(
+                ccoeff_normed_masked(&image, &templ, &mask, threads),
+                sequential_masked
+            );
+        }
+    }
 }

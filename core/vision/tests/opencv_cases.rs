@@ -344,3 +344,56 @@ fn several_separated_matches_come_out_in_opencv_order() {
     assert_eq!(image.exists(&CvPattern::new(several().1), 0.97), Ok(true));
     assert_eq!(image.exists(&CvPattern::new(several().1), 1.01), Ok(false));
 }
+
+fn near_flat(seed: u32, width: usize, height: usize, base: u8, every: u8) -> GrayImage {
+    let pixels = noise(seed, width, height)
+        .into_iter()
+        .map(|z| if z % every == 0 { base + 1 } else { base })
+        .collect();
+    gray(width, height, pixels)
+}
+
+fn pearson(image: &GrayImage, templ: &GrayImage, x: usize, y: usize) -> f64 {
+    let n = templ.pixels().len() as i128;
+    let (mut si, mut st, mut sii, mut stt, mut sit) = (0i128, 0i128, 0i128, 0i128, 0i128);
+    for ty in 0..templ.height() {
+        for tx in 0..templ.width() {
+            let i = i128::from(image.pixels()[(y + ty) * image.width() + x + tx]);
+            let t = i128::from(templ.pixels()[ty * templ.width() + tx]);
+            si += i;
+            st += t;
+            sii += i * i;
+            stt += t * t;
+            sit += i * t;
+        }
+    }
+    let image_spread = n * sii - si * si;
+    if image_spread == 0 {
+        return 0.0;
+    }
+    let templ_spread = n * stt - st * st;
+    (n * sit - si * st) as f64 / ((image_spread as f64).sqrt() * (templ_spread as f64).sqrt())
+}
+
+#[test]
+fn near_flat_unmasked_windows_score_the_exact_correlation() {
+    let image = near_flat(11, 60, 30, 200, 23);
+    let templ = near_flat(61, 12, 12, 90, 5);
+    let actual = map(
+        &CvPattern::new(image.clone()),
+        &CvPattern::new(templ.clone()),
+    );
+    let mut largest: f64 = 0.0;
+    for y in 0..actual.height() {
+        for x in 0..actual.width() {
+            let expected = pearson(&image, &templ, x, y);
+            let got = f64::from(actual.get(x, y).unwrap());
+            assert!(
+                (got - expected).abs() <= 1e-6,
+                "({x}, {y}): {got} expected {expected}"
+            );
+            largest = largest.max(expected.abs());
+        }
+    }
+    assert!(largest > 0.1);
+}

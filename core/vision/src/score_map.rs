@@ -117,4 +117,21 @@ mod tests {
         map.sanitize_masked_result();
         assert_eq!(map.values(), &[0.0, 0.0, 0.0, 0.0, 1.01, -1.01, 0.5]);
     }
+
+    #[test]
+    fn get_outside_the_row_is_none() {
+        let map = ScoreMap::new(3, 2, vec![0.1, 0.2, 0.3, 0.4, 0.5, 0.6]);
+        assert_eq!(map.get(2, 0), Some(0.3));
+        assert_eq!(map.get(3, 0), None);
+        assert_eq!(map.get(0, 2), None);
+    }
+
+    #[test]
+    fn flood_fill_reaches_all_four_edges() {
+        let mut values = vec![0.9_f32; 5 * 4];
+        values[7] = 1.0;
+        let mut map = ScoreMap::new(5, 4, values);
+        map.flood_fill(2, 1, 0.3, 0.0);
+        assert_eq!(map.values(), &[0.0; 20]);
+    }
 }

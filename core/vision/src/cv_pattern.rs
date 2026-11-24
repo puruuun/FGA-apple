@@ -1,6 +1,6 @@
 use crate::gray_image::GrayImage;
 use crate::score_map::ScoreMap;
-use crate::templmatch::{ccoeff_normed, ccoeff_normed_masked};
+use crate::templmatch::{available_threads, ccoeff_normed, ccoeff_normed_masked};
 use crate::vision_error::VisionError;
 
 const FLOOD_FILL_MAX_DIFF: f32 = 0.3;
@@ -67,11 +67,12 @@ impl CvPattern {
         }
         let map = match &template.mask {
             Some(mask) => {
-                let mut map = ccoeff_normed_masked(&self.image, &template.image, mask);
+                let mut map =
+                    ccoeff_normed_masked(&self.image, &template.image, mask, available_threads());
                 map.sanitize_masked_result();
                 map
             }
-            None => ccoeff_normed(&self.image, &template.image),
+            None => ccoeff_normed(&self.image, &template.image, available_threads()),
         };
         Ok(Some(map))
     }
@@ -180,6 +181,31 @@ mod tests {
             (4, 4, 0.8500000238418579),
         ];
         let actual = found(ScoreMap::new(7, 5, values));
+        assert_eq!(actual.len(), expected.len(), "{actual:?}");
+        for (a, e) in actual.iter().zip(&expected) {
+            assert_eq!((a.0, a.1), (e.0, e.1), "{actual:?}");
+            assert!((a.2 - e.2).abs() <= 0.01, "{actual:?}");
+        }
+    }
+
+    #[test]
+    fn flood_fill_range_is_point_three_inclusive() {
+        let mut values = vec![0.0_f32; 4 * 5];
+        values[..3].copy_from_slice(&[1.0, 0.695, 0.9]);
+        values[8..11].copy_from_slice(&[1.0, 0.7, 0.85]);
+        values[16..19].copy_from_slice(&[1.0, 0.69999, 0.88]);
+        let actual: Vec<(i32, i32, f64)> =
+            FindMatches::over(Some(ScoreMap::new(4, 5, values)), 0.8, 1, 1)
+                .take(10)
+                .map(|m| (m.x, m.y, m.score))
+                .collect();
+        let expected = [
+            (0, 0, 1.0),
+            (0, 2, 1.0),
+            (0, 4, 1.0),
+            (2, 0, 0.8999999761581421),
+            (2, 4, 0.8799999952316284),
+        ];
         assert_eq!(actual.len(), expected.len(), "{actual:?}");
         for (a, e) in actual.iter().zip(&expected) {
             assert_eq!((a.0, a.1), (e.0, e.1), "{actual:?}");

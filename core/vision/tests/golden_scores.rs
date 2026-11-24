@@ -140,27 +140,31 @@ fn every_golden_case_agrees_with_opencv() {
                 ));
             }
 
-            let further: Vec<(i32, i32, f64)> = cropped
+            let yielded: Vec<(i32, i32, f64)> = cropped
                 .find_matches(&pattern, SIMILARITY)
                 .unwrap()
                 .take(FURTHER_MATCHES + 1)
-                .skip(1)
                 .map(|m| absolute(&m, region))
                 .collect();
-            if further.len() != case.further.len() {
+            let expected: Vec<&Hit> = if case.best.score >= SIMILARITY {
+                std::iter::once(&case.best).chain(&case.further).collect()
+            } else {
+                Vec::new()
+            };
+            if yielded.len() != expected.len() {
                 failures.push(format!(
-                    "{label}: further {further:?} expected {} entries",
-                    case.further.len()
+                    "{label}: yielded {yielded:?} expected {} entries",
+                    expected.len()
                 ));
             }
-            for (index, (found, expected)) in further.iter().zip(&case.further).enumerate() {
+            for (index, (found, expected)) in yielded.iter().zip(&expected).enumerate() {
                 let diff = (found.2 - expected.score).abs();
                 if diff > largest.0 {
-                    largest = (diff, format!("{label}: further {index}"));
+                    largest = (diff, format!("{label}: yielded {index}"));
                 }
                 if diff > TOLERANCE || (found.0, found.1) != (expected.x, expected.y) {
                     failures.push(format!(
-                        "{label}: further {index} {found:?} expected ({}, {}) {}",
+                        "{label}: yielded {index} {found:?} expected ({}, {}) {}",
                         expected.x, expected.y, expected.score
                     ));
                 }
