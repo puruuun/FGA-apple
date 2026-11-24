@@ -3,6 +3,105 @@
 use vision::{CvPattern, GrayImage, ScoreMap};
 
 const TOLERANCE: f64 = 0.01;
+
+const FLAT_BESIDE_TEXTURE: [[f64; 14]; 6] = [
+    [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.1782856583595276,
+        0.09892870485782623,
+        0.2572915852069855,
+        0.21187911927700043,
+        -0.030991623178124428,
+        0.007454918697476387,
+        0.033730313181877136,
+        0.004519108682870865,
+        0.30158376693725586,
+        -0.15747246146202087,
+    ],
+    [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.14876797795295715,
+        0.17123062908649445,
+        -0.08441118150949478,
+        -0.036742158234119415,
+        0.3209978938102722,
+        0.11932360380887985,
+        0.05024413391947746,
+        0.11808639764785767,
+        -0.016844164580106735,
+        -0.0910797193646431,
+    ],
+    [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.08274655044078827,
+        -0.17322520911693573,
+        0.2612544596195221,
+        0.12502728402614594,
+        0.07448668032884598,
+        0.012404058128595352,
+        -0.16930752992630005,
+        -0.006569625809788704,
+        0.04875073581933975,
+        0.12537744641304016,
+    ],
+    [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.04092642664909363,
+        0.07939982414245605,
+        0.16075332462787628,
+        0.0828227624297142,
+        0.05183935537934303,
+        0.1866106539964676,
+        0.054034192115068436,
+        0.011593527160584927,
+        -0.031634002923965454,
+        0.03340383991599083,
+    ],
+    [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.00019465648801997304,
+        -0.031803615391254425,
+        0.03222721442580223,
+        0.1926259547472,
+        0.05899786204099655,
+        0.1926330029964447,
+        0.025071803480386734,
+        -0.03204994648694992,
+        0.36893007159233093,
+        -0.12923210859298706,
+    ],
+    [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.18033087253570557,
+        0.19663245975971222,
+        0.19883425533771515,
+        0.09608309715986252,
+        0.18440870940685272,
+        0.049598366022109985,
+        0.11255775392055511,
+        -0.1646054983139038,
+        -0.15750789642333984,
+        -0.11042826622724533,
+    ],
+];
 const PLAIN: [[f64; 6]; 5] = [
     [
         -0.127741277217865,
@@ -396,4 +495,78 @@ fn near_flat_unmasked_windows_score_the_exact_correlation() {
         }
     }
     assert!(largest > 0.1);
+}
+
+#[test]
+fn constant_templates_over_constant_images_match_opencv() {
+    let side = 40;
+    let cases: [(usize, usize, u8, u8, f32); 13] = [
+        (7, 7, 200, 200, 0.0),
+        (7, 7, 200, 0, 0.0),
+        (7, 7, 200, 255, 0.0),
+        (7, 7, 254, 254, 0.0),
+        (23, 11, 254, 254, 0.0),
+        (23, 11, 254, 255, 0.0),
+        (11, 23, 2, 2, 0.0),
+        (23, 11, 2, 2, 0.0),
+        (7, 7, 13, 255, 0.0),
+        (7, 7, 1, 1, 1.0),
+        (30, 30, 1, 1, 1.0),
+        (1, 1, 1, 1, 1.0),
+        (12, 12, 77, 0, 1.0),
+    ];
+    for (width, height, templ_value, image_value, expected) in cases {
+        let image = CvPattern::new(gray(side, side, vec![image_value; side * side]));
+        let templ = CvPattern::new(gray(width, height, vec![templ_value; width * height]));
+        let actual = map(&image, &templ);
+        assert_eq!(
+            (actual.width(), actual.height()),
+            (side + 1 - width, side + 1 - height)
+        );
+        assert!(
+            actual
+                .values()
+                .iter()
+                .all(|&v| (f64::from(v) - f64::from(expected)).abs() <= TOLERANCE),
+            "{width}x{height} of {templ_value} over {image_value}: {:?}",
+            actual.max_loc()
+        );
+    }
+}
+
+#[test]
+fn flat_windows_beside_texture_score_zero_as_in_opencv() {
+    let mut pixels = noise(21, 20, 12);
+    for row in pixels.chunks_mut(20) {
+        row[..10].fill(200);
+    }
+    let image = CvPattern::new(gray(20, 12, pixels));
+    let templ = CvPattern::new(gray(7, 7, noise(22, 7, 7)));
+    let actual = map(&image, &templ);
+    assert_map(&actual, &FLAT_BESIDE_TEXTURE);
+    for y in 0..actual.height() {
+        for x in 0..4 {
+            assert_eq!(actual.get(x, y), Some(0.0), "({x}, {y})");
+        }
+    }
+}
+
+#[test]
+fn a_constant_template_scores_zero_over_flat_and_textured_windows_as_in_opencv() {
+    let mut pixels = noise(21, 40, 30);
+    for row in pixels.chunks_mut(40) {
+        row[..20].fill(200);
+    }
+    let image = CvPattern::new(gray(40, 30, pixels));
+    let templ = CvPattern::new(gray(7, 7, vec![200; 49]));
+    let actual = map(&image, &templ);
+    assert_eq!((actual.width(), actual.height()), (34, 24));
+    assert!(
+        actual
+            .values()
+            .iter()
+            .all(|&v| f64::from(v).abs() <= TOLERANCE),
+        "{:?}",
+        actual.max_loc()
+    );
 }

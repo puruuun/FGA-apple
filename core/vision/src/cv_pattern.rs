@@ -214,6 +214,16 @@ mod tests {
     }
 
     #[test]
+    fn a_fill_does_not_spill_into_the_next_row() {
+        let map = ScoreMap::new(3, 2, vec![0.0, 0.0, 1.0, 0.9, 0.0, 0.0]);
+        let actual: Vec<(i32, i32, f64)> = FindMatches::over(Some(map), 0.8, 1, 1)
+            .take(10)
+            .map(|m| (m.x, m.y, m.score))
+            .collect();
+        assert_eq!(actual, [(2, 0, 1.0), (0, 1, f64::from(0.9_f32))]);
+    }
+
+    #[test]
     fn stops_at_the_first_maximum_below_similarity() {
         let map = ScoreMap::new(3, 1, vec![0.9, 0.0, 0.79]);
         let mut matches = FindMatches::over(Some(map), 0.8, 2, 3);

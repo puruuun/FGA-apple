@@ -224,7 +224,11 @@ pub(crate) fn ccoeff_normed(image: &GrayImage, templ: &GrayImage, threads: usize
             let wnd_mean2 = sum * sum * inv_area;
             let mut num = corr as f64 - sum * templ_mean;
             let diff2 = (wnd_sum2 - wnd_mean2).max(0.0);
-            let t = diff2.sqrt() * templ_norm;
+            let t = if diff2 <= (10.0 * f64::from(f32::EPSILON) * wnd_sum2).min(0.5) {
+                0.0
+            } else {
+                diff2.sqrt() * templ_norm
+            };
             if num.abs() < t {
                 num /= t;
             } else if num.abs() < t * 1.125 {
@@ -320,7 +324,7 @@ mod tests {
     }
 
     fn pasted_bottom_right() -> (GrayImage, GrayImage, GrayImage) {
-        let (width, height, side) = (220, 130, 40);
+        let (width, height, side) = (320, 200, 40);
         let templ = noise(5, side, side);
         let mut pixels = noise(9, width, height);
         for r in 0..side {
@@ -347,7 +351,10 @@ mod tests {
     fn threaded_maps_equal_the_sequential_map_to_the_last_row_and_column() {
         let (image, templ, mask) = pasted_bottom_right();
         let (columns, rows) = result_size(&image, &templ);
-        assert!(columns * templ.pixels().len() * rows > PARALLEL_WORK);
+        let keep: Vec<u8> = mask.pixels().iter().map(|&m| u8::from(m > 0)).collect();
+        let runs = kept_runs(&keep, templ.width()).len();
+        assert!(columns * templ.pixels().len() * rows > 2 * PARALLEL_WORK);
+        assert!(columns * runs * rows > 2 * PARALLEL_WORK);
         let last = Some((1.0, columns - 1, rows - 1));
         let sequential = ccoeff_normed(&image, &templ, 1);
         assert_eq!(sequential.max_loc(), last);
