@@ -1,7 +1,61 @@
 {
-  "errors": ["battle.master.locate(Skill.Master.A)", "battle.master.locate(Skill.Master.B)", "battle.master.locate(Skill.Master.C)", "battle.master.masterSkillOpenClick", "battle.master.stageCountRegion"],
+  "errors": [],
   "gameArea": {"height": 1179, "width": 2556, "x": 0, "y": 0},
   "isWide": true,
+  "masterOutcomes": {
+    "buttonFound": {
+      "defaultOffsetLogged": false,
+      "values": {
+        "battle.master.locate(Skill.Master.A)": {
+          "screen": {"x": 1853, "y": 508},
+          "script": {"x": 2263, "y": 620}
+        },
+        "battle.master.locate(Skill.Master.B)": {
+          "screen": {"x": 2000, "y": 508},
+          "script": {"x": 2443, "y": 620}
+        },
+        "battle.master.locate(Skill.Master.C)": {
+          "screen": {"x": 2131, "y": 508},
+          "script": {"x": 2603, "y": 620}
+        },
+        "battle.master.masterSkillOpenClick": {
+          "screen": {"x": 2313, "y": 524},
+          "script": {"x": 2825, "y": 640}
+        },
+        "battle.master.stageCountRegion": {
+          "image": {"height": 27, "width": 17, "x": 1127, "y": 12},
+          "screen": {"height": 43, "width": 27, "x": 1845, "y": 19},
+          "script": {"height": 53, "width": 33, "x": 2254, "y": 23}
+        }
+      }
+    },
+    "buttonNotFound": {
+      "defaultOffsetLogged": true,
+      "values": {
+        "battle.master.locate(Skill.Master.A)": {
+          "screen": {"x": 1852, "y": 508},
+          "script": {"x": 2262, "y": 620}
+        },
+        "battle.master.locate(Skill.Master.B)": {
+          "screen": {"x": 1999, "y": 508},
+          "script": {"x": 2442, "y": 620}
+        },
+        "battle.master.locate(Skill.Master.C)": {
+          "screen": {"x": 2130, "y": 508},
+          "script": {"x": 2602, "y": 620}
+        },
+        "battle.master.masterSkillOpenClick": {
+          "screen": {"x": 2312, "y": 524},
+          "script": {"x": 2824, "y": 640}
+        },
+        "battle.master.stageCountRegion": {
+          "image": {"height": 27, "width": 17, "x": 1127, "y": 12},
+          "screen": {"height": 43, "width": 27, "x": 1845, "y": 19},
+          "script": {"height": 53, "width": 33, "x": 2253, "y": 23}
+        }
+      }
+    }
+  },
   "notEnumerated": ["bond.reachedLevel(arrow: Region)", "sibling.FpSellLocations.card(column: Int, top: Int)", "sibling.FpSellLocations.frameStrip(card: Region, offset: Int, band: Int)", "sibling.FpSellLocations.lock(card: Region)", "sibling.FpSellLocations.presence(card: Region)", "sibling.FpSellLocations.swipeEnd(distance: Int)", "sibling.GameAreaCalibrationLocations.menuSearch(scriptWidth: Int, wide: Boolean)", "sibling.QuestPanelLocations.slot(region: Region, slot: Int)", "sibling.SupportNpLayout.nameRegion(bounds: Region)", "sibling.SupportNpLayout.noblePhantasmBand(bounds: Region)", "sibling.SupportNpLayout.noblePhantasmCrop(bounds: Region, grand: Boolean, levelPrefix: Region)", "sibling.SupportNpLayout.suffixRegion(prefix: Region, digitWidth: Int)", "sibling.SupportScoreLayout.grandLastDigit(templateWidth: Int, templateHeight: Int)", "sibling.SupportScoreLayout.matchedPixels(match: Region, templateWidth: Int, templateHeight: Int, pixels: Region)", "sibling.SupportScoreLayout.numberRegion(bounds: Region)", "sibling.SupportSkillLayout.levelRegions(bounds: Region, append: Boolean)"],
   "omittedInvalidArguments": ["sibling.SkillLevelLocations.panelLevel(SkillLevelMode.Skill, 3)", "sibling.SkillLevelLocations.panelLevel(SkillLevelMode.Skill, 4)", "sibling.SkillLevelLocations.slotClick(SkillLevelMode.Skill, 3)", "sibling.SkillLevelLocations.slotClick(SkillLevelMode.Skill, 4)", "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Skill, 3)", "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Skill, 4)", "sibling.SkillLevelLocations.slotLock(SkillLevelMode.Skill, 3)", "sibling.SkillLevelLocations.slotLock(SkillLevelMode.Skill, 4)"],
   "screen": {"height": 1179, "width": 2556},
@@ -435,11 +489,27 @@
       "screen": {"x": 1278, "y": 573},
       "script": {"x": 1561, "y": 700}
     },
-    "battle.master.locate(Skill.Master.A)": {"error": "java.net.ConnectException"},
-    "battle.master.locate(Skill.Master.B)": {"error": "java.net.ConnectException"},
-    "battle.master.locate(Skill.Master.C)": {"error": "java.net.ConnectException"},
-    "battle.master.masterSkillOpenClick": {"error": "java.net.ConnectException"},
-    "battle.master.stageCountRegion": {"error": "java.net.ConnectException"},
+    "battle.master.locate(Skill.Master.A)": {
+      "screen": {"x": 1852, "y": 508},
+      "script": {"x": 2262, "y": 620}
+    },
+    "battle.master.locate(Skill.Master.B)": {
+      "screen": {"x": 1999, "y": 508},
+      "script": {"x": 2442, "y": 620}
+    },
+    "battle.master.locate(Skill.Master.C)": {
+      "screen": {"x": 2130, "y": 508},
+      "script": {"x": 2602, "y": 620}
+    },
+    "battle.master.masterSkillOpenClick": {
+      "screen": {"x": 2312, "y": 524},
+      "script": {"x": 2824, "y": 640}
+    },
+    "battle.master.stageCountRegion": {
+      "image": {"height": 27, "width": 17, "x": 1127, "y": 12},
+      "screen": {"height": 43, "width": 27, "x": 1845, "y": 19},
+      "script": {"height": 53, "width": 33, "x": 2253, "y": 23}
+    },
     "battle.orderChangeOkClick": {
       "screen": {"x": 1278, "y": 1032},
       "script": {"x": 1561, "y": 1260}
