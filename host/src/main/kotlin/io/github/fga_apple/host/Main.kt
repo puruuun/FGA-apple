@@ -5,7 +5,13 @@ import io.github.fate_grand_automata.scripts.entrypoints.AutoBattle
 import io.github.fate_grand_automata.scripts.entrypoints.isInSupport
 import io.github.fga_apple.host.capture.MacFrameSource
 import io.github.fga_apple.host.di.DaggerHostComponent
+import io.github.fga_apple.host.di.DaggerRecordingHostComponent
 import io.github.fga_apple.host.di.HostConfig
+import io.github.fga_apple.host.di.HostGraph
+import io.github.fga_apple.host.recording.HttpFrameSource
+import io.github.fga_apple.host.recording.Recorder
+import io.github.fga_apple.host.recording.RecordingException
+import io.github.fga_apple.host.recording.recordingMeta
 import io.github.fga_apple.host.prefs.HostPreferences
 import io.github.fga_apple.host.imaging.CvPattern
 import io.github.fga_apple.host.imaging.use
@@ -23,8 +29,9 @@ fun main(args: Array<String>) {
         else -> println(
             """
             usage:
-              host battle <config.json> [--fga=<내보낸 전투 설정>] [--dry-run] [--allow-refill]
+              host battle <config.json> [--fga=<내보낸 전투 설정>] [--dry-run] [--allow-refill] [--record=<폴더>]
                                                            전투 스크립트 실행. data/stop 파일을 만들면 멈춤
+                                                           --record: 화면과 동작을 폴더에 녹화 (docs/recording.md)
               host probe [server=Kr] [top=15] [frameUrl]   템플릿 전부를 화면 전체에서 찾아 점수 순으로 출력
               host screen [config.json]                    스크립트의 화면 판별 코드를 현재 화면에 돌려 봄 (터치 없음)
             """.trimIndent()
@@ -84,8 +91,35 @@ private fun battle(args: List<String>) {
     val stopFile = File(hostConfig.dataDir, "stop")
     stopFile.delete()
 
-    val component = DaggerHostComponent.builder().preferences(prefs).config(hostConfig).build()
-    val entry = component.battle()
+    val recordArg = args.firstOrNull { it.startsWith("--record") }
+    val recorder = if (recordArg == null) null else {
+        val dir = recordArg.removePrefix("--record").removePrefix("=")
+        if (dir.isBlank()) return println("--record=<폴더> 형식으로 폴더를 지정하세요.")
+        try {
+            Recorder.open(
+                File(dir),
+                HttpFrameSource(hostConfig.frameUrl),
+                recordingMeta(
+                    hostConfig.screenWidth, hostConfig.screenHeight, prefs.gameServer.simple,
+                    prefs.battleConfigRaw, fgaCommit()
+                )
+            )
+        } catch (e: RecordingException) {
+            return println("녹화를 시작하지 못했습니다: ${e.message}")
+        }
+    }
+
+    val graph: HostGraph = if (recorder == null) {
+        DaggerHostComponent.builder().preferences(prefs).config(hostConfig).build()
+    } else {
+        DaggerRecordingHostComponent.builder().preferences(prefs).config(hostConfig).recorder(recorder).build()
+    }
+    val entry = try {
+        graph.battle()
+    } catch (e: Throwable) {
+        recorder?.close()
+        throw e
+    }
     val done = java.util.concurrent.CountDownLatch(1)
     var exit: Exception? = null
     entry.scriptExitListener = {
@@ -94,23 +128,49 @@ private fun battle(args: List<String>) {
     }
 
     println(if (dryRun) "시작 (dry-run: 터치를 보내지 않음)" else "시작")
+    recorder?.start()
     entry.run()
+    var recordingFailed = false
     while (!done.await(500, java.util.concurrent.TimeUnit.MILLISECONDS)) {
         if (stopFile.exists()) {
             println("data/stop 발견: 중단 요청")
             stopFile.delete()
             entry.stop()
         }
+        if (!recordingFailed && recorder?.failure != null) {
+            recordingFailed = true
+            println("녹화 실패로 실행을 중단합니다: ${recorder.failure?.message}")
+            entry.stop()
+        }
     }
 
     val e = exit
     val reason = (e as? AutoBattle.ExitException)?.reason
-    println("종료: " + (reason?.let { it.javaClass.simpleName + (it.cause?.let { c -> " / $c" } ?: "") } ?: e.toString()))
+    val exitText = reason?.let { it.javaClass.simpleName + (it.cause?.let { c -> " / $c" } ?: "") } ?: e.toString()
+    println("종료: $exitText")
     if (reason is AutoBattle.ExitReason.Unexpected) reason.cause?.printStackTrace()
     println("완료한 실행 횟수: ${prefs.completedRuns}")
-    component.screenshotService().close()
-    component.gestures().close()
+    var failure: Throwable? = null
+    if (recorder != null) {
+        runCatching { recorder.events.exit(recorder.events.now(), exitText, prefs.completedRuns) }
+        runCatching { recorder.close() }
+        failure = recorder.failure
+    }
+    graph.screenshotService().close()
+    graph.gestures().close()
+    if (failure != null) {
+        println("녹화가 중간에 실패했습니다. 이 녹화는 쓸 수 없습니다: ${failure.message}")
+        kotlin.system.exitProcess(1)
+    }
     kotlin.system.exitProcess(0)
+}
+
+private fun fgaCommit(): String? = try {
+    val process = ProcessBuilder("git", "-C", "fga", "rev-parse", "HEAD").redirectErrorStream(true).start()
+    val text = process.inputStream.bufferedReader().readText().trim()
+    if (process.waitFor() == 0 && text.isNotEmpty()) text else null
+} catch (e: java.io.IOException) {
+    null
 }
 
 private fun screen(args: List<String>) {

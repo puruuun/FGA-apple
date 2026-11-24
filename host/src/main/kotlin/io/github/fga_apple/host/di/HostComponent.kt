@@ -23,7 +23,13 @@ import io.github.fate_grand_automata.scripts.prefs.ISupportPreferencesCommon
 import io.github.fga_apple.host.capture.HostScreenshotService
 import io.github.fga_apple.host.imaging.HostImageLoader
 import io.github.fga_apple.host.input.BoardGestures
+import io.github.fga_apple.host.platform.ConsoleMessages
 import io.github.fga_apple.host.platform.HostPlatform
+import io.github.fga_apple.host.recording.Recorder
+import io.github.fga_apple.host.recording.RecordingGestureService
+import io.github.fga_apple.host.recording.RecordingMessages
+import io.github.fga_apple.host.recording.RecordingScreenshotService
+import io.github.fate_grand_automata.scripts.IScriptMessages
 import io.github.lib_automata.AutomataApi
 import io.github.lib_automata.Clicker
 import io.github.lib_automata.ExitManager
@@ -51,8 +57,37 @@ import javax.inject.Singleton
 
 @Singleton
 @ScriptScope
-@Component(modules = [LibAutomataModule::class, ScriptsModule::class, PreferencesModule::class, HostModule::class])
-interface HostComponent {
+@Component(
+    modules = [LibAutomataModule::class, ScriptsModule::class, PreferencesModule::class, HostModule::class, LiveServicesModule::class]
+)
+interface HostComponent : HostGraph {
+    @Component.Builder
+    interface Builder {
+        @BindsInstance fun preferences(prefs: IPreferences): Builder
+        @BindsInstance fun config(config: HostConfig): Builder
+        fun build(): HostComponent
+    }
+}
+
+@Singleton
+@ScriptScope
+@Component(
+    modules = [
+        LibAutomataModule::class, ScriptsModule::class, PreferencesModule::class, HostModule::class,
+        RecordedServicesModule::class
+    ]
+)
+interface RecordingHostComponent : HostGraph {
+    @Component.Builder
+    interface Builder {
+        @BindsInstance fun preferences(prefs: IPreferences): Builder
+        @BindsInstance fun config(config: HostConfig): Builder
+        @BindsInstance fun recorder(recorder: Recorder): Builder
+        fun build(): RecordingHostComponent
+    }
+}
+
+interface HostGraph {
     fun battle(): AutoBattle
     fun autoDetect(): AutoDetect
     fun api(): IFgoAutomataApi
@@ -63,13 +98,6 @@ interface HostComponent {
     fun screenshotManager(): ScreenshotManager
     fun gestures(): GestureService
     fun screenshotService(): ScreenshotService
-
-    @Component.Builder
-    interface Builder {
-        @BindsInstance fun preferences(prefs: IPreferences): Builder
-        @BindsInstance fun config(config: HostConfig): Builder
-        fun build(): HostComponent
-    }
 }
 
 @Module
@@ -123,12 +151,31 @@ class PreferencesModule {
 }
 
 @Module
-abstract class HostModule {
-    @ScriptScope @Binds abstract fun platform(platform: HostPlatform): PlatformImpl
+abstract class LiveServicesModule {
     @ScriptScope @Binds abstract fun gestures(gestures: BoardGestures): GestureService
     @ScriptScope @Binds abstract fun screenshots(service: HostScreenshotService): ScreenshotService
+    @ScriptScope @Binds abstract fun messages(messages: ConsoleMessages): IScriptMessages
+}
+
+@Module
+object RecordedServicesModule {
+    @ScriptScope @Provides
+    fun gestures(real: BoardGestures, recorder: Recorder): GestureService =
+        RecordingGestureService(real, recorder.events)
+
+    @ScriptScope @Provides
+    fun screenshots(real: HostScreenshotService, recorder: Recorder): ScreenshotService =
+        RecordingScreenshotService(real, recorder.events)
+
+    @ScriptScope @Provides
+    fun messages(real: ConsoleMessages, recorder: Recorder): IScriptMessages =
+        RecordingMessages(real, recorder.events)
+}
+
+@Module
+abstract class HostModule {
+    @ScriptScope @Binds abstract fun platform(platform: HostPlatform): PlatformImpl
     @ScriptScope @Binds abstract fun imageLoader(loader: HostImageLoader): IImageLoader
-    @ScriptScope @Binds abstract fun messages(messages: io.github.fga_apple.host.platform.ConsoleMessages): io.github.fate_grand_automata.scripts.IScriptMessages
     @ScriptScope @Binds abstract fun ocr(ocr: io.github.fga_apple.host.platform.UnsupportedOcr): io.github.lib_automata.OcrService
     @ScriptScope @Binds abstract fun storage(storage: io.github.fga_apple.host.platform.HostStorage): io.github.fate_grand_automata.IStorageProvider
 

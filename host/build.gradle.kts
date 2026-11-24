@@ -70,3 +70,11 @@ tasks.register<JavaExec>("golden") {
     args("core/testdata")
     jvmArgs("-Dstdout.encoding=UTF-8", "-Dstderr.encoding=UTF-8")
 }
+
+tasks.register<JavaExec>("goldenScores") {
+    group = "verification"
+    description = "Writes the synthetic frames and their OpenCV scores"
+    classpath = sourceSets.main.get().runtimeClasspath
+    mainClass.set("io.github.fga_apple.host.golden.GoldenScoresKt")
+    workingDir = rootDir
+}
