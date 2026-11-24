@@ -1,0 +1,5 @@
+{
+  "android": {
+    "decodeError": {"class": "kotlinx.serialization.json.JsonDecodingException", "message": "Unexpected JSON token at offset 2: Expected EOF after parsing, but had { instead at path: $\nJSON input: ﻿{}"}
+  }
+}

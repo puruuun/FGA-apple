@@ -1,0 +1,5 @@
+{
+  "android": {
+    "decodeError": {"class": "kotlinx.serialization.json.JsonDecodingException", "message": "Unexpected JSON token at offset 22: Trailing comma before the end of JSON object at path: $\nTrailing commas are non-complaint JSON and not allowed by default. Use 'allowTrailingComma = true' in 'Json {}' builder to support them.\nJSON input: {\"autoskill_name\": \"x\",}"}
+  }
+}

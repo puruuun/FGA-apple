@@ -1,0 +1,5 @@
+{
+  "android": {
+    "config": {"commandStartArts": -7, "commandStartBuster": 99, "commandStartCardCount": 0, "commandStartMaxTurns": -2147483648, "commandStartQuick": 2147483647, "commandStartServant": -1, "secondaryStartCardCount": 5, "shuffleCardsWave": 0, "tertiaryStartQuick": 4, "turnLimitRetreatStreakCount": 0}
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "android": {
+    "config": {
+      "spam": [
+        {
+          "np": {
+            "spam": "Spam",
+            "waves": [1, 2, 3]
+          },
+          "skills": [
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            },
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            },
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

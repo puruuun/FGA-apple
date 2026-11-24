@@ -1,0 +1,11 @@
+{
+  "autoskill_name": 12345,
+  "autoskill_cmd": true,
+  "support_friend_names_list": [
+    1,
+    true,
+    "x",
+    null,
+    2.5
+  ]
+}

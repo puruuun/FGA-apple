@@ -1,0 +1,12 @@
+{
+  "command_start_servant": -1,
+  "command_start_card_count": 0,
+  "command_start_buster": 99,
+  "command_start_arts": -7,
+  "command_start_quick": 2147483647,
+  "command_start_max_turns": -2147483648,
+  "secondary_start_card_count": 5,
+  "tertiary_start_quick": 4,
+  "shuffle_cards_wave": 0,
+  "turn_limit_retreat_streak_count": 0
+}

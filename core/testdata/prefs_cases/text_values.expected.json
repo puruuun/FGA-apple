@@ -1,0 +1,9 @@
+{
+  "android": {
+    "config": {
+      "name": "Name with \"quotes\", \\ backslash, tab\t, newline\n, unicode éテし and emoji 😀",
+      "secondaryExecution": {"skillCommand": "x1"},
+      "skillCommand": "a,b,c,#,d\n e ,#"
+    }
+  }
+}

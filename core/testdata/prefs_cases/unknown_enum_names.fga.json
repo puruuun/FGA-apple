@@ -1,0 +1,15 @@
+{
+  "command_start_mode": "Nope",
+  "command_start_combine_mode": "or",
+  "secondary_start_combine_mode": "Xor",
+  "tertiary_start_combine_mode": "",
+  "shuffle_cards": "noeffective",
+  "card_priority_split": "wave",
+  "card_priority_style": "Servants",
+  "secondary_card_priority_split": "Nope",
+  "tertiary_card_priority_style": "Nope",
+  "support_mode": "Auto",
+  "support_fallback": "first",
+  "autoskill_support_class": "Shielder",
+  "support_bond_ce_effect": "Np"
+}

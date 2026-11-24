@@ -1,0 +1,5 @@
+{
+  "card_priority": "WQ, WA, WB, Q, A, B, RQ, RA, RB",
+  "secondary_card_priority": "ZZ",
+  "secondary_start_enabled": true
+}

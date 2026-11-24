@@ -7,3 +7,4 @@ pub mod locations {
     pub mod script_area_transforms;
 }
 pub mod models;
+pub mod prefs;

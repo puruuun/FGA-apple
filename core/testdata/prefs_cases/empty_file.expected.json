@@ -1,0 +1,5 @@
+{
+  "android": {
+    "decodeError": {"class": "kotlinx.serialization.json.JsonDecodingException", "message": "Cannot read Json element because of unexpected end of the input at path: $\nJSON input: "}
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "android": {
+    "decodeError": {"class": "java.lang.IllegalArgumentException", "message": "Expected String for 'autoskill_party', got Int"}
+  },
+  "host": {
+    "config": {"party": 3}
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "android": {
+    "config": {
+      "autoChooseTarget": true,
+      "commandStartBuster": 1,
+      "commandStartCardCount": 3,
+      "commandStartCombineMode": "Or",
+      "commandStartMaxTurns": 4,
+      "commandStartMode": "CardCount",
+      "commandStartServant": 2,
+      "materials": ["Bone", "Proof", "Seed"],
+      "name": "Sample skill run",
+      "party": 3,
+      "secondaryExecution": {"skillCommand": "a,b,c,#,j"},
+      "secondaryStartEnabled": true,
+      "secondaryStartServant": 3,
+      "server": {"betterFgo": false, "simple": "Jp"},
+      "skillCommand": "a,b2,c(3),#,d1,e,f,#,g,h,i,t2,#,j,k2,l,x12"
+    }
+  }
+}

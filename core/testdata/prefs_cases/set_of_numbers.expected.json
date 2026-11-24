@@ -1,0 +1,12 @@
+{
+  "android": {
+    "decodeError": {"class": "java.lang.IllegalArgumentException", "message": "Expected array of strings for 'support_friend_names_list'"}
+  },
+  "host": {
+    "config": {
+      "support": {
+        "friendNames": ["1", "2"]
+      }
+    }
+  }
+}

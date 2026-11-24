@@ -1,0 +1,5 @@
+{
+  "android": {
+    "decodeError": {"class": "java.lang.IllegalArgumentException", "message": "Expected array of strings for 'support_pref_ce_list'"}
+  }
+}

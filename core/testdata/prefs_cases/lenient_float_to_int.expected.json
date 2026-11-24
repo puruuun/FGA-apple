@@ -1,0 +1,8 @@
+{
+  "android": {
+    "decodeError": {"class": "java.lang.IllegalArgumentException", "message": "Expected Int for 'command_start_servant', got Double"}
+  },
+  "host": {
+    "config": {"commandStartArts": -1, "commandStartBuster": 2, "commandStartCardCount": 10, "commandStartServant": 2}
+  }
+}

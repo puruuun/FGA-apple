@@ -1,0 +1,262 @@
+{
+  "android": {
+    "config": {
+      "addRaidTurnDelay": true,
+      "autoChooseTarget": true,
+      "bondMaxIgnoredCharacters": [2, 3, 4],
+      "braveChains": ["WithNP", "Avoid"],
+      "cardPriority": [
+        [
+          {"affinity": "Weak", "type": "Quick"},
+          {"affinity": "Weak", "type": "Arts"},
+          {"affinity": "Weak", "type": "Buster"},
+          {"affinity": "Normal", "type": "Quick"},
+          {"affinity": "Normal", "type": "Arts"},
+          {"affinity": "Normal", "type": "Buster"},
+          {"affinity": "Resist", "type": "Quick"},
+          {"affinity": "Resist", "type": "Arts"},
+          {"affinity": "Resist", "type": "Buster"}
+        ],
+        [
+          {"affinity": "Weak", "type": "Arts"},
+          {"affinity": "Weak", "type": "Buster"},
+          {"affinity": "Weak", "type": "Quick"},
+          {"affinity": "Normal", "type": "Arts"},
+          {"affinity": "Normal", "type": "Buster"},
+          {"affinity": "Normal", "type": "Quick"},
+          {"affinity": "Resist", "type": "Arts"},
+          {"affinity": "Resist", "type": "Buster"},
+          {"affinity": "Resist", "type": "Quick"}
+        ]
+      ],
+      "cardPrioritySplit": "Turn",
+      "cardPriorityStyle": "Servant",
+      "cardPriorityStyles": ["Servant", "Affinity"],
+      "cardSwapDetection": true,
+      "commandStartArts": 2,
+      "commandStartBuster": 1,
+      "commandStartCardCount": 4,
+      "commandStartCombineMode": "Or",
+      "commandStartMaxTurns": 9,
+      "commandStartMode": "CardCount",
+      "commandStartQuick": 3,
+      "commandStartServant": 3,
+      "materials": ["Claw", "Proof", "Seed"],
+      "name": "All keys set",
+      "party": 5,
+      "raidTurnDelaySeconds": 8,
+      "rearrangeCards": [true, false],
+      "secondaryExecution": {
+        "braveChains": ["WithNP", "Avoid"],
+        "cardPriority": [
+          [
+            {"affinity": "Weak", "type": "Quick"},
+            {"affinity": "Weak", "type": "Arts"},
+            {"affinity": "Weak", "type": "Buster"},
+            {"affinity": "Normal", "type": "Quick"},
+            {"affinity": "Normal", "type": "Arts"},
+            {"affinity": "Normal", "type": "Buster"},
+            {"affinity": "Resist", "type": "Quick"},
+            {"affinity": "Resist", "type": "Arts"},
+            {"affinity": "Resist", "type": "Buster"}
+          ],
+          [
+            {"affinity": "Weak", "type": "Arts"},
+            {"affinity": "Weak", "type": "Buster"},
+            {"affinity": "Weak", "type": "Quick"},
+            {"affinity": "Normal", "type": "Arts"},
+            {"affinity": "Normal", "type": "Buster"},
+            {"affinity": "Normal", "type": "Quick"},
+            {"affinity": "Resist", "type": "Arts"},
+            {"affinity": "Resist", "type": "Buster"},
+            {"affinity": "Resist", "type": "Quick"}
+          ]
+        ],
+        "cardPriorityStyles": ["Servant", "Affinity"],
+        "rearrangeCards": [true, false],
+        "servantCardPriority": [
+          [
+            {"fieldPosition": 2, "type": "Buster"},
+            {"fieldPosition": 2, "type": "Arts"},
+            {"fieldPosition": 2, "type": "Quick"},
+            {"fieldPosition": 1, "type": "Buster"},
+            {"fieldPosition": 1, "type": "Arts"},
+            {"fieldPosition": 1, "type": "Quick"},
+            {"fieldPosition": 3, "type": "Buster"},
+            {"fieldPosition": 3, "type": "Arts"},
+            {"fieldPosition": 3, "type": "Quick"}
+          ]
+        ],
+        "servantPriority": [
+          [
+            {"position": 3},
+            {"position": 2},
+            {"position": 1},
+            {"position": 4},
+            {"position": 5},
+            {"position": 6}
+          ]
+        ],
+        "skillCommand": "a,b,c1",
+        "useServantPriorities": [true, false]
+      },
+      "secondaryStartArts": 3,
+      "secondaryStartBuster": 2,
+      "secondaryStartCardCount": 3,
+      "secondaryStartCombineMode": "Or",
+      "secondaryStartEnabled": true,
+      "secondaryStartQuick": 1,
+      "secondaryStartServant": 1,
+      "servantCardPriority": [
+        [
+          {"fieldPosition": 2, "type": "Buster"},
+          {"fieldPosition": 2, "type": "Arts"},
+          {"fieldPosition": 2, "type": "Quick"},
+          {"fieldPosition": 1, "type": "Buster"},
+          {"fieldPosition": 1, "type": "Arts"},
+          {"fieldPosition": 1, "type": "Quick"},
+          {"fieldPosition": 3, "type": "Buster"},
+          {"fieldPosition": 3, "type": "Arts"},
+          {"fieldPosition": 3, "type": "Quick"}
+        ]
+      ],
+      "servantPriority": [
+        [
+          {"position": 2},
+          {"position": 1},
+          {"position": 3},
+          {"position": 4},
+          {"position": 5},
+          {"position": 6}
+        ]
+      ],
+      "server": {"betterFgo": true, "simple": "Jp"},
+      "shuffleCards": "FirstTurnStartCondition",
+      "shuffleCardsWave": 2,
+      "skillCommand": "a,b,c0",
+      "spam": [
+        {
+          "np": {
+            "spam": "Spam",
+            "waves": [2, 3]
+          },
+          "skills": [
+            {
+              "spam": "Danger",
+              "target": "Left",
+              "waves": [1]
+            },
+            {
+              "spam": "None",
+              "target": "None",
+              "waves": [1, 2, 3]
+            },
+            {
+              "spam": "Spam",
+              "target": "None",
+              "waves": [1, 2, 3]
+            }
+          ]
+        }
+      ],
+      "stopOnBondMax": true,
+      "support": {
+        "alsoCheckAll": true,
+        "appendSkillCheck": true,
+        "appendSkillsMax": [true, false, true, false, true],
+        "autoFriendRequest": true,
+        "bondCEEffect": "Default",
+        "fallbackTo": "Preferred",
+        "friendNames": ["A friend"],
+        "friendsOnly": true,
+        "grandScore16Check": true,
+        "grandServant": true,
+        "maxAscended": true,
+        "minimumNpLevel": 2,
+        "mlb": true,
+        "npLevelCheck": true,
+        "preferredCEs": ["c1.png"],
+        "preferredNoblePhantasms": ["n1.png"],
+        "preferredServants": ["s2.png", "s1.png"],
+        "requireBothNormalAndRewardMatch": true,
+        "score62Check": true,
+        "selectionMode": "First",
+        "skill1Max": true,
+        "skill2Max": true,
+        "skill3Max": true,
+        "supportClass": "Mix"
+      },
+      "tertiaryExecution": {
+        "braveChains": ["WithNP", "Avoid"],
+        "cardPriority": [
+          [
+            {"affinity": "Weak", "type": "Quick"},
+            {"affinity": "Weak", "type": "Arts"},
+            {"affinity": "Weak", "type": "Buster"},
+            {"affinity": "Normal", "type": "Quick"},
+            {"affinity": "Normal", "type": "Arts"},
+            {"affinity": "Normal", "type": "Buster"},
+            {"affinity": "Resist", "type": "Quick"},
+            {"affinity": "Resist", "type": "Arts"},
+            {"affinity": "Resist", "type": "Buster"}
+          ],
+          [
+            {"affinity": "Weak", "type": "Arts"},
+            {"affinity": "Weak", "type": "Buster"},
+            {"affinity": "Weak", "type": "Quick"},
+            {"affinity": "Normal", "type": "Arts"},
+            {"affinity": "Normal", "type": "Buster"},
+            {"affinity": "Normal", "type": "Quick"},
+            {"affinity": "Resist", "type": "Arts"},
+            {"affinity": "Resist", "type": "Buster"},
+            {"affinity": "Resist", "type": "Quick"}
+          ]
+        ],
+        "cardPrioritySplit": "Turn",
+        "cardPriorityStyle": "Servant",
+        "cardPriorityStyles": ["Servant", "Affinity"],
+        "rearrangeCards": [true, false],
+        "servantCardPriority": [
+          [
+            {"fieldPosition": 2, "type": "Buster"},
+            {"fieldPosition": 2, "type": "Arts"},
+            {"fieldPosition": 2, "type": "Quick"},
+            {"fieldPosition": 1, "type": "Buster"},
+            {"fieldPosition": 1, "type": "Arts"},
+            {"fieldPosition": 1, "type": "Quick"},
+            {"fieldPosition": 3, "type": "Buster"},
+            {"fieldPosition": 3, "type": "Arts"},
+            {"fieldPosition": 3, "type": "Quick"}
+          ]
+        ],
+        "servantPriority": [
+          [
+            {"position": 6},
+            {"position": 5},
+            {"position": 4},
+            {"position": 3},
+            {"position": 2},
+            {"position": 1}
+          ]
+        ],
+        "skillCommand": "a,b,c2",
+        "useServantPriorities": [true, false],
+        "useServantPriority": true
+      },
+      "tertiaryStartArts": 1,
+      "tertiaryStartBuster": 3,
+      "tertiaryStartCardCount": 5,
+      "tertiaryStartCombineMode": "Or",
+      "tertiaryStartEnabled": true,
+      "tertiaryStartQuick": 2,
+      "tertiaryStartServant": 2,
+      "trackBond": true,
+      "turnLimitRetreatEnabled": true,
+      "turnLimitRetreatStopAfterStreak": true,
+      "turnLimitRetreatStreakCount": 4,
+      "turnLimitRetreatTurns": 11,
+      "useServantPriorities": [true, false],
+      "useServantPriority": true
+    }
+  }
+}
