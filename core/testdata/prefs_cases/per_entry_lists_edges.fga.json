@@ -1,0 +1,10 @@
+{
+  "use_servant_priorities": " True, false ,yes,TRUE",
+  "card_priority_styles": "Servant, bogus, affinity,Servant ",
+  "auto_skill_rearrange_cards": "T,t,F,,TT",
+  "auto_skill_brave_chains": "WithNP,withnp,Avoid, None,",
+  "secondary_use_servant_priorities": "   ",
+  "secondary_card_priority_styles": "",
+  "secondary_auto_skill_rearrange_cards": "",
+  "secondary_auto_skill_brave_chains": ""
+}

@@ -1,0 +1,5 @@
+{
+  "android": {
+    "decodeError": {"class": "java.lang.IllegalArgumentException", "message": "Expected Int for 'shuffle_cards_wave', got Double"}
+  }
+}

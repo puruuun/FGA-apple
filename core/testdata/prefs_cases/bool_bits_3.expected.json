@@ -1,0 +1,19 @@
+{
+  "android": {
+    "config": {
+      "support": {
+        "appendSkillCheck": true,
+        "appendSkillsMax": [true, true, true, true, true],
+        "autoFriendRequest": true,
+        "friendsOnly": true,
+        "skill2Max": true,
+        "skill3Max": true
+      },
+      "tertiaryExecution": {"useServantPriority": true},
+      "tertiaryStartEnabled": true,
+      "turnLimitRetreatEnabled": true,
+      "turnLimitRetreatStopAfterStreak": true,
+      "useServantPriority": true
+    }
+  }
+}

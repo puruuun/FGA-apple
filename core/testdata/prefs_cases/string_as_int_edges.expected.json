@@ -1,0 +1,8 @@
+{
+  "android": {
+    "config": {"turnLimitRetreatTurns": -5}
+  },
+  "host": {
+    "config": {"party": 3, "raidTurnDelaySeconds": 2147483647, "turnLimitRetreatTurns": -5}
+  }
+}

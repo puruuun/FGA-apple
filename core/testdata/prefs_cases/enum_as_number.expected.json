@@ -1,0 +1,5 @@
+{
+  "android": {
+    "decodeError": {"class": "java.lang.IllegalArgumentException", "message": "Expected String for 'command_start_mode', got Int"}
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "auto_choose_target": true,
+  "bond_result_stop_on_max": true,
+  "secondary_start_enabled": true,
+  "secondary_use_servant_priority": true,
+  "support_append_skill_max_2": true,
+  "support_append_skill_max_3": true,
+  "support_auto_friend_request": true,
+  "support_friends_only": true,
+  "support_max_ascended": true,
+  "support_np_level_check": true,
+  "support_score_62_check": true,
+  "support_skill_max_1": true,
+  "tertiary_start_enabled": true,
+  "tertiary_use_servant_priority": true,
+  "use_servant_priority": true
+}

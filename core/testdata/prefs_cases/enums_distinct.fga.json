@@ -1,0 +1,6 @@
+{
+  "command_start_mode": "CardCount",
+  "shuffle_cards": "NoNPMatching",
+  "autoskill_support_class": "Caster",
+  "support_bond_ce_effect": "NP"
+}

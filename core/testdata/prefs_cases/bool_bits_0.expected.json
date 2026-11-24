@@ -1,0 +1,21 @@
+{
+  "android": {
+    "config": {
+      "cardSwapDetection": true,
+      "secondaryExecution": {"useServantPriority": true},
+      "stopOnBondMax": true,
+      "support": {
+        "alsoCheckAll": true,
+        "appendSkillsMax": [true, false, true, false, true],
+        "friendsOnly": true,
+        "grandServant": true,
+        "npLevelCheck": true,
+        "requireBothNormalAndRewardMatch": true,
+        "skill1Max": true,
+        "skill3Max": true
+      },
+      "tertiaryExecution": {"useServantPriority": true},
+      "turnLimitRetreatStopAfterStreak": true
+    }
+  }
+}

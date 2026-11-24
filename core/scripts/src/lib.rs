@@ -28,6 +28,7 @@ pub mod locations {
     pub mod weekly_route_locations;
 }
 pub mod models;
+pub mod prefs;
 pub mod modules {
     pub mod skill_level_flow;
 }

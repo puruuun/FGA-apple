@@ -1,0 +1,3 @@
+{
+  "spam_x": "[{\"np\": {\"waves\": [1], \"spam\": \"Spam\"}, \"skills\": [{\"waves\": [1], \"target\": \"Slot1\"}]}, {\"np\": {\"waves\": [2], \"spam\": \"Spam\"}, \"skills\": [{\"waves\": [2], \"target\": \"Slot1\"}]}, {\"np\": {\"waves\": [3], \"spam\": \"Spam\"}, \"skills\": [{\"waves\": [3], \"target\": \"Slot1\"}]}, {\"np\": {\"waves\": [1, 2], \"spam\": \"Spam\"}, \"skills\": [{\"waves\": [1, 2], \"target\": \"Slot1\"}]}, {\"np\": {\"waves\": [2, 3], \"spam\": \"Spam\"}, \"skills\": [{\"waves\": [2, 3], \"target\": \"Slot1\"}]}, {\"np\": {\"waves\": [1, 3], \"spam\": \"Spam\"}, \"skills\": [{\"waves\": [1, 3], \"target\": \"Slot1\"}]}]"
+}

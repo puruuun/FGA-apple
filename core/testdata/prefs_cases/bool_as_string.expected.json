@@ -1,0 +1,10 @@
+{
+  "android": {
+    "decodeError": {"class": "java.lang.IllegalArgumentException", "message": "Expected Boolean for 'support_friends_only', got String"}
+  },
+  "host": {
+    "config": {
+      "support": {"friendsOnly": true}
+    }
+  }
+}

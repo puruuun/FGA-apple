@@ -1,0 +1,20 @@
+{
+  "android": {
+    "config": {
+      "support": {
+        "friendNames": ["Friend 20", "Friend 10", "Friend 11", "Friend 01", "Friend 12", "Friend 02", "Friend 13", "Friend 03", "Friend 14", "Friend 04", "Friend 15", "Friend 05", "Friend 16", "Friend 06", "Friend 17", "Friend 07", "Friend 18", "Friend 08", "Friend 19", "Friend 09"],
+        "preferredCEs": ["beta.png", "alpha.png", "zeta.png", "Mu.png"],
+        "preferredServants": ["servant_5.png", "servant_7.png", "servant_13.png", "servant_2.png", "servant_3.png", "servant_8.png", "servant_12.png", "servant_10.png", "servant_6.png", "servant_4.png", "servant_1.png", "servant_9.png", "servant_11.png"]
+      }
+    }
+  },
+  "host": {
+    "config": {
+      "support": {
+        "friendNames": ["Friend 01", "Friend 02", "Friend 03", "Friend 04", "Friend 05", "Friend 06", "Friend 07", "Friend 08", "Friend 09", "Friend 10", "Friend 11", "Friend 12", "Friend 13", "Friend 14", "Friend 15", "Friend 16", "Friend 17", "Friend 18", "Friend 19", "Friend 20"],
+        "preferredCEs": ["zeta.png", "alpha.png", "Mu.png", "beta.png"],
+        "preferredServants": ["servant_1.png", "servant_2.png", "servant_3.png", "servant_4.png", "servant_5.png", "servant_6.png", "servant_7.png", "servant_8.png", "servant_9.png", "servant_10.png", "servant_11.png", "servant_12.png", "servant_13.png"]
+      }
+    }
+  }
+}

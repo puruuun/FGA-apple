@@ -1,0 +1,5 @@
+{
+  "android": {
+    "decodeError": {"class": "java.lang.IllegalArgumentException", "message": "Element class kotlinx.serialization.json.JsonLiteral is not a JsonObject"}
+  }
+}

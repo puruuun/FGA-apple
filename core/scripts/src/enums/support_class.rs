@@ -11,3 +11,12 @@ kotlin_enum!(SupportClass {
     Extra,
     Mix
 });
+
+impl SupportClass {
+    pub fn can_also_check_all(self) -> bool {
+        !matches!(
+            self,
+            SupportClass::None | SupportClass::All | SupportClass::Mix
+        )
+    }
+}

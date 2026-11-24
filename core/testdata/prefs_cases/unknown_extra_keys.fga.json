@@ -1,0 +1,27 @@
+{
+  "autoskill_name": "Extra keys",
+  "some_future_pref": "value",
+  "some_future_number": 42,
+  "some_future_float": 1.5,
+  "some_future_flag": true,
+  "some_future_null": null,
+  "some_future_list": [
+    1,
+    "two",
+    null,
+    {
+      "a": 1
+    }
+  ],
+  "some_future_object": {
+    "nested": {
+      "deep": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "Autoskill_Name": "wrong case is an unknown key",
+  "secondary_unknown": "x"
+}
