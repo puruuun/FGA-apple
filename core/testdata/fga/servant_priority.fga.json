@@ -1,0 +1,13 @@
+{
+  "autoskill_name": "Servant priority and brave chains",
+  "use_servant_priority": true,
+  "use_servant_priorities": "true,false,true",
+  "servant_priority": "1,2,3,4,5,6\n3,2,1,4,5,6\n2,3,1,6,5,4",
+  "auto_skill_rearrange_cards": "T,F,T",
+  "auto_skill_brave_chains": "WithNP,None,Avoid",
+  "tertiary_start_enabled": true,
+  "tertiary_servant_priority": "6,5,4,3,2,1",
+  "tertiary_auto_skill_brave_chains": "Avoid,WithNP",
+  "shuffle_cards": "NoNPMatching",
+  "shuffle_cards_wave": 2
+}

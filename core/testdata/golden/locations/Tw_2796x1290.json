@@ -1,0 +1,1994 @@
+{
+  "errors": ["battle.master.locate(Skill.Master.A)", "battle.master.locate(Skill.Master.B)", "battle.master.locate(Skill.Master.C)", "battle.master.masterSkillOpenClick", "battle.master.stageCountRegion"],
+  "gameArea": {"height": 1290, "width": 2796, "x": 0, "y": 0},
+  "isWide": true,
+  "notEnumerated": ["bond.reachedLevel(arrow: Region)", "sibling.FpSellLocations.card(column: Int, top: Int)", "sibling.FpSellLocations.frameStrip(card: Region, offset: Int, band: Int)", "sibling.FpSellLocations.lock(card: Region)", "sibling.FpSellLocations.presence(card: Region)", "sibling.FpSellLocations.swipeEnd(distance: Int)", "sibling.GameAreaCalibrationLocations.menuSearch(scriptWidth: Int, wide: Boolean)", "sibling.QuestPanelLocations.slot(region: Region, slot: Int)", "sibling.SupportNpLayout.nameRegion(bounds: Region)", "sibling.SupportNpLayout.noblePhantasmBand(bounds: Region)", "sibling.SupportNpLayout.noblePhantasmCrop(bounds: Region, grand: Boolean, levelPrefix: Region)", "sibling.SupportNpLayout.suffixRegion(prefix: Region, digitWidth: Int)", "sibling.SupportScoreLayout.grandLastDigit(templateWidth: Int, templateHeight: Int)", "sibling.SupportScoreLayout.matchedPixels(match: Region, templateWidth: Int, templateHeight: Int, pixels: Region)", "sibling.SupportScoreLayout.numberRegion(bounds: Region)", "sibling.SupportSkillLayout.levelRegions(bounds: Region, append: Boolean)"],
+  "omittedInvalidArguments": ["sibling.SkillLevelLocations.panelLevel(SkillLevelMode.Skill, 3)", "sibling.SkillLevelLocations.panelLevel(SkillLevelMode.Skill, 4)", "sibling.SkillLevelLocations.slotClick(SkillLevelMode.Skill, 3)", "sibling.SkillLevelLocations.slotClick(SkillLevelMode.Skill, 4)", "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Skill, 3)", "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Skill, 4)", "sibling.SkillLevelLocations.slotLock(SkillLevelMode.Skill, 3)", "sibling.SkillLevelLocations.slotLock(SkillLevelMode.Skill, 4)"],
+  "screen": {"height": 1290, "width": 2796},
+  "screenToImage": 0.5581395348837209,
+  "scriptToImage": 0.5,
+  "scriptToScreen": 0.8958333333333334,
+  "server": "Tw",
+  "unreachableHolders": ["QuestPanelAnchor", "ScriptAreaTransforms", "WeeklyVaultAnchor"],
+  "values": {
+    "attack.affinityRegion(CommandCard.Face.A)": {
+      "image": {"height": 130, "width": 125, "x": 288, "y": 295},
+      "screen": {"height": 233, "width": 224, "x": 515, "y": 529},
+      "script": {"height": 260, "width": 250, "x": 575, "y": 590}
+    },
+    "attack.affinityRegion(CommandCard.Face.B)": {
+      "image": {"height": 130, "width": 125, "x": 545, "y": 295},
+      "screen": {"height": 233, "width": 224, "x": 976, "y": 529},
+      "script": {"height": 260, "width": 250, "x": 1090, "y": 590}
+    },
+    "attack.affinityRegion(CommandCard.Face.C)": {
+      "image": {"height": 130, "width": 125, "x": 801, "y": 295},
+      "screen": {"height": 233, "width": 224, "x": 1434, "y": 529},
+      "script": {"height": 260, "width": 250, "x": 1601, "y": 590}
+    },
+    "attack.affinityRegion(CommandCard.Face.D)": {
+      "image": {"height": 130, "width": 125, "x": 1057, "y": 295},
+      "screen": {"height": 233, "width": 224, "x": 1894, "y": 529},
+      "script": {"height": 260, "width": 250, "x": 2114, "y": 590}
+    },
+    "attack.affinityRegion(CommandCard.Face.E)": {
+      "image": {"height": 130, "width": 125, "x": 1314, "y": 295},
+      "screen": {"height": 233, "width": 224, "x": 2354, "y": 529},
+      "script": {"height": 260, "width": 250, "x": 2628, "y": 590}
+    },
+    "attack.backClick": {
+      "screen": {"x": 2505, "y": 1174},
+      "script": {"x": 2796, "y": 1310}
+    },
+    "attack.clickLocation(CommandCard.Face.A)": {
+      "screen": {"x": 520, "y": 896},
+      "script": {"x": 580, "y": 1000}
+    },
+    "attack.clickLocation(CommandCard.Face.B)": {
+      "screen": {"x": 923, "y": 896},
+      "script": {"x": 1030, "y": 1000}
+    },
+    "attack.clickLocation(CommandCard.Face.C)": {
+      "screen": {"x": 1415, "y": 896},
+      "script": {"x": 1580, "y": 1000}
+    },
+    "attack.clickLocation(CommandCard.Face.D)": {
+      "screen": {"x": 1863, "y": 896},
+      "script": {"x": 2080, "y": 1000}
+    },
+    "attack.clickLocation(CommandCard.Face.E)": {
+      "screen": {"x": 2356, "y": 896},
+      "script": {"x": 2630, "y": 1000}
+    },
+    "attack.clickLocation(CommandCard.NP.A)": {
+      "screen": {"x": 1147, "y": 197},
+      "script": {"x": 1280, "y": 220}
+    },
+    "attack.clickLocation(CommandCard.NP.B)": {
+      "screen": {"x": 1415, "y": 358},
+      "script": {"x": 1580, "y": 400}
+    },
+    "attack.clickLocation(CommandCard.NP.C)": {
+      "screen": {"x": 1810, "y": 358},
+      "script": {"x": 2020, "y": 400}
+    },
+    "attack.servantMatchRegion(CommandCard.Face.A)": {
+      "image": {"height": 200, "width": 250, "x": 143, "y": 350},
+      "screen": {"height": 358, "width": 448, "x": 256, "y": 627},
+      "script": {"height": 400, "width": 500, "x": 286, "y": 700}
+    },
+    "attack.servantMatchRegion(CommandCard.Face.B)": {
+      "image": {"height": 200, "width": 250, "x": 400, "y": 350},
+      "screen": {"height": 358, "width": 448, "x": 717, "y": 627},
+      "script": {"height": 400, "width": 500, "x": 800, "y": 700}
+    },
+    "attack.servantMatchRegion(CommandCard.Face.C)": {
+      "image": {"height": 200, "width": 250, "x": 655, "y": 350},
+      "screen": {"height": 358, "width": 448, "x": 1174, "y": 627},
+      "script": {"height": 400, "width": 500, "x": 1310, "y": 700}
+    },
+    "attack.servantMatchRegion(CommandCard.Face.D)": {
+      "image": {"height": 200, "width": 250, "x": 912, "y": 350},
+      "screen": {"height": 358, "width": 448, "x": 1634, "y": 627},
+      "script": {"height": 400, "width": 500, "x": 1824, "y": 700}
+    },
+    "attack.servantMatchRegion(CommandCard.Face.E)": {
+      "image": {"height": 200, "width": 250, "x": 1170, "y": 350},
+      "screen": {"height": 358, "width": 448, "x": 2096, "y": 627},
+      "script": {"height": 400, "width": 500, "x": 2340, "y": 700}
+    },
+    "attack.supportCheckRegion(CommandCard.Face.A)": {
+      "image": {"height": 130, "width": 125, "x": 263, "y": 345},
+      "screen": {"height": 233, "width": 224, "x": 470, "y": 618},
+      "script": {"height": 260, "width": 250, "x": 525, "y": 690}
+    },
+    "attack.supportCheckRegion(CommandCard.Face.B)": {
+      "image": {"height": 130, "width": 125, "x": 520, "y": 345},
+      "screen": {"height": 233, "width": 224, "x": 932, "y": 618},
+      "script": {"height": 260, "width": 250, "x": 1040, "y": 690}
+    },
+    "attack.supportCheckRegion(CommandCard.Face.C)": {
+      "image": {"height": 130, "width": 125, "x": 776, "y": 345},
+      "screen": {"height": 233, "width": 224, "x": 1389, "y": 618},
+      "script": {"height": 260, "width": 250, "x": 1551, "y": 690}
+    },
+    "attack.supportCheckRegion(CommandCard.Face.D)": {
+      "image": {"height": 130, "width": 125, "x": 1032, "y": 345},
+      "screen": {"height": 233, "width": 224, "x": 1849, "y": 618},
+      "script": {"height": 260, "width": 250, "x": 2064, "y": 690}
+    },
+    "attack.supportCheckRegion(CommandCard.Face.E)": {
+      "image": {"height": 130, "width": 125, "x": 1289, "y": 345},
+      "screen": {"height": 233, "width": 224, "x": 2309, "y": 618},
+      "script": {"height": 260, "width": 250, "x": 2578, "y": 690}
+    },
+    "attack.swapIconRegion(CommandCard.Face.A)": {
+      "image": {"height": 120, "width": 136, "x": 260, "y": 520},
+      "screen": {"height": 215, "width": 244, "x": 466, "y": 932},
+      "script": {"height": 240, "width": 272, "x": 520, "y": 1040}
+    },
+    "attack.swapIconRegion(CommandCard.Face.B)": {
+      "image": {"height": 120, "width": 136, "x": 516, "y": 520},
+      "screen": {"height": 215, "width": 244, "x": 925, "y": 932},
+      "script": {"height": 240, "width": 272, "x": 1032, "y": 1040}
+    },
+    "attack.swapIconRegion(CommandCard.Face.C)": {
+      "image": {"height": 120, "width": 136, "x": 772, "y": 520},
+      "screen": {"height": 215, "width": 244, "x": 1383, "y": 932},
+      "script": {"height": 240, "width": 272, "x": 1544, "y": 1040}
+    },
+    "attack.swapIconRegion(CommandCard.Face.D)": {
+      "image": {"height": 120, "width": 136, "x": 1028, "y": 520},
+      "screen": {"height": 215, "width": 244, "x": 1842, "y": 932},
+      "script": {"height": 240, "width": 272, "x": 2056, "y": 1040}
+    },
+    "attack.swapIconRegion(CommandCard.Face.E)": {
+      "image": {"height": 120, "width": 136, "x": 1284, "y": 520},
+      "screen": {"height": 215, "width": 244, "x": 2301, "y": 932},
+      "script": {"height": 240, "width": 272, "x": 2568, "y": 1040}
+    },
+    "attack.typeRegion(CommandCard.Face.A)": {
+      "image": {"height": 100, "width": 256, "x": 140, "y": 530},
+      "screen": {"height": 179, "width": 459, "x": 251, "y": 950},
+      "script": {"height": 200, "width": 512, "x": 280, "y": 1060}
+    },
+    "attack.typeRegion(CommandCard.Face.B)": {
+      "image": {"height": 100, "width": 256, "x": 396, "y": 530},
+      "screen": {"height": 179, "width": 459, "x": 710, "y": 950},
+      "script": {"height": 200, "width": 512, "x": 792, "y": 1060}
+    },
+    "attack.typeRegion(CommandCard.Face.C)": {
+      "image": {"height": 100, "width": 256, "x": 652, "y": 530},
+      "screen": {"height": 179, "width": 459, "x": 1168, "y": 950},
+      "script": {"height": 200, "width": 512, "x": 1304, "y": 1060}
+    },
+    "attack.typeRegion(CommandCard.Face.D)": {
+      "image": {"height": 100, "width": 256, "x": 908, "y": 530},
+      "screen": {"height": 179, "width": 459, "x": 1627, "y": 950},
+      "script": {"height": 200, "width": 512, "x": 1816, "y": 1060}
+    },
+    "attack.typeRegion(CommandCard.Face.E)": {
+      "image": {"height": 100, "width": 256, "x": 1164, "y": 530},
+      "screen": {"height": 179, "width": 459, "x": 2086, "y": 950},
+      "script": {"height": 200, "width": 512, "x": 2328, "y": 1060}
+    },
+    "battle.attackClick": {
+      "screen": {"x": 2384, "y": 1084},
+      "script": {"x": 2661, "y": 1210}
+    },
+    "battle.battleSafeMiddleOfScreenClick": {
+      "screen": {"x": 1398, "y": 493},
+      "script": {"x": 1560, "y": 550}
+    },
+    "battle.dangerRegion(EnemyTarget.A)": {
+      "image": {"height": 110, "width": 243, "x": 75, "y": 0},
+      "screen": {"height": 197, "width": 434, "x": 134, "y": 0},
+      "script": {"height": 220, "width": 485, "x": 150, "y": 0}
+    },
+    "battle.dangerRegion(EnemyTarget.B)": {
+      "image": {"height": 110, "width": 241, "x": 318, "y": 0},
+      "screen": {"height": 197, "width": 432, "x": 569, "y": 0},
+      "script": {"height": 220, "width": 482, "x": 635, "y": 0}
+    },
+    "battle.dangerRegion(EnemyTarget.C)": {
+      "image": {"height": 110, "width": 238, "x": 559, "y": 0},
+      "screen": {"height": 197, "width": 426, "x": 1001, "y": 0},
+      "script": {"height": 220, "width": 476, "x": 1117, "y": 0}
+    },
+    "battle.extraInfoWindowCloseClick": {
+      "screen": {"x": 2527, "y": 842},
+      "script": {"x": 2821, "y": 940}
+    },
+    "battle.imageRegion(Skill.Servant.A1)": {
+      "image": {"height": 15, "width": 15, "x": 139, "y": 573},
+      "screen": {"height": 27, "width": 27, "x": 249, "y": 1026},
+      "script": {"height": 30, "width": 30, "x": 278, "y": 1145}
+    },
+    "battle.imageRegion(Skill.Servant.A2)": {
+      "image": {"height": 15, "width": 15, "x": 227, "y": 573},
+      "screen": {"height": 27, "width": 27, "x": 407, "y": 1026},
+      "script": {"height": 30, "width": 30, "x": 454, "y": 1145}
+    },
+    "battle.imageRegion(Skill.Servant.A3)": {
+      "image": {"height": 15, "width": 15, "x": 315, "y": 573},
+      "screen": {"height": 27, "width": 27, "x": 564, "y": 1026},
+      "script": {"height": 30, "width": 30, "x": 630, "y": 1145}
+    },
+    "battle.imageRegion(Skill.Servant.B1)": {
+      "image": {"height": 15, "width": 15, "x": 457, "y": 573},
+      "screen": {"height": 27, "width": 27, "x": 819, "y": 1026},
+      "script": {"height": 30, "width": 30, "x": 914, "y": 1145}
+    },
+    "battle.imageRegion(Skill.Servant.B2)": {
+      "image": {"height": 15, "width": 15, "x": 545, "y": 573},
+      "screen": {"height": 27, "width": 27, "x": 976, "y": 1026},
+      "script": {"height": 30, "width": 30, "x": 1090, "y": 1145}
+    },
+    "battle.imageRegion(Skill.Servant.B3)": {
+      "image": {"height": 15, "width": 15, "x": 633, "y": 573},
+      "screen": {"height": 27, "width": 27, "x": 1134, "y": 1026},
+      "script": {"height": 30, "width": 30, "x": 1266, "y": 1145}
+    },
+    "battle.imageRegion(Skill.Servant.C1)": {
+      "image": {"height": 15, "width": 15, "x": 774, "y": 573},
+      "screen": {"height": 27, "width": 27, "x": 1387, "y": 1026},
+      "script": {"height": 30, "width": 30, "x": 1548, "y": 1145}
+    },
+    "battle.imageRegion(Skill.Servant.C2)": {
+      "image": {"height": 15, "width": 15, "x": 862, "y": 573},
+      "screen": {"height": 27, "width": 27, "x": 1544, "y": 1026},
+      "script": {"height": 30, "width": 30, "x": 1724, "y": 1145}
+    },
+    "battle.imageRegion(Skill.Servant.C3)": {
+      "image": {"height": 15, "width": 15, "x": 950, "y": 573},
+      "screen": {"height": 27, "width": 27, "x": 1702, "y": 1026},
+      "script": {"height": 30, "width": 30, "x": 1900, "y": 1145}
+    },
+    "battle.locate(EnemyTarget.A)": {
+      "screen": {"x": 245, "y": 72},
+      "script": {"x": 273, "y": 80}
+    },
+    "battle.locate(EnemyTarget.B)": {
+      "screen": {"x": 675, "y": 72},
+      "script": {"x": 753, "y": 80}
+    },
+    "battle.locate(EnemyTarget.C)": {
+      "screen": {"x": 1105, "y": 72},
+      "script": {"x": 1233, "y": 80}
+    },
+    "battle.locate(EnemyTarget.RaidBoss)": {
+      "screen": {"x": 838, "y": 72},
+      "script": {"x": 935, "y": 80}
+    },
+    "battle.locate(EnemyTarget.RaidLeft)": {
+      "screen": {"x": 408, "y": 258},
+      "script": {"x": 455, "y": 288}
+    },
+    "battle.locate(EnemyTarget.RaidLowerLeft)": {
+      "screen": {"x": 551, "y": 388},
+      "script": {"x": 615, "y": 433}
+    },
+    "battle.locate(EnemyTarget.RaidLowerMiddle)": {
+      "screen": {"x": 909, "y": 388},
+      "script": {"x": 1015, "y": 433}
+    },
+    "battle.locate(EnemyTarget.RaidLowerRight)": {
+      "screen": {"x": 1268, "y": 388},
+      "script": {"x": 1415, "y": 433}
+    },
+    "battle.locate(EnemyTarget.RaidMiddle)": {
+      "screen": {"x": 856, "y": 258},
+      "script": {"x": 955, "y": 288}
+    },
+    "battle.locate(EnemyTarget.RaidRight)": {
+      "screen": {"x": 1259, "y": 258},
+      "script": {"x": 1405, "y": 288}
+    },
+    "battle.locate(EnemyTarget.SixBottomLeft)": {
+      "screen": {"x": 372, "y": 247},
+      "script": {"x": 415, "y": 276}
+    },
+    "battle.locate(EnemyTarget.SixBottomMiddle)": {
+      "screen": {"x": 730, "y": 247},
+      "script": {"x": 815, "y": 276}
+    },
+    "battle.locate(EnemyTarget.SixBottomRight)": {
+      "screen": {"x": 1088, "y": 247},
+      "script": {"x": 1215, "y": 276}
+    },
+    "battle.locate(EnemyTarget.SixTopLeft)": {
+      "screen": {"x": 551, "y": 72},
+      "script": {"x": 615, "y": 80}
+    },
+    "battle.locate(EnemyTarget.SixTopMiddle)": {
+      "screen": {"x": 909, "y": 72},
+      "script": {"x": 1015, "y": 80}
+    },
+    "battle.locate(EnemyTarget.SixTopRight)": {
+      "screen": {"x": 1268, "y": 72},
+      "script": {"x": 1415, "y": 80}
+    },
+    "battle.locate(OrderChangeMember.Starting.A)": {
+      "screen": {"x": 502, "y": 627},
+      "script": {"x": 560, "y": 700}
+    },
+    "battle.locate(OrderChangeMember.Starting.B)": {
+      "screen": {"x": 860, "y": 627},
+      "script": {"x": 960, "y": 700}
+    },
+    "battle.locate(OrderChangeMember.Starting.C)": {
+      "screen": {"x": 1218, "y": 627},
+      "script": {"x": 1360, "y": 700}
+    },
+    "battle.locate(OrderChangeMember.Sub.A)": {
+      "screen": {"x": 1577, "y": 627},
+      "script": {"x": 1760, "y": 700}
+    },
+    "battle.locate(OrderChangeMember.Sub.B)": {
+      "screen": {"x": 1935, "y": 627},
+      "script": {"x": 2160, "y": 700}
+    },
+    "battle.locate(OrderChangeMember.Sub.C)": {
+      "screen": {"x": 2293, "y": 627},
+      "script": {"x": 2560, "y": 700}
+    },
+    "battle.locate(ServantTarget.A)": {
+      "screen": {"x": 878, "y": 788},
+      "script": {"x": 980, "y": 880}
+    },
+    "battle.locate(ServantTarget.B)": {
+      "screen": {"x": 1398, "y": 788},
+      "script": {"x": 1560, "y": 880}
+    },
+    "battle.locate(ServantTarget.C)": {
+      "screen": {"x": 1989, "y": 788},
+      "script": {"x": 2220, "y": 880}
+    },
+    "battle.locate(ServantTarget.Left)": {
+      "screen": {"x": 1138, "y": 788},
+      "script": {"x": 1270, "y": 880}
+    },
+    "battle.locate(ServantTarget.Option1)": {
+      "screen": {"x": 1398, "y": 788},
+      "script": {"x": 1560, "y": 880}
+    },
+    "battle.locate(ServantTarget.Option2)": {
+      "screen": {"x": 1819, "y": 788},
+      "script": {"x": 2030, "y": 880}
+    },
+    "battle.locate(ServantTarget.Right)": {
+      "screen": {"x": 1693, "y": 788},
+      "script": {"x": 1890, "y": 880}
+    },
+    "battle.locate(ServantTarget.SpecialTarget.Choice2OptionA)": {
+      "screen": {"x": 1398, "y": 788},
+      "script": {"x": 1560, "y": 880}
+    },
+    "battle.locate(ServantTarget.SpecialTarget.Choice2OptionB)": {
+      "screen": {"x": 1819, "y": 788},
+      "script": {"x": 2030, "y": 880}
+    },
+    "battle.locate(ServantTarget.SpecialTarget.Choice3OptionA)": {
+      "screen": {"x": 1218, "y": 788},
+      "script": {"x": 1360, "y": 880}
+    },
+    "battle.locate(ServantTarget.SpecialTarget.Choice3OptionB)": {
+      "screen": {"x": 1666, "y": 788},
+      "script": {"x": 1860, "y": 880}
+    },
+    "battle.locate(ServantTarget.SpecialTarget.Choice3OptionC)": {
+      "screen": {"x": 1998, "y": 788},
+      "script": {"x": 2230, "y": 880}
+    },
+    "battle.locate(ServantTarget.Transform)": null,
+    "battle.locate(Skill.Servant.A1)": {
+      "screen": {"x": 229, "y": 1001},
+      "script": {"x": 256, "y": 1117}
+    },
+    "battle.locate(Skill.Servant.A2)": {
+      "screen": {"x": 387, "y": 1001},
+      "script": {"x": 432, "y": 1117}
+    },
+    "battle.locate(Skill.Servant.A3)": {
+      "screen": {"x": 545, "y": 1001},
+      "script": {"x": 608, "y": 1117}
+    },
+    "battle.locate(Skill.Servant.B1)": {
+      "screen": {"x": 799, "y": 1001},
+      "script": {"x": 892, "y": 1117}
+    },
+    "battle.locate(Skill.Servant.B2)": {
+      "screen": {"x": 957, "y": 1001},
+      "script": {"x": 1068, "y": 1117}
+    },
+    "battle.locate(Skill.Servant.B3)": {
+      "screen": {"x": 1114, "y": 1001},
+      "script": {"x": 1244, "y": 1117}
+    },
+    "battle.locate(Skill.Servant.C1)": {
+      "screen": {"x": 1367, "y": 1001},
+      "script": {"x": 1526, "y": 1117}
+    },
+    "battle.locate(Skill.Servant.C2)": {
+      "screen": {"x": 1525, "y": 1001},
+      "script": {"x": 1702, "y": 1117}
+    },
+    "battle.locate(Skill.Servant.C3)": {
+      "screen": {"x": 1682, "y": 1001},
+      "script": {"x": 1878, "y": 1117}
+    },
+    "battle.master.battleMenuSearchRegion": {
+      "image": {"height": 40, "width": 200, "x": 1361, "y": 180},
+      "screen": {"height": 72, "width": 358, "x": 2438, "y": 323},
+      "script": {"height": 80, "width": 400, "x": 2721, "y": 360}
+    },
+    "battle.master.cancelCommandSpellRegion": {
+      "image": {"height": 87, "width": 48, "x": 679, "y": 382},
+      "screen": {"height": 156, "width": 85, "x": 1217, "y": 684},
+      "script": {"height": 174, "width": 95, "x": 1358, "y": 764}
+    },
+    "battle.master.commandSpellClick": {
+      "screen": {"x": 2353, "y": 134},
+      "script": {"x": 2627, "y": 150}
+    },
+    "battle.master.locate(Skill.CommandSpell.NpCharge)": {
+      "screen": {"x": 1398, "y": 627},
+      "script": {"x": 1560, "y": 700}
+    },
+    "battle.master.locate(Skill.Master.A)": {"error": "java.net.ConnectException"},
+    "battle.master.locate(Skill.Master.B)": {"error": "java.net.ConnectException"},
+    "battle.master.locate(Skill.Master.C)": {"error": "java.net.ConnectException"},
+    "battle.master.masterSkillOpenClick": {"error": "java.net.ConnectException"},
+    "battle.master.stageCountRegion": {"error": "java.net.ConnectException"},
+    "battle.orderChangeOkClick": {
+      "screen": {"x": 1398, "y": 1129},
+      "script": {"x": 1560, "y": 1260}
+    },
+    "battle.screenCheckRegion": {
+      "image": {"height": 88, "width": 200, "x": 1231, "y": 615},
+      "screen": {"height": 157, "width": 358, "x": 2205, "y": 1102},
+      "script": {"height": 175, "width": 400, "x": 2461, "y": 1230}
+    },
+    "battle.servantChangeCheckRegion(FieldSlot.A)": {
+      "image": {"height": 40, "width": 20, "x": 226, "y": 433},
+      "screen": {"height": 72, "width": 36, "x": 405, "y": 775},
+      "script": {"height": 80, "width": 40, "x": 452, "y": 865}
+    },
+    "battle.servantChangeCheckRegion(FieldSlot.B)": {
+      "image": {"height": 40, "width": 20, "x": 544, "y": 433},
+      "screen": {"height": 72, "width": 36, "x": 975, "y": 775},
+      "script": {"height": 80, "width": 40, "x": 1088, "y": 865}
+    },
+    "battle.servantChangeCheckRegion(FieldSlot.C)": {
+      "image": {"height": 40, "width": 20, "x": 861, "y": 433},
+      "screen": {"height": 72, "width": 36, "x": 1543, "y": 775},
+      "script": {"height": 80, "width": 40, "x": 1722, "y": 865}
+    },
+    "battle.servantChangeSupportCheckRegion(FieldSlot.A)": {
+      "image": {"height": 85, "width": 150, "x": 229, "y": 355},
+      "screen": {"height": 152, "width": 269, "x": 409, "y": 636},
+      "script": {"height": 170, "width": 300, "x": 457, "y": 710}
+    },
+    "battle.servantChangeSupportCheckRegion(FieldSlot.B)": {
+      "image": {"height": 85, "width": 150, "x": 547, "y": 355},
+      "screen": {"height": 152, "width": 269, "x": 979, "y": 636},
+      "script": {"height": 170, "width": 300, "x": 1093, "y": 710}
+    },
+    "battle.servantChangeSupportCheckRegion(FieldSlot.C)": {
+      "image": {"height": 85, "width": 150, "x": 864, "y": 355},
+      "screen": {"height": 152, "width": 269, "x": 1547, "y": 636},
+      "script": {"height": 170, "width": 300, "x": 1727, "y": 710}
+    },
+    "battle.servantDetailsFaceCardRegion": {
+      "image": {"height": 30, "width": 55, "x": 438, "y": 205},
+      "screen": {"height": 54, "width": 99, "x": 784, "y": 367},
+      "script": {"height": 60, "width": 110, "x": 875, "y": 410}
+    },
+    "battle.servantDetailsInfoClick": {
+      "screen": {"x": 806, "y": 99},
+      "script": {"x": 900, "y": 110}
+    },
+    "battle.servantOpenDetailsClick(FieldSlot.A)": {
+      "screen": {"x": 387, "y": 726},
+      "script": {"x": 432, "y": 810}
+    },
+    "battle.servantOpenDetailsClick(FieldSlot.B)": {
+      "screen": {"x": 957, "y": 726},
+      "script": {"x": 1068, "y": 810}
+    },
+    "battle.servantOpenDetailsClick(FieldSlot.C)": {
+      "screen": {"x": 1525, "y": 726},
+      "script": {"x": 1702, "y": 810}
+    },
+    "battle.servantPresentRegion(FieldSlot.A)": {
+      "image": {"height": 60, "width": 60, "x": 322, "y": 592},
+      "screen": {"height": 108, "width": 108, "x": 576, "y": 1061},
+      "script": {"height": 120, "width": 120, "x": 643, "y": 1184}
+    },
+    "battle.servantPresentRegion(FieldSlot.B)": {
+      "image": {"height": 60, "width": 60, "x": 640, "y": 592},
+      "screen": {"height": 108, "width": 108, "x": 1146, "y": 1061},
+      "script": {"height": 120, "width": 120, "x": 1279, "y": 1184}
+    },
+    "battle.servantPresentRegion(FieldSlot.C)": {
+      "image": {"height": 60, "width": 60, "x": 957, "y": 592},
+      "screen": {"height": 108, "width": 108, "x": 1714, "y": 1061},
+      "script": {"height": 120, "width": 120, "x": 1913, "y": 1184}
+    },
+    "battle.shuffleNPShortageRegion": {
+      "image": {"height": 65, "width": 160, "x": 700, "y": 530},
+      "screen": {"height": 116, "width": 287, "x": 1254, "y": 950},
+      "script": {"height": 130, "width": 320, "x": 1400, "y": 1060}
+    },
+    "battle.skillOkClick": {
+      "screen": {"x": 1756, "y": 761},
+      "script": {"x": 1960, "y": 850}
+    },
+    "battle.skillUseRegion": {
+      "image": {"height": 43, "width": 210, "x": 675, "y": 160},
+      "screen": {"height": 76, "width": 376, "x": 1209, "y": 287},
+      "script": {"height": 85, "width": 420, "x": 1350, "y": 320}
+    },
+    "battleMenuCloseClick": {
+      "screen": {"x": 2359, "y": 197},
+      "script": {"x": 2633, "y": 220}
+    },
+    "bond.gain(0)": {
+      "image": {"height": 46, "width": 215, "x": 223, "y": 488},
+      "screen": {"height": 82, "width": 385, "x": 399, "y": 874},
+      "script": {"height": 92, "width": 430, "x": 445, "y": 976}
+    },
+    "bond.gain(1)": {
+      "image": {"height": 46, "width": 215, "x": 448, "y": 488},
+      "screen": {"height": 82, "width": 385, "x": 802, "y": 874},
+      "script": {"height": 92, "width": 430, "x": 895, "y": 976}
+    },
+    "bond.gain(2)": {
+      "image": {"height": 46, "width": 215, "x": 673, "y": 488},
+      "screen": {"height": 82, "width": 385, "x": 1205, "y": 874},
+      "script": {"height": 92, "width": 430, "x": 1345, "y": 976}
+    },
+    "bond.gain(3)": {
+      "image": {"height": 46, "width": 215, "x": 898, "y": 488},
+      "screen": {"height": 82, "width": 385, "x": 1608, "y": 874},
+      "script": {"height": 92, "width": 430, "x": 1795, "y": 976}
+    },
+    "bond.gain(4)": {
+      "image": {"height": 46, "width": 215, "x": 1123, "y": 488},
+      "screen": {"height": 82, "width": 385, "x": 2011, "y": 874},
+      "script": {"height": 92, "width": 430, "x": 2245, "y": 976}
+    },
+    "bond.gainText(0)": {
+      "image": {"height": 38, "width": 215, "x": 223, "y": 488},
+      "screen": {"height": 68, "width": 385, "x": 399, "y": 874},
+      "script": {"height": 76, "width": 430, "x": 445, "y": 976}
+    },
+    "bond.gainText(1)": {
+      "image": {"height": 38, "width": 215, "x": 448, "y": 488},
+      "screen": {"height": 68, "width": 385, "x": 802, "y": 874},
+      "script": {"height": 76, "width": 430, "x": 895, "y": 976}
+    },
+    "bond.gainText(2)": {
+      "image": {"height": 38, "width": 215, "x": 673, "y": 488},
+      "screen": {"height": 68, "width": 385, "x": 1205, "y": 874},
+      "script": {"height": 76, "width": 430, "x": 1345, "y": 976}
+    },
+    "bond.gainText(3)": {
+      "image": {"height": 38, "width": 215, "x": 898, "y": 488},
+      "screen": {"height": 68, "width": 385, "x": 1608, "y": 874},
+      "script": {"height": 76, "width": 430, "x": 1795, "y": 976}
+    },
+    "bond.gainText(4)": {
+      "image": {"height": 38, "width": 215, "x": 1123, "y": 488},
+      "screen": {"height": 68, "width": 385, "x": 2011, "y": 874},
+      "script": {"height": 76, "width": 430, "x": 2245, "y": 976}
+    },
+    "bond.levelUpMarker(0)": {
+      "image": {"height": 95, "width": 225, "x": 218, "y": 330},
+      "screen": {"height": 170, "width": 403, "x": 390, "y": 591},
+      "script": {"height": 190, "width": 450, "x": 435, "y": 660}
+    },
+    "bond.levelUpMarker(1)": {
+      "image": {"height": 95, "width": 225, "x": 443, "y": 330},
+      "screen": {"height": 170, "width": 403, "x": 793, "y": 591},
+      "script": {"height": 190, "width": 450, "x": 885, "y": 660}
+    },
+    "bond.levelUpMarker(2)": {
+      "image": {"height": 95, "width": 225, "x": 668, "y": 330},
+      "screen": {"height": 170, "width": 403, "x": 1196, "y": 591},
+      "script": {"height": 190, "width": 450, "x": 1335, "y": 660}
+    },
+    "bond.levelUpMarker(3)": {
+      "image": {"height": 95, "width": 225, "x": 893, "y": 330},
+      "screen": {"height": 170, "width": 403, "x": 1599, "y": 591},
+      "script": {"height": 190, "width": 450, "x": 1785, "y": 660}
+    },
+    "bond.levelUpMarker(4)": {
+      "image": {"height": 95, "width": 225, "x": 1118, "y": 330},
+      "screen": {"height": 170, "width": 403, "x": 2002, "y": 591},
+      "script": {"height": 190, "width": 450, "x": 2235, "y": 660}
+    },
+    "bond.popupArrow": {
+      "image": {"height": 120, "width": 200, "x": 1120, "y": 350},
+      "screen": {"height": 215, "width": 358, "x": 2007, "y": 627},
+      "script": {"height": 240, "width": 400, "x": 2240, "y": 700}
+    },
+    "bond.popupTitle": {
+      "image": {"height": 110, "width": 610, "x": 780, "y": 280},
+      "screen": {"height": 197, "width": 1093, "x": 1398, "y": 502},
+      "script": {"height": 220, "width": 1220, "x": 1560, "y": 560}
+    },
+    "bond.resultTitle": {
+      "image": {"height": 90, "width": 500, "x": 180, "y": 140},
+      "screen": {"height": 161, "width": 896, "x": 323, "y": 251},
+      "script": {"height": 180, "width": 1000, "x": 360, "y": 280}
+    },
+    "continueBoostClick": {
+      "screen": {"x": 1380, "y": 1003},
+      "script": {"x": 1540, "y": 1120}
+    },
+    "continueRegion": {
+      "image": {"height": 150, "width": 400, "x": 840, "y": 500},
+      "screen": {"height": 269, "width": 717, "x": 1505, "y": 896},
+      "script": {"height": 300, "width": 800, "x": 1680, "y": 1000}
+    },
+    "edgeInset": 171,
+    "emptyEnhanceRegion": {
+      "image": {"height": 200, "width": 200, "x": 230, "y": 300},
+      "screen": {"height": 358, "width": 358, "x": 412, "y": 538},
+      "script": {"height": 400, "width": 400, "x": 460, "y": 600}
+    },
+    "enhancementBannerRegion": {
+      "image": {"height": 19, "width": 121, "x": 574, "y": 141},
+      "screen": {"height": 33, "width": 216, "x": 1028, "y": 253},
+      "script": {"height": 37, "width": 241, "x": 1148, "y": 282}
+    },
+    "enhancementClick": {
+      "screen": {"x": 2441, "y": 1150},
+      "script": {"x": 2725, "y": 1284}
+    },
+    "enhancementSkipRapidClick": {
+      "screen": {"x": 1398, "y": 1254},
+      "script": {"x": 1560, "y": 1400}
+    },
+    "fp.continueSummonClick": {
+      "screen": {"x": 1684, "y": 1187},
+      "script": {"x": 1880, "y": 1325}
+    },
+    "fp.continueSummonRegion": {
+      "image": {"height": 85, "width": 290, "x": 762, "y": 632},
+      "screen": {"height": 152, "width": 520, "x": 1365, "y": 1132},
+      "script": {"height": 170, "width": 580, "x": 1524, "y": 1264}
+    },
+    "fp.first10SummonClick": {
+      "screen": {"x": 1756, "y": 951},
+      "script": {"x": 1960, "y": 1062}
+    },
+    "fp.initialSummonCheck": {
+      "image": {"height": 92, "width": 120, "x": 628, "y": 561},
+      "screen": {"height": 164, "width": 215, "x": 1124, "y": 1004},
+      "script": {"height": 183, "width": 240, "x": 1255, "y": 1121}
+    },
+    "fp.initialSummonClick": {
+      "screen": {"x": 1399, "y": 875},
+      "script": {"x": 1562, "y": 977}
+    },
+    "fp.initialSummonContinueClick": {
+      "image": {"height": 30, "width": 60, "x": 951, "y": 573},
+      "screen": {"height": 54, "width": 108, "x": 1703, "y": 1026},
+      "script": {"height": 60, "width": 120, "x": 1901, "y": 1145}
+    },
+    "fp.okClick": {
+      "screen": {"x": 1684, "y": 1003},
+      "script": {"x": 1880, "y": 1120}
+    },
+    "fp.skipRapidClick": {
+      "screen": {"x": 2508, "y": 1254},
+      "script": {"x": 2800, "y": 1400}
+    },
+    "fp.summonCheck": {
+      "image": {"height": 72, "width": 50, "x": 905, "y": 561},
+      "screen": {"height": 128, "width": 90, "x": 1621, "y": 1004},
+      "script": {"height": 143, "width": 100, "x": 1810, "y": 1121}
+    },
+    "giftBoxSwipeEnd": {
+      "screen": {"x": 1505, "y": 314},
+      "script": {"x": 1680, "y": 350}
+    },
+    "giftBoxSwipeStart": {
+      "screen": {"x": 1505, "y": 1075},
+      "script": {"x": 1680, "y": 1200}
+    },
+    "interludeCloseClick": {
+      "screen": {"x": 1040, "y": 1008},
+      "script": {"x": 1161, "y": 1125}
+    },
+    "interludeEndScreenClose": {
+      "image": {"height": 45, "width": 115, "x": 523, "y": 540},
+      "screen": {"height": 81, "width": 206, "x": 936, "y": 968},
+      "script": {"height": 90, "width": 230, "x": 1045, "y": 1080}
+    },
+    "inventoryFullRegion": {
+      "image": {"height": 95, "width": 280, "x": 640, "y": 430},
+      "screen": {"height": 170, "width": 502, "x": 1147, "y": 770},
+      "script": {"height": 190, "width": 560, "x": 1280, "y": 860}
+    },
+    "locate(BoostItem.Enabled.BoostItem1)": {
+      "screen": {"x": 2544, "y": 374},
+      "script": {"x": 2840, "y": 418}
+    },
+    "locate(BoostItem.Enabled.BoostItem2)": {
+      "screen": {"x": 2544, "y": 650},
+      "script": {"x": 2840, "y": 726}
+    },
+    "locate(BoostItem.Enabled.BoostItem3)": {
+      "screen": {"x": 2544, "y": 896},
+      "script": {"x": 2840, "y": 1000}
+    },
+    "locate(BoostItem.Enabled.Skip)": {
+      "screen": {"x": 2877, "y": 1168},
+      "script": {"x": 3212, "y": 1304}
+    },
+    "locate(RefillResourceEnum.Bronze)[0]": {
+      "screen": {"x": 2069, "y": 269},
+      "script": {"x": 2310, "y": 300}
+    },
+    "locate(RefillResourceEnum.Bronze)[1]": {
+      "screen": {"x": 923, "y": 1021},
+      "script": {"x": 1030, "y": 1140}
+    },
+    "locate(RefillResourceEnum.Copper)[0]": {
+      "screen": {"x": 2069, "y": 932},
+      "script": {"x": 2310, "y": 1040}
+    },
+    "locate(RefillResourceEnum.Copper)[1]": {
+      "screen": {"x": 923, "y": 878},
+      "script": {"x": 1030, "y": 980}
+    },
+    "locate(RefillResourceEnum.Gold)[0]": {
+      "screen": {"x": 2069, "y": 269},
+      "script": {"x": 2310, "y": 300}
+    },
+    "locate(RefillResourceEnum.Gold)[1]": {
+      "screen": {"x": 923, "y": 568},
+      "script": {"x": 1030, "y": 634}
+    },
+    "locate(RefillResourceEnum.SQ)[0]": {
+      "screen": {"x": 2069, "y": 269},
+      "script": {"x": 2310, "y": 300}
+    },
+    "locate(RefillResourceEnum.SQ)[1]": {
+      "screen": {"x": 923, "y": 309},
+      "script": {"x": 1030, "y": 345}
+    },
+    "locate(RefillResourceEnum.Silver)[0]": {
+      "screen": {"x": 2069, "y": 269},
+      "script": {"x": 2310, "y": 300}
+    },
+    "locate(RefillResourceEnum.Silver)[1]": {
+      "screen": {"x": 923, "y": 826},
+      "script": {"x": 1030, "y": 922}
+    },
+    "lottery.checkRegion": {
+      "image": {"height": 165, "width": 338, "x": 215, "y": 350},
+      "screen": {"height": 296, "width": 605, "x": 385, "y": 627},
+      "script": {"height": 330, "width": 675, "x": 430, "y": 700}
+    },
+    "lottery.doneRegion": {
+      "image": {"height": 45, "width": 30, "x": 525, "y": 350},
+      "screen": {"height": 81, "width": 54, "x": 941, "y": 627},
+      "script": {"height": 90, "width": 60, "x": 1050, "y": 700}
+    },
+    "lottery.finishedRegion": {
+      "image": {"height": 50, "width": 28, "x": 525, "y": 350},
+      "screen": {"height": 90, "width": 49, "x": 941, "y": 627},
+      "script": {"height": 100, "width": 55, "x": 1050, "y": 700}
+    },
+    "lottery.fullPresentBoxRegion": {
+      "image": {"height": 250, "width": 500, "x": 790, "y": 430},
+      "screen": {"height": 448, "width": 896, "x": 1415, "y": 770},
+      "script": {"height": 500, "width": 1000, "x": 1580, "y": 860}
+    },
+    "lottery.spinClick": {
+      "screen": {"x": 819, "y": 770},
+      "script": {"x": 914, "y": 860}
+    },
+    "lottery.transitionRegion": {
+      "image": {"height": 35, "width": 33, "x": 1370, "y": 15},
+      "screen": {"height": 63, "width": 58, "x": 2455, "y": 27},
+      "script": {"height": 70, "width": 65, "x": 2740, "y": 30}
+    },
+    "menuScreenRegion": {
+      "image": {"height": 120, "width": 300, "x": 1261, "y": 600},
+      "screen": {"height": 215, "width": 538, "x": 2258, "y": 1075},
+      "script": {"height": 240, "width": 600, "x": 2521, "y": 1200}
+    },
+    "menuSelectQuestClick": {
+      "screen": {"x": 2384, "y": 394},
+      "script": {"x": 2661, "y": 440}
+    },
+    "menuStartQuestClick": {
+      "screen": {"x": 2482, "y": 1147},
+      "script": {"x": 2771, "y": 1280}
+    },
+    "menuStorySkipClick": {
+      "screen": {"x": 2365, "y": 72},
+      "script": {"x": 2640, "y": 80}
+    },
+    "menuStorySkipRegion": {
+      "image": {"height": 60, "width": 150, "x": 1260, "y": 10},
+      "screen": {"height": 108, "width": 269, "x": 2258, "y": 18},
+      "script": {"height": 120, "width": 300, "x": 2520, "y": 20}
+    },
+    "menuStorySkipYesClick": {
+      "screen": {"x": 1684, "y": 985},
+      "script": {"x": 1880, "y": 1100}
+    },
+    "middleOfScreenClick": {
+      "screen": {"x": 1398, "y": 645},
+      "script": {"x": 1560, "y": 720}
+    },
+    "missionPopupClearClick": {
+      "screen": {"x": 1398, "y": 90},
+      "script": {"x": 1560, "y": 100}
+    },
+    "npStartedRegion": {
+      "image": {"height": 200, "width": 400, "x": 580, "y": 250},
+      "screen": {"height": 358, "width": 717, "x": 1039, "y": 448},
+      "script": {"height": 400, "width": 800, "x": 1160, "y": 500}
+    },
+    "ordealCallConfirmPodUseRegion": {
+      "image": {"height": 31, "width": 210, "x": 875, "y": 548},
+      "screen": {"height": 56, "width": 376, "x": 1568, "y": 982},
+      "script": {"height": 62, "width": 420, "x": 1750, "y": 1096}
+    },
+    "ordealCallOutOfPodsClick": {
+      "screen": {"x": 1396, "y": 1007},
+      "script": {"x": 1558, "y": 1124}
+    },
+    "ordealCallOutOfPodsRegion": {
+      "image": {"height": 36, "width": 110, "x": 724, "y": 544},
+      "screen": {"height": 65, "width": 196, "x": 1297, "y": 975},
+      "script": {"height": 72, "width": 219, "x": 1448, "y": 1088}
+    },
+    "partySelectionArray[0]": {
+      "screen": {"x": 1084, "y": 90},
+      "script": {"x": 1210, "y": 100}
+    },
+    "partySelectionArray[10]": {
+      "screen": {"x": 1532, "y": 90},
+      "script": {"x": 1710, "y": 100}
+    },
+    "partySelectionArray[11]": {
+      "screen": {"x": 1577, "y": 90},
+      "script": {"x": 1760, "y": 100}
+    },
+    "partySelectionArray[12]": {
+      "screen": {"x": 1621, "y": 90},
+      "script": {"x": 1810, "y": 100}
+    },
+    "partySelectionArray[13]": {
+      "screen": {"x": 1666, "y": 90},
+      "script": {"x": 1860, "y": 100}
+    },
+    "partySelectionArray[14]": {
+      "screen": {"x": 1711, "y": 90},
+      "script": {"x": 1910, "y": 100}
+    },
+    "partySelectionArray[1]": {
+      "screen": {"x": 1129, "y": 90},
+      "script": {"x": 1260, "y": 100}
+    },
+    "partySelectionArray[2]": {
+      "screen": {"x": 1174, "y": 90},
+      "script": {"x": 1310, "y": 100}
+    },
+    "partySelectionArray[3]": {
+      "screen": {"x": 1218, "y": 90},
+      "script": {"x": 1360, "y": 100}
+    },
+    "partySelectionArray[4]": {
+      "screen": {"x": 1263, "y": 90},
+      "script": {"x": 1410, "y": 100}
+    },
+    "partySelectionArray[5]": {
+      "screen": {"x": 1308, "y": 90},
+      "script": {"x": 1460, "y": 100}
+    },
+    "partySelectionArray[6]": {
+      "screen": {"x": 1353, "y": 90},
+      "script": {"x": 1510, "y": 100}
+    },
+    "partySelectionArray[7]": {
+      "screen": {"x": 1398, "y": 90},
+      "script": {"x": 1560, "y": 100}
+    },
+    "partySelectionArray[8]": {
+      "screen": {"x": 1442, "y": 90},
+      "script": {"x": 1610, "y": 100}
+    },
+    "partySelectionArray[9]": {
+      "screen": {"x": 1487, "y": 90},
+      "script": {"x": 1660, "y": 100}
+    },
+    "questItems.dialogClose": {
+      "image": {"height": 87, "width": 310, "x": 625, "y": 520},
+      "screen": {"height": 156, "width": 555, "x": 1120, "y": 932},
+      "script": {"height": 174, "width": 620, "x": 1250, "y": 1040}
+    },
+    "questItems.dialogHeading": {
+      "image": {"height": 80, "width": 520, "x": 520, "y": 80},
+      "screen": {"height": 143, "width": 932, "x": 932, "y": 143},
+      "script": {"height": 160, "width": 1040, "x": 1040, "y": 160}
+    },
+    "questItems.mainControl": {
+      "image": {"height": 79, "width": 260, "x": 896, "y": 599},
+      "screen": {"height": 142, "width": 466, "x": 1604, "y": 1073},
+      "script": {"height": 158, "width": 520, "x": 1791, "y": 1198}
+    },
+    "questItems.stormPodControl": {
+      "image": {"height": 82, "width": 100, "x": 655, "y": 365},
+      "screen": {"height": 147, "width": 179, "x": 1174, "y": 654},
+      "script": {"height": 164, "width": 200, "x": 1310, "y": 730}
+    },
+    "questItems.teapotControl": {
+      "image": {"height": 82, "width": 100, "x": 905, "y": 365},
+      "screen": {"height": 147, "width": 179, "x": 1621, "y": 654},
+      "script": {"height": 164, "width": 200, "x": 1810, "y": 730}
+    },
+    "rankUpRegion": {
+      "image": {"height": 170, "width": 110, "x": 915, "y": 365},
+      "screen": {"height": 305, "width": 197, "x": 1639, "y": 654},
+      "script": {"height": 340, "width": 220, "x": 1830, "y": 730}
+    },
+    "resultBondRegion": {
+      "image": {"height": 200, "width": 60, "x": 1140, "y": 300},
+      "screen": {"height": 358, "width": 108, "x": 2043, "y": 538},
+      "script": {"height": 400, "width": 120, "x": 2280, "y": 600}
+    },
+    "resultCeRewardCloseClick": {
+      "screen": {"x": 237, "y": 54},
+      "script": {"x": 265, "y": 60}
+    },
+    "resultCeRewardDetailsRegion": {
+      "image": {"height": 58, "width": 68, "x": 97, "y": 256},
+      "screen": {"height": 103, "width": 121, "x": 173, "y": 459},
+      "script": {"height": 115, "width": 135, "x": 193, "y": 512}
+    },
+    "resultCeRewardRegion": {
+      "image": {"height": 14, "width": 17, "x": 665, "y": 608},
+      "screen": {"height": 25, "width": 30, "x": 1191, "y": 1089},
+      "script": {"height": 28, "width": 33, "x": 1330, "y": 1216}
+    },
+    "resultClick": {
+      "screen": {"x": 1684, "y": 1209},
+      "script": {"x": 1880, "y": 1350}
+    },
+    "resultDropScrollEndClick": {
+      "screen": {"x": 2320, "y": 867},
+      "script": {"x": 2590, "y": 968}
+    },
+    "resultDropScrollbarRegion": {
+      "image": {"height": 44, "width": 50, "x": 1270, "y": 84},
+      "screen": {"height": 79, "width": 90, "x": 2275, "y": 150},
+      "script": {"height": 88, "width": 100, "x": 2540, "y": 167}
+    },
+    "resultFriendRequestRegion": {
+      "image": {"height": 47, "width": 50, "x": 1080, "y": 75},
+      "screen": {"height": 84, "width": 90, "x": 1935, "y": 134},
+      "script": {"height": 94, "width": 100, "x": 2160, "y": 150}
+    },
+    "resultFriendRequestRejectClick": {
+      "screen": {"x": 788, "y": 1075},
+      "script": {"x": 880, "y": 1200}
+    },
+    "resultFriendRequestSendClick": {
+      "screen": {"x": 2007, "y": 1075},
+      "script": {"x": 2240, "y": 1200}
+    },
+    "resultMasterExpRegion": {
+      "image": {"height": 55, "width": 200, "x": 780, "y": 175},
+      "screen": {"height": 99, "width": 358, "x": 1398, "y": 314},
+      "script": {"height": 110, "width": 400, "x": 1560, "y": 350}
+    },
+    "resultMasterLvlUpRegion": {
+      "image": {"height": 135, "width": 125, "x": 1135, "y": 80},
+      "screen": {"height": 242, "width": 224, "x": 2034, "y": 143},
+      "script": {"height": 270, "width": 250, "x": 2270, "y": 160}
+    },
+    "resultMatRewardsRegion": {
+      "image": {"height": 65, "width": 140, "x": 1180, "y": 610},
+      "screen": {"height": 116, "width": 251, "x": 2114, "y": 1093},
+      "script": {"height": 130, "width": 280, "x": 2360, "y": 1220}
+    },
+    "resultQuestRewardRegion": {
+      "image": {"height": 125, "width": 185, "x": 955, "y": 70},
+      "screen": {"height": 224, "width": 331, "x": 1711, "y": 125},
+      "script": {"height": 250, "width": 370, "x": 1910, "y": 140}
+    },
+    "resultScreenRegion": {
+      "image": {"height": 100, "width": 350, "x": 190, "y": 150},
+      "screen": {"height": 179, "width": 627, "x": 340, "y": 269},
+      "script": {"height": 200, "width": 700, "x": 380, "y": 300}
+    },
+    "retryRegion": {
+      "image": {"height": 150, "width": 350, "x": 790, "y": 500},
+      "screen": {"height": 269, "width": 627, "x": 1415, "y": 896},
+      "script": {"height": 300, "width": 700, "x": 1580, "y": 1000}
+    },
+    "scriptArea": {
+      "image": {"height": 720, "width": 1561, "x": 0, "y": 0},
+      "screen": {"height": 1290, "width": 2796, "x": 0, "y": 0},
+      "script": {"height": 1440, "width": 3121, "x": 0, "y": 0}
+    },
+    "selectedPartyRegion": {
+      "image": {"height": 36, "width": 370, "x": 595, "y": 31},
+      "screen": {"height": 65, "width": 663, "x": 1066, "y": 56},
+      "script": {"height": 72, "width": 740, "x": 1190, "y": 62}
+    },
+    "servant.ascensionReturnToLevelRegion": {
+      "image": {"height": 43, "width": 24, "x": 1063, "y": 244},
+      "screen": {"height": 77, "width": 42, "x": 1905, "y": 436},
+      "script": {"height": 86, "width": 47, "x": 2126, "y": 487}
+    },
+    "servant.autoFillStateRegion": {
+      "image": {"height": 40, "width": 50, "x": 913, "y": 418},
+      "screen": {"height": 72, "width": 90, "x": 1635, "y": 749},
+      "script": {"height": 80, "width": 100, "x": 1825, "y": 836}
+    },
+    "servant.autoSelectMinEmberLowQPLocation": {
+      "screen": {"x": 1758, "y": 1009},
+      "script": {"x": 1962, "y": 1126}
+    },
+    "servant.autoSelectMinEmberLowQPRegion": {
+      "image": {"height": 33, "width": 64, "x": 950, "y": 546},
+      "screen": {"height": 59, "width": 115, "x": 1701, "y": 978},
+      "script": {"height": 66, "width": 128, "x": 1899, "y": 1092}
+    },
+    "servant.emberConfirmationDialogRegion": {
+      "image": {"height": 35, "width": 65, "x": 949, "y": 615},
+      "screen": {"height": 63, "width": 116, "x": 1700, "y": 1101},
+      "script": {"height": 70, "width": 130, "x": 1898, "y": 1229}
+    },
+    "servant.emptyEmberOrQPDialogRegion": {
+      "image": {"height": 38, "width": 112, "x": 724, "y": 543},
+      "screen": {"height": 68, "width": 201, "x": 1296, "y": 973},
+      "script": {"height": 76, "width": 224, "x": 1447, "y": 1086}
+    },
+    "servant.finalConfirmRegion": {
+      "image": {"height": 32, "width": 62, "x": 950, "y": 572},
+      "screen": {"height": 57, "width": 111, "x": 1701, "y": 1024},
+      "script": {"height": 64, "width": 124, "x": 1899, "y": 1143}
+    },
+    "servant.returnToServantMenuFromAscensionLocation": {
+      "screen": {"x": 2129, "y": 512},
+      "script": {"x": 2376, "y": 572}
+    },
+    "servant.servantAutoSelectRegion": {
+      "image": {"height": 37, "width": 129, "x": 1291, "y": 129},
+      "screen": {"height": 65, "width": 231, "x": 2313, "y": 231},
+      "script": {"height": 73, "width": 258, "x": 2582, "y": 258}
+    },
+    "servant.servantMaxLevelRegion": {
+      "image": {"height": 64, "width": 29, "x": 1087, "y": 504},
+      "screen": {"height": 115, "width": 52, "x": 1947, "y": 902},
+      "script": {"height": 128, "width": 58, "x": 2173, "y": 1007}
+    },
+    "servant.servantRedirectCheckRegion(GameServer.Cn)": {
+      "image": {"height": 57, "width": 25, "x": 1167, "y": 507},
+      "screen": {"height": 102, "width": 45, "x": 2091, "y": 907},
+      "script": {"height": 114, "width": 50, "x": 2334, "y": 1013}
+    },
+    "servant.servantRedirectCheckRegion(GameServer.En.BetterFGO)": {
+      "image": {"height": 58, "width": 24, "x": 1124, "y": 507},
+      "screen": {"height": 103, "width": 42, "x": 2013, "y": 907},
+      "script": {"height": 115, "width": 47, "x": 2247, "y": 1013}
+    },
+    "servant.servantRedirectCheckRegion(GameServer.En.Original)": {
+      "image": {"height": 58, "width": 24, "x": 1124, "y": 507},
+      "screen": {"height": 103, "width": 42, "x": 2013, "y": 907},
+      "script": {"height": 115, "width": 47, "x": 2247, "y": 1013}
+    },
+    "servant.servantRedirectCheckRegion(GameServer.Jp.BetterFGO)": {
+      "image": {"height": 58, "width": 24, "x": 1124, "y": 507},
+      "screen": {"height": 103, "width": 42, "x": 2013, "y": 907},
+      "script": {"height": 115, "width": 47, "x": 2247, "y": 1013}
+    },
+    "servant.servantRedirectCheckRegion(GameServer.Jp.Original)": {
+      "image": {"height": 58, "width": 24, "x": 1124, "y": 507},
+      "screen": {"height": 103, "width": 42, "x": 2013, "y": 907},
+      "script": {"height": 115, "width": 47, "x": 2247, "y": 1013}
+    },
+    "servant.servantRedirectCheckRegion(GameServer.Kr)": {
+      "image": {"height": 57, "width": 25, "x": 1167, "y": 507},
+      "screen": {"height": 102, "width": 45, "x": 2091, "y": 907},
+      "script": {"height": 114, "width": 50, "x": 2334, "y": 1013}
+    },
+    "servant.servantRedirectCheckRegion(GameServer.Tw)": {
+      "image": {"height": 57, "width": 25, "x": 1167, "y": 507},
+      "screen": {"height": 102, "width": 45, "x": 2091, "y": 907},
+      "script": {"height": 114, "width": 50, "x": 2334, "y": 1013}
+    },
+    "sibling.CEEnhanceLocations.autoFill": {
+      "image": {"height": 40, "width": 50, "x": 913, "y": 507},
+      "screen": {"height": 72, "width": 90, "x": 1635, "y": 907},
+      "script": {"height": 80, "width": 100, "x": 1825, "y": 1013}
+    },
+    "sibling.CEEnhanceLocations.execute": {
+      "image": {"height": 60, "width": 150, "x": 1118, "y": 605},
+      "screen": {"height": 108, "width": 269, "x": 2002, "y": 1084},
+      "script": {"height": 120, "width": 300, "x": 2235, "y": 1210}
+    },
+    "sibling.CEEnhanceLocations.filterWarningConfirm": {
+      "screen": {"x": 1756, "y": 1012},
+      "script": {"x": 1960, "y": 1130}
+    },
+    "sibling.CEEnhanceLocations.filterWarningConfirmRegion": {
+      "image": {"height": 45, "width": 130, "x": 930, "y": 543},
+      "screen": {"height": 81, "width": 233, "x": 1666, "y": 972},
+      "script": {"height": 90, "width": 260, "x": 1860, "y": 1085}
+    },
+    "sibling.CEEnhanceLocations.reselect": {
+      "image": {"height": 90, "width": 170, "x": 256, "y": 0},
+      "screen": {"height": 161, "width": 305, "x": 458, "y": 0},
+      "script": {"height": 180, "width": 340, "x": 511, "y": 0}
+    },
+    "sibling.FpSellLocations.bannerTitle": {
+      "image": {"height": 130, "width": 650, "x": 455, "y": 300},
+      "screen": {"height": 233, "width": 1165, "x": 815, "y": 538},
+      "script": {"height": 260, "width": 1300, "x": 910, "y": 600}
+    },
+    "sibling.FpSellLocations.bottomScrollbarRegion": {
+      "image": {"height": 17, "width": 36, "x": 1198, "y": 665},
+      "screen": {"height": 30, "width": 65, "x": 2146, "y": 1191},
+      "script": {"height": 34, "width": 72, "x": 2396, "y": 1330}
+    },
+    "sibling.FpSellLocations.cardHeight": 252,
+    "sibling.FpSellLocations.cardWidth": 232,
+    "sibling.FpSellLocations.close": {
+      "screen": {"x": 297, "y": 72},
+      "script": {"x": 331, "y": 80}
+    },
+    "sibling.FpSellLocations.columnX(0)": 446,
+    "sibling.FpSellLocations.columnX(1)": 712,
+    "sibling.FpSellLocations.columnX(2)": 979,
+    "sibling.FpSellLocations.columnX(3)": 1246,
+    "sibling.FpSellLocations.columnX(4)": 1512,
+    "sibling.FpSellLocations.columnX(5)": 1778,
+    "sibling.FpSellLocations.columnX(6)": 2045,
+    "sibling.FpSellLocations.confirm": {
+      "image": {"height": 90, "width": 220, "x": 1245, "y": 620},
+      "screen": {"height": 161, "width": 394, "x": 2231, "y": 1111},
+      "script": {"height": 180, "width": 440, "x": 2490, "y": 1240}
+    },
+    "sibling.FpSellLocations.convert": {
+      "image": {"height": 85, "width": 310, "x": 830, "y": 585},
+      "screen": {"height": 152, "width": 555, "x": 1487, "y": 1048},
+      "script": {"height": 170, "width": 620, "x": 1660, "y": 1170}
+    },
+    "sibling.FpSellLocations.dailySummonButton": {
+      "image": {"height": 90, "width": 220, "x": 670, "y": 470},
+      "screen": {"height": 161, "width": 394, "x": 1200, "y": 842},
+      "script": {"height": 180, "width": 440, "x": 1340, "y": 940}
+    },
+    "sibling.FpSellLocations.doneClose": {
+      "image": {"height": 85, "width": 300, "x": 630, "y": 585},
+      "screen": {"height": 152, "width": 538, "x": 1129, "y": 1048},
+      "script": {"height": 170, "width": 600, "x": 1260, "y": 1170}
+    },
+    "sibling.FpSellLocations.frameBands[0]": 72,
+    "sibling.FpSellLocations.frameBands[1]": 120,
+    "sibling.FpSellLocations.frameBands[2]": 160,
+    "sibling.FpSellLocations.frameOffsets[0]": -8,
+    "sibling.FpSellLocations.frameOffsets[10]": 2,
+    "sibling.FpSellLocations.frameOffsets[11]": 3,
+    "sibling.FpSellLocations.frameOffsets[12]": 4,
+    "sibling.FpSellLocations.frameOffsets[13]": 5,
+    "sibling.FpSellLocations.frameOffsets[14]": 6,
+    "sibling.FpSellLocations.frameOffsets[15]": 7,
+    "sibling.FpSellLocations.frameOffsets[16]": 8,
+    "sibling.FpSellLocations.frameOffsets[1]": -7,
+    "sibling.FpSellLocations.frameOffsets[2]": -6,
+    "sibling.FpSellLocations.frameOffsets[3]": -5,
+    "sibling.FpSellLocations.frameOffsets[4]": -4,
+    "sibling.FpSellLocations.frameOffsets[5]": -3,
+    "sibling.FpSellLocations.frameOffsets[6]": -2,
+    "sibling.FpSellLocations.frameOffsets[7]": -1,
+    "sibling.FpSellLocations.frameOffsets[8]": 0,
+    "sibling.FpSellLocations.frameOffsets[9]": 1,
+    "sibling.FpSellLocations.fullDialogLine": {
+      "image": {"height": 45, "width": 920, "x": 320, "y": 145},
+      "screen": {"height": 81, "width": 1648, "x": 573, "y": 260},
+      "script": {"height": 90, "width": 1840, "x": 640, "y": 290}
+    },
+    "sibling.FpSellLocations.fullSell": {
+      "image": {"height": 80, "width": 290, "x": 355, "y": 440},
+      "screen": {"height": 143, "width": 520, "x": 636, "y": 788},
+      "script": {"height": 160, "width": 580, "x": 710, "y": 880}
+    },
+    "sibling.FpSellLocations.grid": {
+      "image": {"height": 551, "width": 925, "x": 220, "y": 169},
+      "screen": {"height": 987, "width": 1657, "x": 394, "y": 303},
+      "script": {"height": 1102, "width": 1850, "x": 440, "y": 338}
+    },
+    "sibling.FpSellLocations.layoutCardHeight(5)": 180,
+    "sibling.FpSellLocations.layoutCardHeight(6)": 150,
+    "sibling.FpSellLocations.layoutCardHeight(7)": 126,
+    "sibling.FpSellLocations.layoutColumns(5)[0]": 5,
+    "sibling.FpSellLocations.layoutColumns(5)[1]": 193,
+    "sibling.FpSellLocations.layoutColumns(5)[2]": 380,
+    "sibling.FpSellLocations.layoutColumns(5)[3]": 567,
+    "sibling.FpSellLocations.layoutColumns(5)[4]": 755,
+    "sibling.FpSellLocations.layoutColumns(6)[0]": 5,
+    "sibling.FpSellLocations.layoutColumns(6)[1]": 161,
+    "sibling.FpSellLocations.layoutColumns(6)[2]": 317,
+    "sibling.FpSellLocations.layoutColumns(6)[3]": 474,
+    "sibling.FpSellLocations.layoutColumns(6)[4]": 630,
+    "sibling.FpSellLocations.layoutColumns(6)[5]": 786,
+    "sibling.FpSellLocations.layoutColumns(7)[0]": 3,
+    "sibling.FpSellLocations.layoutColumns(7)[1]": 136,
+    "sibling.FpSellLocations.layoutColumns(7)[2]": 269,
+    "sibling.FpSellLocations.layoutColumns(7)[3]": 403,
+    "sibling.FpSellLocations.layoutColumns(7)[4]": 536,
+    "sibling.FpSellLocations.layoutColumns(7)[5]": 669,
+    "sibling.FpSellLocations.layoutColumns(7)[6]": 802,
+    "sibling.FpSellLocations.layoutPitch(5)": 200,
+    "sibling.FpSellLocations.layoutPitch(6)": 166,
+    "sibling.FpSellLocations.layoutPitch(7)": 142,
+    "sibling.FpSellLocations.leftArrow": {
+      "screen": {"x": 198, "y": 645},
+      "script": {"x": 221, "y": 720}
+    },
+    "sibling.FpSellLocations.leftArrowRegion": {
+      "image": {"height": 125, "width": 75, "x": 86, "y": 300},
+      "screen": {"height": 224, "width": 134, "x": 153, "y": 538},
+      "script": {"height": 250, "width": 150, "x": 171, "y": 600}
+    },
+    "sibling.FpSellLocations.menu": {
+      "image": {"height": 100, "width": 190, "x": 1280, "y": 605},
+      "screen": {"height": 179, "width": 340, "x": 2293, "y": 1084},
+      "script": {"height": 200, "width": 380, "x": 2560, "y": 1210}
+    },
+    "sibling.FpSellLocations.rowPitch": 284,
+    "sibling.FpSellLocations.servantTab": {
+      "image": {"height": 70, "width": 170, "x": 101, "y": 93},
+      "screen": {"height": 125, "width": 305, "x": 180, "y": 166},
+      "script": {"height": 140, "width": 340, "x": 201, "y": 185}
+    },
+    "sibling.FpSellLocations.servantTabClick": {
+      "screen": {"x": 297, "y": 228},
+      "script": {"x": 331, "y": 254}
+    },
+    "sibling.FpSellLocations.sizeSwitch": {
+      "screen": {"x": 243, "y": 1136},
+      "script": {"x": 271, "y": 1268}
+    },
+    "sibling.FpSellLocations.summonButton": {
+      "image": {"height": 90, "width": 250, "x": 905, "y": 470},
+      "screen": {"height": 161, "width": 448, "x": 1621, "y": 842},
+      "script": {"height": 180, "width": 500, "x": 1810, "y": 940}
+    },
+    "sibling.FpSellLocations.summonMenu": {
+      "image": {"height": 90, "width": 170, "x": 650, "y": 590},
+      "screen": {"height": 161, "width": 305, "x": 1165, "y": 1057},
+      "script": {"height": 180, "width": 340, "x": 1300, "y": 1180}
+    },
+    "sibling.FpSellLocations.swipeStart": {
+      "screen": {"x": 1398, "y": 1174},
+      "script": {"x": 1560, "y": 1310}
+    },
+    "sibling.QuestPanelLocations.apDigits": {
+      "image": {"height": 38, "width": 50, "x": 1014, "y": 205},
+      "screen": {"height": 68, "width": 90, "x": 1817, "y": 367},
+      "script": {"height": 76, "width": 100, "x": 2028, "y": 410}
+    },
+    "sibling.QuestPanelLocations.enlargedSpotName": {
+      "image": {"height": 32, "width": 350, "x": 340, "y": 468},
+      "screen": {"height": 57, "width": 627, "x": 609, "y": 839},
+      "script": {"height": 64, "width": 700, "x": 680, "y": 936}
+    },
+    "sibling.QuestPanelLocations.freeLabel": {
+      "image": {"height": 110, "width": 165, "x": 810, "y": 135},
+      "screen": {"height": 197, "width": 296, "x": 1451, "y": 242},
+      "script": {"height": 220, "width": 330, "x": 1620, "y": 270}
+    },
+    "sibling.QuestPanelLocations.freeSearchBand": {
+      "image": {"height": 580, "width": 1537, "x": 12, "y": 80},
+      "screen": {"height": 1039, "width": 2753, "x": 22, "y": 143},
+      "script": {"height": 1160, "width": 3073, "x": 24, "y": 160}
+    },
+    "sibling.QuestPanelLocations.name": {
+      "image": {"height": 30, "width": 347, "x": 973, "y": 136},
+      "screen": {"height": 54, "width": 622, "x": 1743, "y": 244},
+      "script": {"height": 60, "width": 694, "x": 1946, "y": 272}
+    },
+    "sibling.QuestPanelLocations.tap(0)": {
+      "screen": {"x": 1926, "y": 344},
+      "script": {"x": 2150, "y": 384}
+    },
+    "sibling.QuestPanelLocations.tap(1)": {
+      "screen": {"x": 1926, "y": 681},
+      "script": {"x": 2150, "y": 760}
+    },
+    "sibling.QuestPanelLocations.tap(2)": {
+      "screen": {"x": 1926, "y": 1018},
+      "script": {"x": 2150, "y": 1136}
+    },
+    "sibling.QuestPanelLocations.tap(3)": {
+      "screen": {"x": 1926, "y": 1355},
+      "script": {"x": 2150, "y": 1512}
+    },
+    "sibling.QuestPanelLocations.tap(4)": {
+      "screen": {"x": 1926, "y": 1691},
+      "script": {"x": 2150, "y": 1888}
+    },
+    "sibling.SkillLevelLocations.buttonLabel": {
+      "image": {"height": 90, "width": 250, "x": 1253, "y": 600},
+      "screen": {"height": 161, "width": 448, "x": 2245, "y": 1075},
+      "script": {"height": 180, "width": 500, "x": 2506, "y": 1200}
+    },
+    "sibling.SkillLevelLocations.currentLevel(SkillLevelMode.Append)": {
+      "image": {"height": 60, "width": 32, "x": 677, "y": 262},
+      "screen": {"height": 108, "width": 57, "x": 1213, "y": 469},
+      "script": {"height": 120, "width": 64, "x": 1354, "y": 524}
+    },
+    "sibling.SkillLevelLocations.currentLevel(SkillLevelMode.Skill)": {
+      "image": {"height": 60, "width": 52, "x": 676, "y": 312},
+      "screen": {"height": 108, "width": 93, "x": 1211, "y": 559},
+      "script": {"height": 120, "width": 104, "x": 1352, "y": 624}
+    },
+    "sibling.SkillLevelLocations.dialogCancel(SkillLevelMode.Append)": {
+      "screen": {"x": 1048, "y": 1014},
+      "script": {"x": 1170, "y": 1132}
+    },
+    "sibling.SkillLevelLocations.dialogCancel(SkillLevelMode.Skill)": {
+      "screen": {"x": 1048, "y": 1057},
+      "script": {"x": 1170, "y": 1180}
+    },
+    "sibling.SkillLevelLocations.dialogConfirm(SkillLevelMode.Append)": {
+      "screen": {"x": 1756, "y": 1014},
+      "script": {"x": 1960, "y": 1132}
+    },
+    "sibling.SkillLevelLocations.dialogConfirm(SkillLevelMode.Skill)": {
+      "screen": {"x": 1756, "y": 1057},
+      "script": {"x": 1960, "y": 1180}
+    },
+    "sibling.SkillLevelLocations.dialogTitle(SkillLevelMode.Append)": {
+      "image": {"height": 56, "width": 160, "x": 810, "y": 108},
+      "screen": {"height": 100, "width": 287, "x": 1451, "y": 194},
+      "script": {"height": 112, "width": 320, "x": 1620, "y": 216}
+    },
+    "sibling.SkillLevelLocations.dialogTitle(SkillLevelMode.Skill)": {
+      "image": {"height": 56, "width": 160, "x": 740, "y": 134},
+      "screen": {"height": 100, "width": 287, "x": 1326, "y": 240},
+      "script": {"height": 112, "width": 320, "x": 1480, "y": 268}
+    },
+    "sibling.SkillLevelLocations.dialogWatermark": {
+      "image": {"height": 60, "width": 250, "x": 660, "y": 590},
+      "screen": {"height": 108, "width": 448, "x": 1183, "y": 1057},
+      "script": {"height": 120, "width": 500, "x": 1320, "y": 1180}
+    },
+    "sibling.SkillLevelLocations.label": {
+      "image": {"height": 70, "width": 620, "x": 500, "y": 340},
+      "screen": {"height": 125, "width": 1111, "x": 896, "y": 609},
+      "script": {"height": 140, "width": 1240, "x": 1000, "y": 680}
+    },
+    "sibling.SkillLevelLocations.nextLevel(SkillLevelMode.Append)": {
+      "image": {"height": 68, "width": 96, "x": 888, "y": 254},
+      "screen": {"height": 122, "width": 172, "x": 1591, "y": 455},
+      "script": {"height": 136, "width": 192, "x": 1776, "y": 508}
+    },
+    "sibling.SkillLevelLocations.nextLevel(SkillLevelMode.Skill)": {
+      "image": {"height": 60, "width": 82, "x": 888, "y": 312},
+      "screen": {"height": 108, "width": 147, "x": 1591, "y": 559},
+      "script": {"height": 120, "width": 164, "x": 1776, "y": 624}
+    },
+    "sibling.SkillLevelLocations.panelLevel(SkillLevelMode.Append, 0)": {
+      "image": {"height": 21, "width": 33, "x": 608, "y": 273},
+      "screen": {"height": 38, "width": 59, "x": 1089, "y": 489},
+      "script": {"height": 42, "width": 66, "x": 1216, "y": 546}
+    },
+    "sibling.SkillLevelLocations.panelLevel(SkillLevelMode.Append, 1)": {
+      "image": {"height": 21, "width": 33, "x": 785, "y": 273},
+      "screen": {"height": 38, "width": 59, "x": 1406, "y": 489},
+      "script": {"height": 42, "width": 66, "x": 1570, "y": 546}
+    },
+    "sibling.SkillLevelLocations.panelLevel(SkillLevelMode.Append, 2)": {
+      "image": {"height": 21, "width": 33, "x": 963, "y": 273},
+      "screen": {"height": 38, "width": 59, "x": 1725, "y": 489},
+      "script": {"height": 42, "width": 66, "x": 1926, "y": 546}
+    },
+    "sibling.SkillLevelLocations.panelLevel(SkillLevelMode.Append, 3)": {
+      "image": {"height": 21, "width": 33, "x": 1140, "y": 273},
+      "screen": {"height": 38, "width": 59, "x": 2043, "y": 489},
+      "script": {"height": 42, "width": 66, "x": 2280, "y": 546}
+    },
+    "sibling.SkillLevelLocations.panelLevel(SkillLevelMode.Append, 4)": {
+      "image": {"height": 21, "width": 33, "x": 1318, "y": 273},
+      "screen": {"height": 38, "width": 59, "x": 2361, "y": 489},
+      "script": {"height": 42, "width": 66, "x": 2636, "y": 546}
+    },
+    "sibling.SkillLevelLocations.panelLevel(SkillLevelMode.Skill, 0)": {
+      "image": {"height": 34, "width": 145, "x": 678, "y": 270},
+      "screen": {"height": 61, "width": 260, "x": 1215, "y": 484},
+      "script": {"height": 68, "width": 290, "x": 1356, "y": 540}
+    },
+    "sibling.SkillLevelLocations.panelLevel(SkillLevelMode.Skill, 1)": {
+      "image": {"height": 34, "width": 145, "x": 964, "y": 270},
+      "screen": {"height": 61, "width": 260, "x": 1727, "y": 484},
+      "script": {"height": 68, "width": 290, "x": 1928, "y": 540}
+    },
+    "sibling.SkillLevelLocations.panelLevel(SkillLevelMode.Skill, 2)": {
+      "image": {"height": 34, "width": 145, "x": 1252, "y": 270},
+      "screen": {"height": 61, "width": 260, "x": 2243, "y": 484},
+      "script": {"height": 68, "width": 290, "x": 2504, "y": 540}
+    },
+    "sibling.SkillLevelLocations.reselect": {
+      "image": {"height": 90, "width": 170, "x": 256, "y": 0},
+      "screen": {"height": 161, "width": 305, "x": 458, "y": 0},
+      "script": {"height": 180, "width": 340, "x": 511, "y": 0}
+    },
+    "sibling.SkillLevelLocations.result": {
+      "image": {"height": 70, "width": 560, "x": 520, "y": 640},
+      "screen": {"height": 125, "width": 1003, "x": 932, "y": 1147},
+      "script": {"height": 140, "width": 1120, "x": 1040, "y": 1280}
+    },
+    "sibling.SkillLevelLocations.skipClick": {
+      "screen": {"x": 2043, "y": 65},
+      "script": {"x": 2280, "y": 72}
+    },
+    "sibling.SkillLevelLocations.slotClick(SkillLevelMode.Append, 0)": {
+      "screen": {"x": 1098, "y": 428},
+      "script": {"x": 1226, "y": 478}
+    },
+    "sibling.SkillLevelLocations.slotClick(SkillLevelMode.Append, 1)": {
+      "screen": {"x": 1415, "y": 428},
+      "script": {"x": 1580, "y": 478}
+    },
+    "sibling.SkillLevelLocations.slotClick(SkillLevelMode.Append, 2)": {
+      "screen": {"x": 1734, "y": 428},
+      "script": {"x": 1936, "y": 478}
+    },
+    "sibling.SkillLevelLocations.slotClick(SkillLevelMode.Append, 3)": {
+      "screen": {"x": 2051, "y": 428},
+      "script": {"x": 2290, "y": 478}
+    },
+    "sibling.SkillLevelLocations.slotClick(SkillLevelMode.Append, 4)": {
+      "screen": {"x": 2370, "y": 428},
+      "script": {"x": 2646, "y": 478}
+    },
+    "sibling.SkillLevelLocations.slotClick(SkillLevelMode.Skill, 0)": {
+      "screen": {"x": 1098, "y": 428},
+      "script": {"x": 1226, "y": 478}
+    },
+    "sibling.SkillLevelLocations.slotClick(SkillLevelMode.Skill, 1)": {
+      "screen": {"x": 1611, "y": 428},
+      "script": {"x": 1798, "y": 478}
+    },
+    "sibling.SkillLevelLocations.slotClick(SkillLevelMode.Skill, 2)": {
+      "screen": {"x": 2127, "y": 428},
+      "script": {"x": 2374, "y": 478}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 0)[0]": {
+      "image": {"height": 1, "width": 73, "x": 577, "y": 179},
+      "screen": {"height": 2, "width": 131, "x": 1034, "y": 321},
+      "script": {"height": 2, "width": 146, "x": 1154, "y": 358}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 0)[1]": {
+      "image": {"height": 1, "width": 73, "x": 577, "y": 299},
+      "screen": {"height": 2, "width": 131, "x": 1034, "y": 536},
+      "script": {"height": 2, "width": 146, "x": 1154, "y": 598}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 0)[2]": {
+      "image": {"height": 73, "width": 1, "x": 553, "y": 203},
+      "screen": {"height": 131, "width": 2, "x": 991, "y": 364},
+      "script": {"height": 146, "width": 2, "x": 1106, "y": 406}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 0)[3]": {
+      "image": {"height": 73, "width": 1, "x": 673, "y": 203},
+      "screen": {"height": 131, "width": 2, "x": 1206, "y": 364},
+      "script": {"height": 146, "width": 2, "x": 1346, "y": 406}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 1)[0]": {
+      "image": {"height": 1, "width": 73, "x": 754, "y": 179},
+      "screen": {"height": 2, "width": 131, "x": 1351, "y": 321},
+      "script": {"height": 2, "width": 146, "x": 1508, "y": 358}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 1)[1]": {
+      "image": {"height": 1, "width": 73, "x": 754, "y": 299},
+      "screen": {"height": 2, "width": 131, "x": 1351, "y": 536},
+      "script": {"height": 2, "width": 146, "x": 1508, "y": 598}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 1)[2]": {
+      "image": {"height": 73, "width": 1, "x": 730, "y": 203},
+      "screen": {"height": 131, "width": 2, "x": 1308, "y": 364},
+      "script": {"height": 146, "width": 2, "x": 1460, "y": 406}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 1)[3]": {
+      "image": {"height": 73, "width": 1, "x": 850, "y": 203},
+      "screen": {"height": 131, "width": 2, "x": 1523, "y": 364},
+      "script": {"height": 146, "width": 2, "x": 1700, "y": 406}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 2)[0]": {
+      "image": {"height": 1, "width": 73, "x": 932, "y": 179},
+      "screen": {"height": 2, "width": 131, "x": 1670, "y": 321},
+      "script": {"height": 2, "width": 146, "x": 1864, "y": 358}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 2)[1]": {
+      "image": {"height": 1, "width": 73, "x": 932, "y": 299},
+      "screen": {"height": 2, "width": 131, "x": 1670, "y": 536},
+      "script": {"height": 2, "width": 146, "x": 1864, "y": 598}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 2)[2]": {
+      "image": {"height": 73, "width": 1, "x": 908, "y": 203},
+      "screen": {"height": 131, "width": 2, "x": 1627, "y": 364},
+      "script": {"height": 146, "width": 2, "x": 1816, "y": 406}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 2)[3]": {
+      "image": {"height": 73, "width": 1, "x": 1028, "y": 203},
+      "screen": {"height": 131, "width": 2, "x": 1842, "y": 364},
+      "script": {"height": 146, "width": 2, "x": 2056, "y": 406}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 3)[0]": {
+      "image": {"height": 1, "width": 73, "x": 1109, "y": 179},
+      "screen": {"height": 2, "width": 131, "x": 1987, "y": 321},
+      "script": {"height": 2, "width": 146, "x": 2218, "y": 358}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 3)[1]": {
+      "image": {"height": 1, "width": 73, "x": 1109, "y": 299},
+      "screen": {"height": 2, "width": 131, "x": 1987, "y": 536},
+      "script": {"height": 2, "width": 146, "x": 2218, "y": 598}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 3)[2]": {
+      "image": {"height": 73, "width": 1, "x": 1085, "y": 203},
+      "screen": {"height": 131, "width": 2, "x": 1944, "y": 364},
+      "script": {"height": 146, "width": 2, "x": 2170, "y": 406}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 3)[3]": {
+      "image": {"height": 73, "width": 1, "x": 1205, "y": 203},
+      "screen": {"height": 131, "width": 2, "x": 2159, "y": 364},
+      "script": {"height": 146, "width": 2, "x": 2410, "y": 406}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 4)[0]": {
+      "image": {"height": 1, "width": 73, "x": 1287, "y": 179},
+      "screen": {"height": 2, "width": 131, "x": 2306, "y": 321},
+      "script": {"height": 2, "width": 146, "x": 2574, "y": 358}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 4)[1]": {
+      "image": {"height": 1, "width": 73, "x": 1287, "y": 299},
+      "screen": {"height": 2, "width": 131, "x": 2306, "y": 536},
+      "script": {"height": 2, "width": 146, "x": 2574, "y": 598}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 4)[2]": {
+      "image": {"height": 73, "width": 1, "x": 1263, "y": 203},
+      "screen": {"height": 131, "width": 2, "x": 2263, "y": 364},
+      "script": {"height": 146, "width": 2, "x": 2526, "y": 406}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Append, 4)[3]": {
+      "image": {"height": 73, "width": 1, "x": 1383, "y": 203},
+      "screen": {"height": 131, "width": 2, "x": 2478, "y": 364},
+      "script": {"height": 146, "width": 2, "x": 2766, "y": 406}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Skill, 0)[0]": {
+      "image": {"height": 1, "width": 73, "x": 577, "y": 179},
+      "screen": {"height": 2, "width": 131, "x": 1034, "y": 321},
+      "script": {"height": 2, "width": 146, "x": 1154, "y": 358}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Skill, 0)[1]": {
+      "image": {"height": 1, "width": 73, "x": 577, "y": 299},
+      "screen": {"height": 2, "width": 131, "x": 1034, "y": 536},
+      "script": {"height": 2, "width": 146, "x": 1154, "y": 598}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Skill, 0)[2]": {
+      "image": {"height": 73, "width": 1, "x": 553, "y": 203},
+      "screen": {"height": 131, "width": 2, "x": 991, "y": 364},
+      "script": {"height": 146, "width": 2, "x": 1106, "y": 406}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Skill, 0)[3]": {
+      "image": {"height": 73, "width": 1, "x": 673, "y": 203},
+      "screen": {"height": 131, "width": 2, "x": 1206, "y": 364},
+      "script": {"height": 146, "width": 2, "x": 1346, "y": 406}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Skill, 1)[0]": {
+      "image": {"height": 1, "width": 73, "x": 863, "y": 179},
+      "screen": {"height": 2, "width": 131, "x": 1546, "y": 321},
+      "script": {"height": 2, "width": 146, "x": 1726, "y": 358}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Skill, 1)[1]": {
+      "image": {"height": 1, "width": 73, "x": 863, "y": 299},
+      "screen": {"height": 2, "width": 131, "x": 1546, "y": 536},
+      "script": {"height": 2, "width": 146, "x": 1726, "y": 598}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Skill, 1)[2]": {
+      "image": {"height": 73, "width": 1, "x": 839, "y": 203},
+      "screen": {"height": 131, "width": 2, "x": 1503, "y": 364},
+      "script": {"height": 146, "width": 2, "x": 1678, "y": 406}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Skill, 1)[3]": {
+      "image": {"height": 73, "width": 1, "x": 959, "y": 203},
+      "screen": {"height": 131, "width": 2, "x": 1718, "y": 364},
+      "script": {"height": 146, "width": 2, "x": 1918, "y": 406}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Skill, 2)[0]": {
+      "image": {"height": 1, "width": 73, "x": 1151, "y": 179},
+      "screen": {"height": 2, "width": 131, "x": 2062, "y": 321},
+      "script": {"height": 2, "width": 146, "x": 2302, "y": 358}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Skill, 2)[1]": {
+      "image": {"height": 1, "width": 73, "x": 1151, "y": 299},
+      "screen": {"height": 2, "width": 131, "x": 2062, "y": 536},
+      "script": {"height": 2, "width": 146, "x": 2302, "y": 598}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Skill, 2)[2]": {
+      "image": {"height": 73, "width": 1, "x": 1127, "y": 203},
+      "screen": {"height": 131, "width": 2, "x": 2019, "y": 364},
+      "script": {"height": 146, "width": 2, "x": 2254, "y": 406}
+    },
+    "sibling.SkillLevelLocations.slotGlowSides(SkillLevelMode.Skill, 2)[3]": {
+      "image": {"height": 73, "width": 1, "x": 1247, "y": 203},
+      "screen": {"height": 131, "width": 2, "x": 2234, "y": 364},
+      "script": {"height": 146, "width": 2, "x": 2494, "y": 406}
+    },
+    "sibling.SkillLevelLocations.slotLock(SkillLevelMode.Append, 0)": {
+      "image": {"height": 112, "width": 80, "x": 573, "y": 183},
+      "screen": {"height": 201, "width": 143, "x": 1027, "y": 328},
+      "script": {"height": 224, "width": 160, "x": 1146, "y": 366}
+    },
+    "sibling.SkillLevelLocations.slotLock(SkillLevelMode.Append, 1)": {
+      "image": {"height": 112, "width": 80, "x": 750, "y": 183},
+      "screen": {"height": 201, "width": 143, "x": 1344, "y": 328},
+      "script": {"height": 224, "width": 160, "x": 1500, "y": 366}
+    },
+    "sibling.SkillLevelLocations.slotLock(SkillLevelMode.Append, 2)": {
+      "image": {"height": 112, "width": 80, "x": 928, "y": 183},
+      "screen": {"height": 201, "width": 143, "x": 1663, "y": 328},
+      "script": {"height": 224, "width": 160, "x": 1856, "y": 366}
+    },
+    "sibling.SkillLevelLocations.slotLock(SkillLevelMode.Append, 3)": {
+      "image": {"height": 112, "width": 80, "x": 1105, "y": 183},
+      "screen": {"height": 201, "width": 143, "x": 1980, "y": 328},
+      "script": {"height": 224, "width": 160, "x": 2210, "y": 366}
+    },
+    "sibling.SkillLevelLocations.slotLock(SkillLevelMode.Append, 4)": {
+      "image": {"height": 112, "width": 80, "x": 1283, "y": 183},
+      "screen": {"height": 201, "width": 143, "x": 2299, "y": 328},
+      "script": {"height": 224, "width": 160, "x": 2566, "y": 366}
+    },
+    "sibling.SkillLevelLocations.slotLock(SkillLevelMode.Skill, 0)": {
+      "image": {"height": 112, "width": 80, "x": 573, "y": 183},
+      "screen": {"height": 201, "width": 143, "x": 1027, "y": 328},
+      "script": {"height": 224, "width": 160, "x": 1146, "y": 366}
+    },
+    "sibling.SkillLevelLocations.slotLock(SkillLevelMode.Skill, 1)": {
+      "image": {"height": 112, "width": 80, "x": 859, "y": 183},
+      "screen": {"height": 201, "width": 143, "x": 1539, "y": 328},
+      "script": {"height": 224, "width": 160, "x": 1718, "y": 366}
+    },
+    "sibling.SkillLevelLocations.slotLock(SkillLevelMode.Skill, 2)": {
+      "image": {"height": 112, "width": 80, "x": 1147, "y": 183},
+      "screen": {"height": 201, "width": 143, "x": 2055, "y": 328},
+      "script": {"height": 224, "width": 160, "x": 2294, "y": 366}
+    },
+    "sibling.SupportNpLayout.BAND_BOTTOM_MARGIN": 10,
+    "sibling.SupportNpLayout.BAND_TOP_MARGIN": 10,
+    "sibling.SupportNpLayout.BAND_WIDTH": 1044,
+    "sibling.SupportNpLayout.BAND_X": 500,
+    "sibling.SupportNpLayout.CROP_VERTICAL_MARGIN": 10,
+    "sibling.SupportNpLayout.DIGIT_WIDTH": 38,
+    "sibling.SupportNpLayout.GRAND_ICON_X": 821,
+    "sibling.SupportNpLayout.ICON_CROP_MARGIN": 6,
+    "sibling.SupportNpLayout.LEVEL_CROP_GAP": 8,
+    "sibling.SupportNpLayout.NAME_HEIGHT": 104,
+    "sibling.SupportNpLayout.NAME_LINE_OFFSET": 62,
+    "sibling.SupportNpLayout.NAME_WIDTH": 896,
+    "sibling.SupportNpLayout.NAME_X": 648,
+    "sibling.SupportNpLayout.NAME_Y": 260,
+    "sibling.SupportNpLayout.NORMAL_ICON_X": 596,
+    "sibling.SupportNpLayout.SUFFIX_MARGIN": 4,
+    "sibling.SupportNpLayout.SUFFIX_RIGHT_OVERHANG": 12,
+    "sibling.SupportNpLayout.TEXT_START_OFFSET": 58,
+    "sibling.SupportScoreLayout.SCORE_HEIGHT": 60,
+    "sibling.SupportScoreLayout.SCORE_WIDTH": 120,
+    "sibling.SupportScoreLayout.SCORE_X": 1960,
+    "sibling.SupportScoreLayout.SCORE_Y": 310,
+    "sibling.SupportSkillLayout.APPEND_SPACING": 75,
+    "sibling.SupportSkillLayout.LEVEL_HEIGHT": 50,
+    "sibling.SupportSkillLayout.LEVEL_WIDTH": 60,
+    "sibling.SupportSkillLayout.LEVEL_X": 1610,
+    "sibling.SupportSkillLayout.LEVEL_Y": 325,
+    "sibling.SupportSkillLayout.NORMAL_SPACING": 90,
+    "sibling.WeeklyRouteLocations.bottomScrollbarRegion": {
+      "image": {"height": 17, "width": 37, "x": 1434, "y": 576},
+      "screen": {"height": 30, "width": 66, "x": 2569, "y": 1032},
+      "script": {"height": 34, "width": 74, "x": 2868, "y": 1152}
+    },
+    "sibling.WeeklyRouteLocations.homeOtherBanner": {
+      "image": {"height": 180, "width": 750, "x": 811, "y": 100},
+      "screen": {"height": 323, "width": 1344, "x": 1452, "y": 179},
+      "script": {"height": 360, "width": 1500, "x": 1621, "y": 200}
+    },
+    "sibling.WeeklyRouteLocations.listArea": {
+      "image": {"height": 570, "width": 750, "x": 811, "y": 100},
+      "screen": {"height": 1021, "width": 1344, "x": 1452, "y": 179},
+      "script": {"height": 1140, "width": 1500, "x": 1621, "y": 200}
+    },
+    "sibling.WeeklyRouteLocations.listScrollEnd": {
+      "screen": {"x": 2169, "y": 484},
+      "script": {"x": 2421, "y": 540}
+    },
+    "sibling.WeeklyRouteLocations.listScrollStart": {
+      "screen": {"x": 2169, "y": 1057},
+      "script": {"x": 2421, "y": 1180}
+    },
+    "sibling.WeeklyRouteLocations.mapMotion": {
+      "image": {"height": 300, "width": 1191, "x": 250, "y": 180},
+      "screen": {"height": 538, "width": 2133, "x": 448, "y": 323},
+      "script": {"height": 600, "width": 2381, "x": 500, "y": 360}
+    },
+    "sibling.WeeklyRouteLocations.panelColumn": {
+      "image": {"height": 550, "width": 165, "x": 810, "y": 125},
+      "screen": {"height": 985, "width": 296, "x": 1451, "y": 224},
+      "script": {"height": 1100, "width": 330, "x": 1620, "y": 250}
+    },
+    "sibling.WeeklyRouteLocations.pinchBounds": {
+      "image": {"height": 400, "width": 1161, "x": 200, "y": 150},
+      "screen": {"height": 717, "width": 2079, "x": 358, "y": 269},
+      "script": {"height": 800, "width": 2321, "x": 400, "y": 300}
+    },
+    "sibling.WeeklyRouteLocations.repeatDialogClose": {
+      "screen": {"x": 1045, "y": 1045},
+      "script": {"x": 1166, "y": 1166}
+    },
+    "sibling.WeeklyRouteLocations.repeatDialogSignal": {
+      "image": {"height": 65, "width": 280, "x": 870, "y": 550},
+      "screen": {"height": 116, "width": 502, "x": 1559, "y": 985},
+      "script": {"height": 130, "width": 560, "x": 1740, "y": 1100}
+    },
+    "sibling.WeeklyRouteLocations.topLeftButton": {
+      "image": {"height": 70, "width": 190, "x": 91, "y": 15},
+      "screen": {"height": 125, "width": 340, "x": 162, "y": 27},
+      "script": {"height": 140, "width": 380, "x": 181, "y": 30}
+    },
+    "sibling.WeeklyRouteLocations.topScrollbarRegion": {
+      "image": {"height": 19, "width": 37, "x": 1434, "y": 89},
+      "screen": {"height": 34, "width": 66, "x": 2569, "y": 159},
+      "script": {"height": 38, "width": 74, "x": 2868, "y": 178}
+    },
+    "staminaCloseClick": {
+      "screen": {"x": 1398, "y": 1111},
+      "script": {"x": 1560, "y": 1240}
+    },
+    "staminaOkClick": {
+      "screen": {"x": 1729, "y": 1003},
+      "script": {"x": 1930, "y": 1120}
+    },
+    "staminaScreenRegion": {
+      "image": {"height": 150, "width": 150, "x": 440, "y": 100},
+      "screen": {"height": 269, "width": 269, "x": 788, "y": 179},
+      "script": {"height": 300, "width": 300, "x": 880, "y": 200}
+    },
+    "support.bondCeRegion": {
+      "image": {"height": 28, "width": 27, "x": 383, "y": 96},
+      "screen": {"height": 49, "width": 47, "x": 686, "y": 172},
+      "script": {"height": 55, "width": 53, "x": 766, "y": 192}
+    },
+    "support.bottomScrollbarRegion": {
+      "image": {"height": 28, "width": 70, "x": 1433, "y": 695},
+      "screen": {"height": 49, "width": 125, "x": 2567, "y": 1245},
+      "script": {"height": 55, "width": 140, "x": 2866, "y": 1390}
+    },
+    "support.confirmSetupButtonRegion": {
+      "image": {"height": 720, "width": 185, "x": 1212, "y": 0},
+      "screen": {"height": 1290, "width": 331, "x": 2172, "y": 0},
+      "script": {"height": 1440, "width": 370, "x": 2424, "y": 0}
+    },
+    "support.defaultBounds": {
+      "image": {"height": 214, "width": 1178, "x": 200, "y": 0},
+      "screen": {"height": 383, "width": 2111, "x": 358, "y": 0},
+      "script": {"height": 428, "width": 2356, "x": 400, "y": 0}
+    },
+    "support.defaultCeBounds": {
+      "image": {"height": 75, "width": 189, "x": 200, "y": 135},
+      "screen": {"height": 134, "width": 339, "x": 358, "y": 242},
+      "script": {"height": 150, "width": 378, "x": 400, "y": 270}
+    },
+    "support.extraRegion": {
+      "image": {"height": 65, "width": 65, "x": 686, "y": 100},
+      "screen": {"height": 116, "width": 116, "x": 1228, "y": 179},
+      "script": {"height": 130, "width": 130, "x": 1371, "y": 200}
+    },
+    "support.firstSupportClick": {
+      "screen": {"x": 1398, "y": 448},
+      "script": {"x": 1560, "y": 500}
+    },
+    "support.friendRegion": {
+      "image": {"height": 546, "width": 60, "x": 1279, "y": 166},
+      "screen": {"height": 977, "width": 108, "x": 2292, "y": 297},
+      "script": {"height": 1091, "width": 120, "x": 2558, "y": 332}
+    },
+    "support.friendsRegion": {
+      "image": {"height": 546, "width": 605, "x": 386, "y": 166},
+      "screen": {"height": 977, "width": 1084, "x": 692, "y": 297},
+      "script": {"height": 1091, "width": 1210, "x": 772, "y": 332}
+    },
+    "support.grandCeClipRegion": {
+      "image": {"height": 135, "width": 142, "x": 386, "y": -17},
+      "screen": {"height": 242, "width": 254, "x": 692, "y": -30},
+      "script": {"height": 270, "width": 284, "x": 772, "y": -34}
+    },
+    "support.grandCeLabelRegion": {
+      "image": {"height": 30, "width": 30, "x": 377, "y": 0},
+      "screen": {"height": 54, "width": 54, "x": 675, "y": 0},
+      "script": {"height": 60, "width": 60, "x": 753, "y": 0}
+    },
+    "support.grandCeListRegion": {
+      "image": {"height": 546, "width": 171, "x": 377, "y": 166},
+      "screen": {"height": 977, "width": 306, "x": 675, "y": 297},
+      "script": {"height": 1091, "width": 342, "x": 753, "y": 332}
+    },
+    "support.grandCeRegion1": {
+      "image": {"height": 47, "width": 160, "x": 382, "y": 50},
+      "screen": {"height": 84, "width": 287, "x": 684, "y": 90},
+      "script": {"height": 94, "width": 320, "x": 764, "y": 100}
+    },
+    "support.grandCeRegion2": {
+      "image": {"height": 47, "width": 160, "x": 382, "y": 96},
+      "screen": {"height": 84, "width": 287, "x": 684, "y": 172},
+      "script": {"height": 94, "width": 320, "x": 764, "y": 192}
+    },
+    "support.grandCeRegion3": {
+      "image": {"height": 47, "width": 160, "x": 382, "y": 142},
+      "screen": {"height": 84, "width": 287, "x": 684, "y": 254},
+      "script": {"height": 94, "width": 320, "x": 764, "y": 284}
+    },
+    "support.grandLimitBreakRegion": {
+      "image": {"height": 45, "width": 20, "x": 515, "y": 0},
+      "screen": {"height": 81, "width": 36, "x": 922, "y": 0},
+      "script": {"height": 90, "width": 40, "x": 1029, "y": 0}
+    },
+    "support.limitBreakRegion": {
+      "image": {"height": 45, "width": 20, "x": 344, "y": 0},
+      "screen": {"height": 81, "width": 36, "x": 616, "y": 0},
+      "script": {"height": 90, "width": 40, "x": 688, "y": 0}
+    },
+    "support.listRegion": {
+      "image": {"height": 546, "width": 189, "x": 197, "y": 166},
+      "screen": {"height": 977, "width": 339, "x": 353, "y": 297},
+      "script": {"height": 1091, "width": 378, "x": 394, "y": 332}
+    },
+    "support.listSwipeEnd": {
+      "screen": {"x": 295, "y": 269},
+      "script": {"x": 329, "y": 300}
+    },
+    "support.listSwipeStart": {
+      "screen": {"x": 322, "y": 896},
+      "script": {"x": 359, "y": 1000}
+    },
+    "support.listTopClick": {
+      "screen": {"x": 2601, "y": 323},
+      "script": {"x": 2903, "y": 360}
+    },
+    "support.locate(SupportClass.All)": {
+      "screen": {"x": 318, "y": 229},
+      "script": {"x": 355, "y": 256}
+    },
+    "support.locate(SupportClass.Archer)": {
+      "screen": {"x": 560, "y": 229},
+      "script": {"x": 625, "y": 256}
+    },
+    "support.locate(SupportClass.Assassin)": {
+      "screen": {"x": 1044, "y": 229},
+      "script": {"x": 1165, "y": 256}
+    },
+    "support.locate(SupportClass.Berserker)": {
+      "screen": {"x": 1165, "y": 229},
+      "script": {"x": 1301, "y": 256}
+    },
+    "support.locate(SupportClass.Caster)": {
+      "screen": {"x": 922, "y": 229},
+      "script": {"x": 1029, "y": 256}
+    },
+    "support.locate(SupportClass.Extra)": {
+      "screen": {"x": 1286, "y": 229},
+      "script": {"x": 1435, "y": 256}
+    },
+    "support.locate(SupportClass.Lancer)": {
+      "screen": {"x": 662, "y": 229},
+      "script": {"x": 739, "y": 256}
+    },
+    "support.locate(SupportClass.Mix)": {
+      "screen": {"x": 1409, "y": 229},
+      "script": {"x": 1573, "y": 256}
+    },
+    "support.locate(SupportClass.None)": {
+      "screen": {"x": 153, "y": 229},
+      "script": {"x": 171, "y": 256}
+    },
+    "support.locate(SupportClass.Rider)": {
+      "screen": {"x": 802, "y": 229},
+      "script": {"x": 895, "y": 256}
+    },
+    "support.locate(SupportClass.Saber)": {
+      "screen": {"x": 440, "y": 229},
+      "script": {"x": 491, "y": 256}
+    },
+    "support.maxAscendedRegion": {
+      "image": {"height": 85, "width": 20, "x": 344, "y": 0},
+      "screen": {"height": 152, "width": 36, "x": 616, "y": 0},
+      "script": {"height": 170, "width": 40, "x": 688, "y": 0}
+    },
+    "support.notFoundRegion": {
+      "image": {"height": 83, "width": 180, "x": 690, "y": 405},
+      "screen": {"height": 149, "width": 323, "x": 1236, "y": 726},
+      "script": {"height": 166, "width": 360, "x": 1380, "y": 810}
+    },
+    "support.refreshRegion": {
+      "image": {"height": 83, "width": 88, "x": 971, "y": 98},
+      "screen": {"height": 148, "width": 157, "x": 1739, "y": 175},
+      "script": {"height": 165, "width": 175, "x": 1941, "y": 195}
+    },
+    "support.screenCheckRegion": {
+      "image": {"height": 200, "width": 100, "x": 86, "y": 0},
+      "screen": {"height": 358, "width": 179, "x": 153, "y": 0},
+      "script": {"height": 400, "width": 200, "x": 171, "y": 0}
+    },
+    "support.skillDisplayLabelsRegion": {
+      "image": {"height": 546, "width": 250, "x": 984, "y": 166},
+      "screen": {"height": 977, "width": 448, "x": 1763, "y": 297},
+      "script": {"height": 1091, "width": 500, "x": 1968, "y": 332}
+    },
+    "support.skillDisplaySwitchClick": {
+      "screen": {"x": 1672, "y": 233},
+      "script": {"x": 1866, "y": 260}
+    },
+    "support.topScrollbarRegion": {
+      "image": {"height": 28, "width": 70, "x": 1433, "y": 163},
+      "screen": {"height": 49, "width": 125, "x": 2567, "y": 291},
+      "script": {"height": 55, "width": 140, "x": 2866, "y": 325}
+    },
+    "support.updateClick": {
+      "screen": {"x": 1824, "y": 233},
+      "script": {"x": 2036, "y": 260}
+    },
+    "support.updateYesClick": {
+      "screen": {"x": 1577, "y": 994},
+      "script": {"x": 1760, "y": 1110}
+    },
+    "tempServantEnhancementLocation": {
+      "screen": {"x": 1758, "y": 1007},
+      "script": {"x": 1962, "y": 1124}
+    },
+    "tempServantEnhancementRegion": {
+      "image": {"height": 52, "width": 240, "x": 868, "y": 540},
+      "screen": {"height": 93, "width": 430, "x": 1555, "y": 968},
+      "script": {"height": 104, "width": 480, "x": 1736, "y": 1080}
+    },
+    "turnLimitRetreatClick": {
+      "screen": {"x": 1888, "y": 444},
+      "script": {"x": 2107, "y": 496}
+    },
+    "turnLimitRetreatOkRegion": {
+      "image": {"height": 80, "width": 200, "x": 923, "y": 320},
+      "screen": {"height": 143, "width": 358, "x": 1653, "y": 573},
+      "script": {"height": 160, "width": 400, "x": 1845, "y": 640}
+    },
+    "turnLimitRetreatRegion": {
+      "image": {"height": 65, "width": 170, "x": 970, "y": 215},
+      "screen": {"height": 116, "width": 305, "x": 1738, "y": 385},
+      "script": {"height": 130, "width": 340, "x": 1940, "y": 430}
+    },
+    "withdrawAcceptClick": {
+      "screen": {"x": 1832, "y": 645},
+      "script": {"x": 2045, "y": 720}
+    },
+    "withdrawCloseClick": {
+      "screen": {"x": 1389, "y": 1021},
+      "script": {"x": 1550, "y": 1140}
+    },
+    "withdrawRegion": {
+      "image": {"height": 167, "width": 900, "x": 340, "y": 270},
+      "screen": {"height": 298, "width": 1613, "x": 609, "y": 484},
+      "script": {"height": 333, "width": 1800, "x": 680, "y": 540}
+    }
+  }
+}

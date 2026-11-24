@@ -13,7 +13,11 @@ import kotlin.test.assertTrue
 
 class FrameBuilderTest {
     private companion object {
-        val loaded: Templates.Loaded by lazy { Templates.load(File("fga/app/src/main/assets")) }
+        val loaded: Templates.Loaded by lazy {
+            val root = generateSequence(File("").absoluteFile) { it.parentFile }
+                .first { File(it, "fga/app/src/main/assets/En").isDirectory }
+            Templates.load(File(root, "fga/app/src/main/assets"))
+        }
     }
 
     private fun png(frame: SyntheticFrame) = FrameBuilder.encodePng(frame.mat)

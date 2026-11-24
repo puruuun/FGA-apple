@@ -1,0 +1,17 @@
+{
+  "autoskill_name": "Sample skill run",
+  "autoskill_cmd": "a,b2,c(3),#,d1,e,f,#,g,h,i,t2,#,j,k2,l,x12",
+  "autoskill_party": 3,
+  "auto_choose_target": "true",
+  "command_start_mode": "CardCount",
+  "command_start_servant": 2,
+  "command_start_card_count": 3,
+  "command_start_buster": 1,
+  "command_start_combine_mode": "Or",
+  "command_start_max_turns": 4,
+  "secondary_start_enabled": true,
+  "secondary_start_servant": 3,
+  "secondary_autoskill_cmd": "a,b,c,#,j",
+  "battle_config_mat": ["Proof", "Bone", "Seed"],
+  "battle_config_server": "Jp"
+}
