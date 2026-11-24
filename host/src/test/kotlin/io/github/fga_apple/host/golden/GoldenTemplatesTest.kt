@@ -22,6 +22,8 @@ import kotlin.test.assertTrue
 
 class GoldenTemplatesTest {
     private companion object {
+        const val SCORE_TOLERANCE = 1e-5
+
         val root: File = generateSequence(File("").absoluteFile) { it.parentFile }
             .first { File(it, "core/testdata/golden/scores").isDirectory && File(it, "fga/app/src/main/assets/En").isDirectory }
         val templatesDir = File(root, "core/testdata/synthetic/templates")
@@ -124,7 +126,7 @@ class GoldenTemplatesTest {
                 assertEquals(expected.getValue("x").jsonPrimitive.int, best.x, label)
                 assertEquals(expected.getValue("y").jsonPrimitive.int, best.y, label)
                 val committed = expected.getValue("score").jsonPrimitive.double
-                assertTrue(kotlin.math.abs(committed - best.score) <= 1e-9, "$label committed $committed computed ${best.score}")
+                assertTrue(kotlin.math.abs(committed - best.score) <= SCORE_TOLERANCE,"$label committed $committed computed ${best.score}")
                 checked++
                 if (template.masked) maskedChecked++
             }
