@@ -1,0 +1,189 @@
+{
+  "cases": [
+    {
+      "best": {"score": 0.9996417760848999, "x": 72, "y": 13},
+      "further": [],
+      "kind": "local",
+      "masked": true,
+      "params": {"brightness": -20.0, "contrast": 1.15},
+      "pasted": {"height": 38, "width": 38, "x": 72, "y": 13},
+      "region": {"height": 71, "width": 78, "x": 52, "y": 0},
+      "template": "card_swap.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.9996417760848999, "x": 72, "y": 13},
+      "further": [],
+      "kind": "whole_frame",
+      "masked": true,
+      "params": {"brightness": -20.0, "contrast": 1.15},
+      "pasted": {"height": 38, "width": 38, "x": 72, "y": 13},
+      "region": {"height": 720, "width": 1565, "x": 0, "y": 0},
+      "template": "card_swap.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.9644300937652588, "x": 307, "y": 20},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 40, "width": 21, "x": 307, "y": 20},
+      "region": {"height": 80, "width": 61, "x": 287, "y": 0},
+      "template": "servant_ascension_return_to_level.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.05168579891324043, "x": 598, "y": 39},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 15, "width": 122, "x": 527, "y": 34},
+      "region": {"height": 45, "width": 132, "x": 588, "y": 19},
+      "template": "servant_auto_select.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 1.0, "x": 918, "y": 116},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 15, "width": 122, "x": 918, "y": 116},
+      "region": {"height": 55, "width": 162, "x": 898, "y": 96},
+      "template": "servant_auto_select_off.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 1.0, "x": 918, "y": 116},
+      "further": [
+        {"score": 0.8238207101821899, "x": 527, "y": 34}
+      ],
+      "kind": "whole_frame",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 15, "width": 122, "x": 918, "y": 116},
+      "region": {"height": 720, "width": 1565, "x": 0, "y": 0},
+      "template": "servant_auto_select_off.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.9999478459358215, "x": 1153, "y": 8},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"brightness": -20.0, "contrast": 0.7},
+      "pasted": {"height": 26, "width": 103, "x": 1153, "y": 8},
+      "region": {"height": 54, "width": 143, "x": 1133, "y": 0},
+      "template": "servant_check_support.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.9146298766136169, "x": 1463, "y": 221},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 14, "width": 13, "x": 1463, "y": 221},
+      "region": {"height": 54, "width": 53, "x": 1443, "y": 201},
+      "template": "servant_exist.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.11270450055599213, "x": 14, "y": 243},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 62, "width": 26, "x": 1, "y": 251},
+      "region": {"height": 92, "width": 36, "x": 14, "y": 236},
+      "template": "servant_max_level.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 0.9999973177909851, "x": 1, "y": 251},
+      "further": [],
+      "kind": "whole_frame",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 62, "width": 26, "x": 1, "y": 251},
+      "region": {"height": 720, "width": 1565, "x": 0, "y": 0},
+      "template": "servant_max_level.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 0.9999998211860657, "x": 366, "y": 398},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 18, "width": 120, "x": 366, "y": 398},
+      "region": {"height": 58, "width": 160, "x": 346, "y": 378},
+      "template": "servant_palingenesis_banner.png",
+      "variant": "as_is"
+    },
+    {
+      "best": {"score": 0.9999552965164185, "x": 535, "y": 245},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"brightness": 40.0, "contrast": 0.7},
+      "pasted": {"height": 55, "width": 21, "x": 535, "y": 245},
+      "region": {"height": 95, "width": 61, "x": 515, "y": 225},
+      "template": "servant_palingenesis_redirect_from_menu.png",
+      "variant": "brightness"
+    },
+    {
+      "best": {"score": 0.9286200404167175, "x": 823, "y": 250},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {"shift_x": 0.5, "shift_y": 0.5},
+      "pasted": {"height": 14, "width": 206, "x": 823, "y": 250},
+      "region": {"height": 54, "width": 246, "x": 803, "y": 230},
+      "template": "skill_level_confirmation.png",
+      "variant": "half_pixel"
+    },
+    {
+      "best": {"score": 0.14142967760562897, "x": 1077, "y": 390},
+      "further": [],
+      "kind": "local",
+      "masked": false,
+      "params": {},
+      "pasted": {"height": 48, "width": 34, "x": 1053, "y": 402},
+      "region": {"height": 78, "width": 44, "x": 1070, "y": 387},
+      "template": "skill_level_digit_0.png",
+      "variant": "partly_outside"
+    },
+    {
+      "best": {"score": 0.1457621157169342, "x": 1320, "y": 374},
+      "further": [],
+      "kind": "noise",
+      "masked": false,
+      "params": {},
+      "pasted": null,
+      "region": {"height": 240, "width": 260, "x": 1300, "y": 240},
+      "template": "skill_level_digit_1.png",
+      "variant": "absent"
+    },
+    {
+      "best": {"score": 0.09631571173667908, "x": 49, "y": 665},
+      "further": [],
+      "kind": "noise",
+      "masked": false,
+      "params": {},
+      "pasted": null,
+      "region": {"height": 240, "width": 260, "x": 0, "y": 480},
+      "template": "skill_level_digit_2.png",
+      "variant": "absent"
+    }
+  ],
+  "frame": "frame_06",
+  "height": 720,
+  "method": "TM_CCOEFF_NORMED",
+  "seed": 1179078385272059,
+  "similarity": 0.8,
+  "source": "synthetic",
+  "width": 1565
+}

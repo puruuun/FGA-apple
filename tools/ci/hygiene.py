@@ -6,6 +6,8 @@ BLOCKED_SUFFIXES = (
     ".jpg", ".jpeg", ".png", ".gif", ".heic", ".bmp", ".webp",
     ".mp4", ".mov", ".mkv", ".fga", ".log", ".mobileprovision", ".p12",
 )
+IMAGE_SUFFIXES = (".jpg", ".jpeg", ".png", ".gif", ".heic", ".bmp", ".webp")
+ALLOWED_IMAGE_PREFIXES = ("core/testdata/synthetic/",)
 PRIVATE_ADDRESS = re.compile(
     r"(?<![\d.])(?:192\.168|10\.\d{1,3}|172\.(?:1[6-9]|2\d|3[01]))\.\d{1,3}\.\d{1,3}(?![\d.])"
 )
@@ -19,12 +21,21 @@ def tracked_files():
     return [p for p in out.decode().split("\0") if p]
 
 
+def is_blocked(path):
+    lowered = path.lower()
+    if not lowered.endswith(BLOCKED_SUFFIXES):
+        return False
+    if lowered.endswith(IMAGE_SUFFIXES) and path.startswith(ALLOWED_IMAGE_PREFIXES):
+        return False
+    return True
+
+
 def main():
     problems = []
     for path in tracked_files():
         if path.startswith("fga/") or path == "fga":
             continue
-        if path.lower().endswith(BLOCKED_SUFFIXES):
+        if is_blocked(path):
             problems.append(f"{path}: this kind of file is not committed")
             continue
         try:
