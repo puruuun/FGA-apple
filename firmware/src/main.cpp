@@ -73,6 +73,7 @@ struct CmdLine {
 static QueueHandle_t cmdQueue = nullptr;
 
 static void reply(bool toBle, const char* msg) {
+    // Bluetooth first: a serial write can block when no program reads the USB port, which delayed replies by about 4 s (measured 2026-11-24).
     if (toBle && cmdTx != nullptr && connected) {
         cmdTx->setValue((const uint8_t*)msg, strlen(msg));
         cmdTx->notify();
