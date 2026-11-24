@@ -99,11 +99,22 @@ jobs:
     needs: changes
     if: needs.changes.outputs.ios == 'true'
     runs-on: macos-latest
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
-      - run: xcodebuild -version && xcodebuild -showsdks | grep -i iphoneos
-      - run: >
+      - id: xcode
+        run: |
+          ls -d /Applications/Xcode*.app
+          app=$(ls -d /Applications/Xcode_27*.app 2>/dev/null | sort -V | tail -1)
+          if [ -z "$app" ]; then
+            echo "::notice::No Xcode 27 on this runner, so the probe is not built here. It needs the iOS 27 SDK."
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          else
+            sudo xcode-select -s "$app"
+            xcodebuild -version
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.xcode.outputs.found == 'true'
+        run: >
           xcodebuild -project ios/FGAProbe/FGAProbe.xcodeproj -scheme FGAProbe
           -configuration Debug -destination 'generic/platform=iOS'
           CODE_SIGNING_ALLOWED=NO build
